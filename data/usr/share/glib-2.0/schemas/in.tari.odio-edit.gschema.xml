@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="in.tari.odio-edit" path="/in/tari/odio-edit/" gettext-domain="odio-edit">
+    <key type="as" name="recent-files">
+      <default>[]</default>
+      <summary>List of recently accessed files</summary>
+      <description>Stores the list of files last accessed by the application.</description>
+    </key>
+    <key type="s" name="last-opened">
+      <default>''</default>
+      <summary>Last file opened</summary>
+      <description>The last file opened by the application.</description>
+    </key>
+    <key type="s" name="last-saved">
+      <default>''</default>
+      <summary>Last file saved</summary>
+      <description>The last file saved by the application.</description>
+    </key>
+  </schema>
+</schemalist>

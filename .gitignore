@@ -1,0 +1,5 @@
+TODO
+project.geany
+src/*.o
+data/usr/bin/odio-edit
+data/usr/share/locale

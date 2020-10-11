@@ -1,0 +1,10 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -frv ./data/usr/share/locale
+	rm -f ./src/*.o
+

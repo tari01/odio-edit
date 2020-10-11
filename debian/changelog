@@ -1,0 +1,46 @@
+odio-edit (20.5.11) unstable; urgency=medium
+
+  * Update for use with libodiosacd 20.5.11
+
+ -- Robert Tari <robert@tari.in>  Mon, 11 May 2020 17:38:26 +0200
+
+odio-edit (20.5.9) unstable; urgency=medium
+
+  * Use fractions as progress input
+  * Add *.dsf and *.dff support
+
+ -- Robert Tari <robert@tari.in>  Sun, 10 May 2020 15:09:00 +0200
+
+odio-edit (20.4.16) unstable; urgency=medium
+
+  * Make gst-libav a dependency
+  * WEBM support
+  * Add progress bar text
+  * Make file load cancellable
+  * Wrap gtk_file_filter_filter checks into a function
+  * Store file patterns in a string array
+  * Add some string manipulation functions
+  * OnSave: show save dialog if source is not WAV
+  * Some code refactoring
+
+ -- Robert Tari <robert@tari.in>  Thu, 16 Apr 2020 04:20:08 +0200
+
+odio-edit (20.4.13) unstable; urgency=medium
+
+  * Added more input formats
+  * Changed loading: decode compressed input files before reading 
+  * Fixed selection after pasting
+
+ -- Robert Tari <robert@tari.in>  Mon, 13 Apr 2020 23:26:33 +0200
+
+odio-edit (20.4.3) unstable; urgency=medium
+
+  * Run About Dialog with app's mainLoop
+
+ -- Robert Tari <robert@tari.in>  Fri, 03 Apr 2020 11:49:06 +0200
+
+odio-edit (20.3.26) unstable; urgency=medium
+
+  * Initial Release.
+
+ -- Robert Tari <robert@tari.in>  Sun, 29 Mar 2020 15:35:56 +0200
