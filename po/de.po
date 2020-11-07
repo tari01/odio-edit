@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: odio-edit 1.4.8\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2020-05-11 17:23+0200\n"
-"PO-Revision-Date: 2020-10-16 18:26+0000\n"
-"Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
+"PO-Revision-Date: 2020-11-08 09:26+0000\n"
+"Last-Translator: mv87 <mv87@dismail.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/odio-edit/master/"
 "de/>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.1-dev\n"
+"X-Generator: Weblate 4.3.2\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -46,6 +46,9 @@ msgid ""
 "and save again. If you exit now, the file's contents could be left in a bad "
 "state."
 msgstr ""
+"Datei %s könnte beschädigt worden sein, weil das Abspeichern fehlgeschlagen "
+"ist. Versuche, Speicherplatz frei zu machen und erneut abzuspeichern. Wenn "
+"du jetzt beendest, könnte die Datei unbrauchbar zurückbleiben."
 
 #: src/chunk.c:431
 #, c-format
@@ -69,16 +72,16 @@ msgstr "Lade"
 #: src/chunk.c:486
 #, c-format
 msgid "Failed to decode '%s'"
-msgstr ""
+msgstr "Konnte '%s' nicht dekodieren"
 
 #: src/chunk.c:850
 msgid "Fading"
-msgstr ""
+msgstr "Fading"
 
 #: src/datasource.c:179
 #, c-format
 msgid "Could not open %s"
-msgstr ""
+msgstr "Konnte '%s' nicht öffnen"
 
 #: src/datasource.c:392
 #, c-format
@@ -88,7 +91,7 @@ msgstr "Fehler beim Lesen %s: %s"
 #: src/document.c:149
 #, c-format
 msgid "Untitled %d"
-msgstr ""
+msgstr "Ohne Titel %d"
 
 #: src/file.c:53
 #, c-format
@@ -98,7 +101,7 @@ msgstr "Kann %s nicht öffnen: %s"
 #: src/file.c:57
 #, c-format
 msgid "Unexpected error: %s %s"
-msgstr ""
+msgstr "Unerwarteter Fehler: %s %s"
 
 #: src/file.c:84
 #, c-format
@@ -118,12 +121,12 @@ msgstr "Kann von %s nicht lesen: %s"
 #: src/file.c:153
 #, c-format
 msgid "Unexpected end of file reading %s"
-msgstr ""
+msgstr "Unerwartetes Dateiende beim Lesen von %s"
 
 #: src/file.c:175
 #, c-format
 msgid "Could not write data to %s"
-msgstr ""
+msgstr "Konnte Daten nicht nach %s schreiben"
 
 #: src/file.c:209
 #, c-format
@@ -133,7 +136,7 @@ msgstr "Kann die Dateiposition in %s nicht bekommen: %s"
 #: src/file.c:335
 #, c-format
 msgid "Could not delete '%s': %s"
-msgstr ""
+msgstr "Konnte '%s' nicht löschen: %s"
 
 #: src/file.c:362
 #, c-format
@@ -142,15 +145,15 @@ msgstr "Fehler beim Erzeugen der Verknüpfung nach '%s': %s"
 
 #: src/mainwindow.c:73
 msgid "The file extension should be \".wav\""
-msgstr ""
+msgstr "Die Dateiendung sollte \".wav\" sein"
 
 #: src/mainwindow.c:89
 msgid "_Save"
-msgstr ""
+msgstr "_Speichern"
 
 #: src/mainwindow.c:89
 msgid "_Open"
-msgstr ""
+msgstr "_Öffnen"
 
 #: src/mainwindow.c:89
 msgid "_Cancel"
@@ -163,11 +166,11 @@ msgstr "Bearbeite Daten"
 #: src/mainwindow.c:172
 #, c-format
 msgid "%s... Press ESC to cancel."
-msgstr ""
+msgstr "%s... ESC zum Abbrechen."
 
 #: src/mainwindow.c:191
 msgid "Ready"
-msgstr ""
+msgstr "Fertig"
 
 #: src/mainwindow.c:325
 msgid "Close"
@@ -175,7 +178,7 @@ msgstr "Schließen"
 
 #: src/mainwindow.c:328
 msgid "Click here for recent files"
-msgstr ""
+msgstr "Zuletzt verwendete Dateien"
 
 #: src/mainwindow.c:426 src/mainwindow.c:1575
 msgid "Cursor"
@@ -183,7 +186,7 @@ msgstr "Cursor"
 
 #: src/mainwindow.c:434 src/mainwindow.c:1577
 msgid "View"
-msgstr ""
+msgstr "Anzeigen"
 
 #: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1579
 msgid "Selection"
@@ -191,7 +194,7 @@ msgstr "Markierung"
 
 #: src/mainwindow.c:566
 msgid "Save file"
-msgstr ""
+msgstr "Datei speichern"
 
 #: src/mainwindow.c:607
 #, c-format
@@ -200,19 +203,19 @@ msgstr "Speichere Änderungen nach %s?"
 
 #: src/mainwindow.c:854 src/mainwindow.c:865
 msgid "Load file"
-msgstr ""
+msgstr "Datei öffnen"
 
 #: src/mainwindow.c:890 src/mainwindow.c:1400
 msgid "Save selection as..."
-msgstr ""
+msgstr "Auswahl speichern als..."
 
 #: src/mainwindow.c:1002 src/mainwindow.c:1023 src/mainwindow.c:1047
 msgid "You cannot mix different sound formats"
-msgstr ""
+msgstr "Du kannst verschiedene Audioformate nicht vermischen"
 
 #: src/mainwindow.c:1179
 msgid "A lightweight audio wave editor"
-msgstr ""
+msgstr "Ein leichtgewichtiger Wave-Editor"
 
 #: src/mainwindow.c:1181
 msgid "translator-credits"
@@ -223,107 +226,109 @@ msgstr ""
 
 #: src/mainwindow.c:1389
 msgid "Open"
-msgstr ""
+msgstr "Öffnen"
 
 #: src/mainwindow.c:1391
 msgid "Load new file [Ctrl+O]"
-msgstr ""
+msgstr "Neue Datei öffnen [Ctrl+O]"
 
 #: src/mainwindow.c:1396
 msgid "Save as..."
-msgstr ""
+msgstr "Speichern als..."
 
 #: src/mainwindow.c:1406
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: src/mainwindow.c:1408
 msgid "Save current file [Ctrl+S]"
-msgstr ""
+msgstr "Aktuelle Datei speichern [Ctrl+S]"
 
 #: src/mainwindow.c:1409 src/mainwindow.c:1464 src/mainwindow.c:1505
 msgid "Click here for more options"
-msgstr ""
+msgstr "Hier für weitere Optionen klicken"
 
 #: src/mainwindow.c:1417
 msgid "Undo"
-msgstr ""
+msgstr "Rückgängig"
 
 #: src/mainwindow.c:1419
 msgid "Undo last change [Ctrl+Z]"
-msgstr ""
+msgstr "Letzte Änderung rückgängig machen [Ctrl+Z]"
 
 #: src/mainwindow.c:1424
 msgid "Redo"
-msgstr ""
+msgstr "Wiederherstellen"
 
 #: src/mainwindow.c:1426
 msgid "Redo last undo operation [Ctrl+Shift+Z]"
-msgstr ""
+msgstr "Letzte Rückgängig-Operation wiederherstellen [Ctrl+Shift+Z]"
 
 #: src/mainwindow.c:1433
 msgid "Cut"
-msgstr ""
+msgstr "Ausschneiden"
 
 #: src/mainwindow.c:1435
 msgid "Remove and copy current selection [Ctrl+X]"
-msgstr ""
+msgstr "Entferne und kopiere die aktuelle Auswahl [Ctrl+X]"
 
 #: src/mainwindow.c:1440
 msgid "Copy"
-msgstr ""
+msgstr "Kopieren"
 
 #: src/mainwindow.c:1442
 msgid "Copy current selection [Ctrl+C]"
-msgstr ""
+msgstr "Kopiere die aktuelle Auswahl [Ctrl+C]"
 
 #: src/mainwindow.c:1448
+#, fuzzy
 msgid "Paste over"
-msgstr ""
+msgstr "Überkleben ('Paste over')"
 
 #: src/mainwindow.c:1452
 msgid "Paste mixed"
-msgstr ""
+msgstr "Gemischt einfügen"
 
 #: src/mainwindow.c:1456
+#, fuzzy
 msgid "Paste to new"
-msgstr ""
+msgstr "Einfügen zu neu"
 
 #: src/mainwindow.c:1461
 msgid "Paste"
-msgstr ""
+msgstr "Einfügen"
 
 #: src/mainwindow.c:1463
 msgid "Paste at cursor position [Ctrl+V]"
-msgstr ""
+msgstr "Füge bei aktueller Zeigerposition ein [Ctrl+V]"
 
 #: src/mainwindow.c:1477
 msgid "Crop"
-msgstr ""
+msgstr "Zurechtschneiden"
 
 #: src/mainwindow.c:1479
 msgid "Crop to selection"
-msgstr ""
+msgstr "Auf Auswahl zurechtschneiden"
 
 #: src/mainwindow.c:1484
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: src/mainwindow.c:1486
 msgid "Delete selection [Ctrl+D]"
-msgstr ""
+msgstr "Auswahl löschen [Ctrl+D]"
 
 #: src/mainwindow.c:1494
 msgid "Play all"
-msgstr ""
+msgstr "Alle abspielen"
 
 #: src/mainwindow.c:1498
 msgid "Play selection"
-msgstr ""
+msgstr "Auswahl abspielen"
 
 #: src/mainwindow.c:1503
 msgid "Play"
-msgstr ""
+msgstr "Abspielen"
 
 #: src/mainwindow.c:1504
 msgid "Play from cursor position"
@@ -331,35 +336,35 @@ msgstr "Spiele ab der Cursor Position"
 
 #: src/mainwindow.c:1511
 msgid "Stop"
-msgstr ""
+msgstr "Stopp"
 
 #: src/mainwindow.c:1512
 msgid "Stop playback"
-msgstr ""
+msgstr "Wiedergabe stoppen"
 
 #: src/mainwindow.c:1526
 msgid "Fade in"
-msgstr ""
+msgstr "Einblenden (Fadein)"
 
 #: src/mainwindow.c:1528
 msgid "Fade in selection"
-msgstr ""
+msgstr "Auswahl einblenden (Fadein)"
 
 #: src/mainwindow.c:1540
 msgid "Fade out"
-msgstr ""
+msgstr "Ausblenden (Fadeout)"
 
 #: src/mainwindow.c:1542
 msgid "Fade out selection"
-msgstr ""
+msgstr "Auswahl ausblenden (Fadeout)"
 
 #: src/mainwindow.c:1550
 msgid "About"
-msgstr ""
+msgstr "Über"
 
 #: src/mainwindow.c:1551
 msgid "About Odio Edit"
-msgstr ""
+msgstr "Über Odio Edit"
 
 #: src/message.c:55
 msgid "Yes"
