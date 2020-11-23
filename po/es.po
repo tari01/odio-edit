@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2020-05-11 17:23+0200\n"
-"PO-Revision-Date: 2020-04-04 07:56+0000\n"
-"Last-Translator: Robert Tari <Unknown>\n"
-"Language-Team: <es@li.org> <es@li.org>\n"
+"PO-Revision-Date: 2020-11-24 12:28+0000\n"
+"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"Language-Team: Spanish <https://hosted.weblate.org/projects/odio-edit/master/"
+"es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.4-dev\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -27,12 +30,12 @@ msgstr "Guardando"
 #: src/chunk.c:303
 #, c-format
 msgid "Failed to open '%s'!"
-msgstr "Fallo al abrir '%s'!"
+msgstr "No se pudo abrir «%s»."
 
 #: src/chunk.c:349
 #, c-format
 msgid "Failed to write to '%s'!"
-msgstr "Fallo al escribir en '%s'!"
+msgstr "No se pudo escribir en «%s»."
 
 #: src/chunk.c:385
 #, c-format
@@ -41,21 +44,24 @@ msgid ""
 "and save again. If you exit now, the file's contents could be left in a bad "
 "state."
 msgstr ""
+"Puede que se haya destruido el archivo «%s» dado que falló el guardado. "
+"Pruebe a liberar espacio en el disco e intente guardar de nuevo. Si sale "
+"ahora, el contenido del archivo podría permanecer en mal estado."
 
 #: src/chunk.c:431
 #, c-format
 msgid "File %s does not exist!"
-msgstr ""
+msgstr "El archivo «%s» no existe."
 
 #: src/chunk.c:440
 #, c-format
 msgid "File %s is not a regular file!"
-msgstr ""
+msgstr "El archivo «%s» no es como los ordinarios."
 
 #: src/chunk.c:466 src/chunk.c:537
 #, c-format
 msgid "Failed to open '%s'"
-msgstr ""
+msgstr "No se pudo abrir «%s»"
 
 #: src/chunk.c:473 src/chunk.c:505
 msgid "Loading"
@@ -64,7 +70,7 @@ msgstr "Cargando"
 #: src/chunk.c:486
 #, c-format
 msgid "Failed to decode '%s'"
-msgstr ""
+msgstr "No se pudo descodificar «%s»"
 
 #: src/chunk.c:850
 msgid "Fading"
@@ -73,7 +79,7 @@ msgstr ""
 #: src/datasource.c:179
 #, c-format
 msgid "Could not open %s"
-msgstr ""
+msgstr "No se pudo abrir %s"
 
 #: src/datasource.c:392
 #, c-format
@@ -83,7 +89,7 @@ msgstr "Error al leer %s: %s"
 #: src/document.c:149
 #, c-format
 msgid "Untitled %d"
-msgstr ""
+msgstr "Sin título %d"
 
 #: src/file.c:53
 #, c-format
@@ -93,7 +99,7 @@ msgstr "No se puede abrir %s: %s"
 #: src/file.c:57
 #, c-format
 msgid "Unexpected error: %s %s"
-msgstr ""
+msgstr "Error inesperado: %s %s"
 
 #: src/file.c:84
 #, c-format
@@ -113,12 +119,12 @@ msgstr "No se puede leer desde %s: %s"
 #: src/file.c:153
 #, c-format
 msgid "Unexpected end of file reading %s"
-msgstr ""
+msgstr "Final inesperado del archivo al leer %s"
 
 #: src/file.c:175
 #, c-format
 msgid "Could not write data to %s"
-msgstr ""
+msgstr "No se pudo escribir datos en %s"
 
 #: src/file.c:209
 #, c-format
@@ -128,24 +134,24 @@ msgstr "No se puede obtener la posición del archivo %s: %s"
 #: src/file.c:335
 #, c-format
 msgid "Could not delete '%s': %s"
-msgstr ""
+msgstr "No se pudo eliminar «%s»: %s"
 
 #: src/file.c:362
 #, c-format
 msgid "Error creating link to '%s': %s"
-msgstr "Error al crear enlace hacia '%s': %s"
+msgstr "Error al crear el enlace a «%s»: %s"
 
 #: src/mainwindow.c:73
 msgid "The file extension should be \".wav\""
-msgstr ""
+msgstr "La extensión del archivo debe ser «.wav»"
 
 #: src/mainwindow.c:89
 msgid "_Save"
-msgstr ""
+msgstr "_Guardar"
 
 #: src/mainwindow.c:89
 msgid "_Open"
-msgstr ""
+msgstr "_Abrir"
 
 #: src/mainwindow.c:89
 msgid "_Cancel"
@@ -158,11 +164,11 @@ msgstr "Procesando datos"
 #: src/mainwindow.c:172
 #, c-format
 msgid "%s... Press ESC to cancel."
-msgstr ""
+msgstr "%s… Oprima Esc para cancelar."
 
 #: src/mainwindow.c:191
 msgid "Ready"
-msgstr ""
+msgstr "Preparado"
 
 #: src/mainwindow.c:325
 msgid "Close"
@@ -170,7 +176,7 @@ msgstr "Cerrar"
 
 #: src/mainwindow.c:328
 msgid "Click here for recent files"
-msgstr ""
+msgstr "Pulse aquí para ver los archivos recientes"
 
 #: src/mainwindow.c:426 src/mainwindow.c:1575
 msgid "Cursor"
@@ -178,7 +184,7 @@ msgstr "Cursor"
 
 #: src/mainwindow.c:434 src/mainwindow.c:1577
 msgid "View"
-msgstr ""
+msgstr "Ver"
 
 #: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1579
 msgid "Selection"
@@ -186,28 +192,28 @@ msgstr "Selección"
 
 #: src/mainwindow.c:566
 msgid "Save file"
-msgstr ""
+msgstr "Guardar archivo"
 
 #: src/mainwindow.c:607
 #, c-format
 msgid "Save changes to %s?"
-msgstr "Guardar cambios en %s?"
+msgstr "¿Quiere guardar los cambios en %s?"
 
 #: src/mainwindow.c:854 src/mainwindow.c:865
 msgid "Load file"
-msgstr ""
+msgstr "Cargar archivo"
 
 #: src/mainwindow.c:890 src/mainwindow.c:1400
 msgid "Save selection as..."
-msgstr ""
+msgstr "Guardar selección como…"
 
 #: src/mainwindow.c:1002 src/mainwindow.c:1023 src/mainwindow.c:1047
 msgid "You cannot mix different sound formats"
-msgstr ""
+msgstr "No se pueden mezclar formatos de sonido diferentes"
 
 #: src/mainwindow.c:1179
 msgid "A lightweight audio wave editor"
-msgstr ""
+msgstr "Un editor de audio de onda ligero"
 
 #: src/mainwindow.c:1181
 msgid "translator-credits"
@@ -218,67 +224,67 @@ msgstr ""
 
 #: src/mainwindow.c:1389
 msgid "Open"
-msgstr ""
+msgstr "Abrir"
 
 #: src/mainwindow.c:1391
 msgid "Load new file [Ctrl+O]"
-msgstr ""
+msgstr "Cargar archivo nuevo [Ctrl+O]"
 
 #: src/mainwindow.c:1396
 msgid "Save as..."
-msgstr ""
+msgstr "Guardar como…"
 
 #: src/mainwindow.c:1406
 msgid "Save"
-msgstr ""
+msgstr "Guardar"
 
 #: src/mainwindow.c:1408
 msgid "Save current file [Ctrl+S]"
-msgstr ""
+msgstr "Guardar archivo actual [Ctrl+S]"
 
 #: src/mainwindow.c:1409 src/mainwindow.c:1464 src/mainwindow.c:1505
 msgid "Click here for more options"
-msgstr ""
+msgstr "Pulse aquí para obtener más opciones"
 
 #: src/mainwindow.c:1417
 msgid "Undo"
-msgstr ""
+msgstr "Deshacer"
 
 #: src/mainwindow.c:1419
 msgid "Undo last change [Ctrl+Z]"
-msgstr ""
+msgstr "Deshacer último cambio [Ctrl+Z]"
 
 #: src/mainwindow.c:1424
 msgid "Redo"
-msgstr ""
+msgstr "Rehacer"
 
 #: src/mainwindow.c:1426
 msgid "Redo last undo operation [Ctrl+Shift+Z]"
-msgstr ""
+msgstr "Rehacer última operación de deshacer [Ctrl+Mayús+Z]"
 
 #: src/mainwindow.c:1433
 msgid "Cut"
-msgstr ""
+msgstr "Cortar"
 
 #: src/mainwindow.c:1435
 msgid "Remove and copy current selection [Ctrl+X]"
-msgstr ""
+msgstr "Quitar y copiar selección actual [Ctrl+X]"
 
 #: src/mainwindow.c:1440
 msgid "Copy"
-msgstr ""
+msgstr "Copiar"
 
 #: src/mainwindow.c:1442
 msgid "Copy current selection [Ctrl+C]"
-msgstr ""
+msgstr "Copiar selección actual [Ctrl+C]"
 
 #: src/mainwindow.c:1448
 msgid "Paste over"
-msgstr ""
+msgstr "Pegar encima"
 
 #: src/mainwindow.c:1452
 msgid "Paste mixed"
-msgstr ""
+msgstr "Pegar mezclado"
 
 #: src/mainwindow.c:1456
 msgid "Paste to new"
@@ -286,39 +292,39 @@ msgstr ""
 
 #: src/mainwindow.c:1461
 msgid "Paste"
-msgstr ""
+msgstr "Pegar"
 
 #: src/mainwindow.c:1463
 msgid "Paste at cursor position [Ctrl+V]"
-msgstr ""
+msgstr "Pegar en la posición del cursor [Ctrl+V]"
 
 #: src/mainwindow.c:1477
 msgid "Crop"
-msgstr ""
+msgstr "Recortar"
 
 #: src/mainwindow.c:1479
 msgid "Crop to selection"
-msgstr ""
+msgstr "Recortar a la selección"
 
 #: src/mainwindow.c:1484
 msgid "Delete"
-msgstr ""
+msgstr "Eliminar"
 
 #: src/mainwindow.c:1486
 msgid "Delete selection [Ctrl+D]"
-msgstr ""
+msgstr "Eliminar selección [Ctrl+D]"
 
 #: src/mainwindow.c:1494
 msgid "Play all"
-msgstr ""
+msgstr "Reproducir todo"
 
 #: src/mainwindow.c:1498
 msgid "Play selection"
-msgstr ""
+msgstr "Reproducir selección"
 
 #: src/mainwindow.c:1503
 msgid "Play"
-msgstr ""
+msgstr "Reproducir"
 
 #: src/mainwindow.c:1504
 msgid "Play from cursor position"
@@ -326,11 +332,11 @@ msgstr "Reproducir desde la posición del cursor"
 
 #: src/mainwindow.c:1511
 msgid "Stop"
-msgstr ""
+msgstr "Detener"
 
 #: src/mainwindow.c:1512
 msgid "Stop playback"
-msgstr ""
+msgstr "Detener reproducción"
 
 #: src/mainwindow.c:1526
 msgid "Fade in"
@@ -350,11 +356,11 @@ msgstr ""
 
 #: src/mainwindow.c:1550
 msgid "About"
-msgstr ""
+msgstr "Acerca de"
 
 #: src/mainwindow.c:1551
 msgid "About Odio Edit"
-msgstr ""
+msgstr "Acerca de Odio Edit"
 
 #: src/message.c:55
 msgid "Yes"
