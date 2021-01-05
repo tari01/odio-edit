@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit 1.4.8\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2020-05-11 17:23+0200\n"
+"POT-Creation-Date: 2021-01-05 14:20+0100\n"
 "PO-Revision-Date: 2020-11-08 09:26+0000\n"
 "Last-Translator: mv87 <mv87@dismail.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -113,32 +113,33 @@ msgstr "Fehler beim Schließen von %s: %s"
 msgid "Could not seek in %s: %s"
 msgstr "Kann in %s nicht suchen: %s"
 
-#: src/file.c:136 src/file.c:189
+#: src/file.c:136 src/file.c:190
 #, c-format
 msgid "Could not read from %s: %s"
 msgstr "Kann von %s nicht lesen: %s"
 
-#: src/file.c:153
+#. Translators: %s will be the name of the file
+#: src/file.c:154
 #, c-format
 msgid "Unexpected end of file reading %s"
 msgstr "Unerwartetes Dateiende beim Lesen von %s"
 
-#: src/file.c:175
+#: src/file.c:176
 #, c-format
 msgid "Could not write data to %s"
 msgstr "Konnte Daten nicht nach %s schreiben"
 
-#: src/file.c:209
+#: src/file.c:210
 #, c-format
 msgid "Could not get file position in %s: %s"
 msgstr "Kann die Dateiposition in %s nicht bekommen: %s"
 
-#: src/file.c:335
+#: src/file.c:336
 #, c-format
 msgid "Could not delete '%s': %s"
 msgstr "Konnte '%s' nicht löschen: %s"
 
-#: src/file.c:362
+#: src/file.c:363
 #, c-format
 msgid "Error creating link to '%s': %s"
 msgstr "Fehler beim Erzeugen der Verknüpfung nach '%s': %s"

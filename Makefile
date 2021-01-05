@@ -60,7 +60,7 @@ uninstall:
 
 trans:
 
-	$(shell xgettext --force-po -o ./po/odio-edit.pot --no-wrap --copyright-holder "2019 Robert Tari" --package-name odio-edit -d odio-edit --msgid-bugs-address "https://github.com/tari01/odio-edit/issues" -L ObjectiveC $(VPATH)/*.h* $(VPATH)/*.c*)
+	$(shell xgettext --force-po --add-comments=" Translators:" -o ./po/odio-edit.pot --no-wrap --copyright-holder "2019-2021 Robert Tari" --package-name odio-edit -d odio-edit --msgid-bugs-address "https://github.com/tari01/odio-edit/issues" -L ObjectiveC $(VPATH)/*.h* $(VPATH)/*.c*)
 	$(shell sed -i '/"Content-Type: text\/plain; charset=CHARSET\\n"/c\"Content-Type: text\/plain; charset=UTF-8\\n"' ./po/odio-edit.pot)
 	$(foreach f, $(wildcard ./po/*.po), $(shell msgmerge --silent --update --no-fuzzy-matching --backup=off $f ./po/odio-edit.pot))
 	$(foreach f, $(wildcard ./po/*.po), $(shell mkdir -p ./data/usr/share/locale/$(notdir $(basename $f))/LC_MESSAGES))

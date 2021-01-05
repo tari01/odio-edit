@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2020-05-11 17:23+0200\n"
+"POT-Creation-Date: 2021-01-05 14:20+0100\n"
 "PO-Revision-Date: 2020-11-24 12:28+0000\n"
 "Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -111,32 +111,33 @@ msgstr "Error al cerrar %s: %s"
 msgid "Could not seek in %s: %s"
 msgstr "No se puede buscar en %s: %s"
 
-#: src/file.c:136 src/file.c:189
+#: src/file.c:136 src/file.c:190
 #, c-format
 msgid "Could not read from %s: %s"
 msgstr "No se puede leer desde %s: %s"
 
-#: src/file.c:153
+#. Translators: %s will be the name of the file
+#: src/file.c:154
 #, c-format
 msgid "Unexpected end of file reading %s"
 msgstr "Final inesperado del archivo al leer %s"
 
-#: src/file.c:175
+#: src/file.c:176
 #, c-format
 msgid "Could not write data to %s"
 msgstr "No se pudo escribir datos en %s"
 
-#: src/file.c:209
+#: src/file.c:210
 #, c-format
 msgid "Could not get file position in %s: %s"
 msgstr "No se puede obtener la posición del archivo %s: %s"
 
-#: src/file.c:335
+#: src/file.c:336
 #, c-format
 msgid "Could not delete '%s': %s"
 msgstr "No se pudo eliminar «%s»: %s"
 
-#: src/file.c:362
+#: src/file.c:363
 #, c-format
 msgid "Error creating link to '%s': %s"
 msgstr "Error al crear el enlace a «%s»: %s"

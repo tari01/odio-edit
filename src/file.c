@@ -150,6 +150,7 @@ gboolean file_Read(gchar *lBytes, gint64 nBytes, File *pFile)
     {
         if (nPos >= 0)
         {
+            // Translators: %s will be the name of the file
             sMessage = g_strdup_printf(_("Unexpected end of file reading %s"), pFile->sFilePath);
             message_Error(sMessage);
             g_free(sMessage);
