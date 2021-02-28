@@ -8,13 +8,16 @@ msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2021-01-05 14:20+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2021-03-01 12:50+0000\n"
+"Last-Translator: HelaBasa <R45XvezA@protonmail.ch>\n"
+"Language-Team: Sinhala <https://hosted.weblate.org/projects/odio-edit/master/"
+"si/>\n"
 "Language: si\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 4.5\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -90,7 +93,7 @@ msgstr ""
 #: src/file.c:57
 #, c-format
 msgid "Unexpected error: %s %s"
-msgstr ""
+msgstr "අනපේක්ෂිත දෝෂයකි: %s %s"
 
 #: src/file.c:84
 #, c-format
@@ -139,7 +142,7 @@ msgstr ""
 
 #: src/mainwindow.c:89
 msgid "_Save"
-msgstr ""
+msgstr "_ සුරකින්න"
 
 #: src/mainwindow.c:89
 msgid "_Open"
