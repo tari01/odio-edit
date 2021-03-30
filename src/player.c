@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2021, Robert Tari <robert@tari.in>
 
     This file is part of Odio Edit.
 
@@ -126,7 +126,7 @@ void player_Stop()
         m_pChunkHandle = NULL;
     }
         
-    m_pOnNotify(0, FALSE);
+    m_pOnNotify(-1, FALSE);
     
     G_UNLOCK(PLAYER_LOCK);
 }

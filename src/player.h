@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2021, Robert Tari <robert@tari.in>
 
     This file is part of Odio Edit.
 
@@ -24,7 +24,7 @@
 #include <glib.h>
 #include "chunk.h"
 
-typedef void (*OnNotify)(guint nPos, gboolean is_running);
+typedef void (*OnNotify)(gint nPos, gboolean is_running);
 
 gboolean player_Play(Chunk *pChunk, gint64 nStartPos, gint64 nEndPos, OnNotify pOnNotify);
 void player_SetPos(gint64 nPos);

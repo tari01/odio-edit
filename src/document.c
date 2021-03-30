@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2021, Robert Tari <robert@tari.in>
     Copyright (C) 2005 2006 2007 2010 2011 2012, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -228,7 +228,7 @@ gboolean document_Save(Document *pDocument, gchar *sFilePath)
     return bError;
 }
 
-static void document_OnCursorChanged(guint nPos, gboolean bIsRunning)
+static void document_OnCursorChanged(gint nPos, gboolean bIsRunning)
 {
     Document *pDocument = g_pPlayingDocument;
 
@@ -237,6 +237,11 @@ static void document_OnCursorChanged(guint nPos, gboolean bIsRunning)
         if (!bIsRunning)
         {
             g_pPlayingDocument = NULL;
+        }
+        
+        if (nPos == -1)
+        {
+            nPos = pDocument->nSelStart;
         }
         
         document_SetCursorMain(pDocument, nPos, TRUE, bIsRunning);
