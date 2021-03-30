@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2021, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2018, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -1175,7 +1175,7 @@ static void mainwindow_OnAbout(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
     gtk_window_set_transient_for(GTK_WINDOW(pAboutDialog), GTK_WINDOW(g_pFocusedWindow));
     gtk_about_dialog_set_license_type(pAboutDialog, GTK_LICENSE_GPL_3_0);
     gtk_about_dialog_set_program_name(pAboutDialog, "Odio Edit");
-    gtk_about_dialog_set_copyright(pAboutDialog, "Robert Tari 2019-2020");
+    gtk_about_dialog_set_copyright(pAboutDialog, "Robert Tari 2019-2021");
     gtk_about_dialog_set_comments(pAboutDialog, _("A lightweight audio wave editor"));
     gtk_about_dialog_set_authors(pAboutDialog, &sAuthors);
     gtk_about_dialog_set_translator_credits(pAboutDialog, _("translator-credits"));
@@ -1495,16 +1495,16 @@ static void mainwindow_init(MainWindow *pMainWindow)
     g_signal_connect(pMenuItem, "activate", G_CALLBACK(mainwindow_OnPlayAll), pMainWindow);
     gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), pMenuItem);
     mainwindow_AppendWidget(&pMainWindow->lNeedChunkItems, pMenuItem);
-    pMenuItem = gtk_menu_item_new_with_label(_("Play selection"));
-    g_signal_connect(pMenuItem, "activate", G_CALLBACK(mainwindow_OnPlaySelection), pMainWindow);
+    pMenuItem = gtk_menu_item_new_with_label(_("Play from cursor position"));
+    g_signal_connect(pMenuItem, "activate", G_CALLBACK(mainwindow_OnPlay), pMainWindow);
     gtk_menu_shell_append(GTK_MENU_SHELL(pMenu), pMenuItem);
-    mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pMenuItem);
+    mainwindow_AppendWidget(&pMainWindow->lNeedChunkItems, pMenuItem);
     gtk_widget_show_all(pMenu);
     pToolItem = gtk_menu_tool_button_new(gtk_image_new_from_icon_name("media-playback-start", GTK_ICON_SIZE_LARGE_TOOLBAR), _("Play"));
-    gtk_tool_item_set_tooltip_text(pToolItem, _("Play from cursor position"));
+    gtk_tool_item_set_tooltip_text(pToolItem, _("Play selection"));
     gtk_menu_tool_button_set_arrow_tooltip_text(GTK_MENU_TOOL_BUTTON(pToolItem), _("Click here for more options"));
     gtk_menu_tool_button_set_menu(GTK_MENU_TOOL_BUTTON(pToolItem), pMenu);
-    g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnPlay), pMainWindow);
+    g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnPlaySelection), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedChunkItems, pToolItem);
 
