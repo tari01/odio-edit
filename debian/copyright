@@ -4,15 +4,15 @@ Upstream-Contact: Robert Tari <robert@tari.in>
 Source: https://github.com/tari01/odio-edit
 
 Files: *
-Copyright: 2019-2020, Robert Tari <robert@tari.in>
+Copyright: 2019-2021, Robert Tari <robert@tari.in>
 License: GPL-3+
 
 Files: po/*.po
-Copyright: 2019-2020, Rosetta Contributors and Canonical Ltd
+Copyright: 2019-2021, Rosetta Contributors and Canonical Ltd
 License: GPL-3+
 
 Files: debian/*
-Copyright: 2019-2020 Robert Tari <robert@tari.in>
+Copyright: 2019-2021 Robert Tari <robert@tari.in>
 License: GPL-3.0+
 
 License: GPL-3.0+

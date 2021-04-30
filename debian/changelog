@@ -1,3 +1,21 @@
+odio-edit (21.4.30) unstable; urgency=medium
+
+  * Return cursor to selection start when playback ends
+  * src/mainwindow.c: Set play button to play selection by default
+  * Translated using Weblate (Sinhala) 
+  * Translated using Weblate (Turkish) 
+  * Translated using Weblate (Spanish) 
+  * Added translation using Weblate (Catalan)
+  * Translated using Weblate (German) 
+  * Translated using Weblate (Norwegian Bokmål) 
+  * Translated using Weblate (French) 
+
+Commits on Oct 11, 2020
+
+    Add binary dir 
+
+ -- Robert Tari <robert@tari.in>  Fri, 30 Apr 2021 18:24:00 +0200
+ 
 odio-edit (20.5.12) unstable; urgency=medium
 
   * Version bump

@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2021, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -24,7 +24,7 @@
 
 #include <gtk/gtk.h>
 
-#define APPVERSION "20.5.12"
+#define APPVERSION "21.4.30"
 #define ARRAY_LENGTH(arr) (sizeof(arr)/sizeof((arr)[0]))
 #define GFLOAT(x) ((gfloat)(x))
 #define GDOUBLE(x) ((gdouble)(x))
