@@ -1482,8 +1482,8 @@ static void mainwindow_init(MainWindow *pMainWindow)
     mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pToolItem);
     
     pToolItem = gtk_tool_button_new(gtk_image_new_from_icon_name("edit-delete", GTK_ICON_SIZE_LARGE_TOOLBAR), _("Delete"));
-    gtk_widget_add_accelerator(GTK_WIDGET(pToolItem), "clicked", pAccelGroup, GDK_KEY_D, GDK_CONTROL_MASK, 0);
-    gtk_tool_item_set_tooltip_text(pToolItem, _("Delete selection [Ctrl+D]"));
+    gtk_widget_add_accelerator(GTK_WIDGET(pToolItem), "clicked", pAccelGroup, GDK_KEY_Delete, 0, 0);
+    gtk_tool_item_set_tooltip_text(pToolItem, _("Delete selection [Del]"));
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnDelete), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pToolItem);
