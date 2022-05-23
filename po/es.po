@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2021-01-05 14:20+0100\n"
-"PO-Revision-Date: 2020-11-24 12:28+0000\n"
-"Last-Translator: Adolfo Jayme Barrientos <fitojb@ubuntu.com>\n"
+"PO-Revision-Date: 2022-05-24 16:15+0000\n"
+"Last-Translator: Luiz Carlos Lucasv <csversut@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/odio-edit/master/"
 "es/>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.4-dev\n"
+"X-Generator: Weblate 4.13-dev\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -30,12 +30,12 @@ msgstr "Guardando"
 #: src/chunk.c:303
 #, c-format
 msgid "Failed to open '%s'!"
-msgstr "No se pudo abrir «%s»."
+msgstr "No se pudo abrir '%s'!"
 
 #: src/chunk.c:349
 #, c-format
 msgid "Failed to write to '%s'!"
-msgstr "No se pudo escribir en «%s»."
+msgstr "No se pudo escribir en '%s'!"
 
 #: src/chunk.c:385
 #, c-format
@@ -51,12 +51,12 @@ msgstr ""
 #: src/chunk.c:431
 #, c-format
 msgid "File %s does not exist!"
-msgstr "El archivo «%s» no existe."
+msgstr "El archivo %s no existe!"
 
 #: src/chunk.c:440
 #, c-format
 msgid "File %s is not a regular file!"
-msgstr "El archivo «%s» no es como los ordinarios."
+msgstr "¡El archivo %s no es un archivo normal!"
 
 #: src/chunk.c:466 src/chunk.c:537
 #, c-format
@@ -74,7 +74,7 @@ msgstr "No se pudo descodificar «%s»"
 
 #: src/chunk.c:850
 msgid "Fading"
-msgstr ""
+msgstr "Desvanecimiento"
 
 #: src/datasource.c:179
 #, c-format
@@ -289,7 +289,7 @@ msgstr "Pegar mezclado"
 
 #: src/mainwindow.c:1456
 msgid "Paste to new"
-msgstr ""
+msgstr "Pegar a nuevo"
 
 #: src/mainwindow.c:1461
 msgid "Paste"
@@ -341,19 +341,19 @@ msgstr "Detener reproducción"
 
 #: src/mainwindow.c:1526
 msgid "Fade in"
-msgstr ""
+msgstr "Fundirse"
 
 #: src/mainwindow.c:1528
 msgid "Fade in selection"
-msgstr ""
+msgstr "Fundido en la selección"
 
 #: src/mainwindow.c:1540
 msgid "Fade out"
-msgstr ""
+msgstr "Apagarse"
 
 #: src/mainwindow.c:1542
 msgid "Fade out selection"
-msgstr ""
+msgstr "Selección de desvanecimiento"
 
 #: src/mainwindow.c:1550
 msgid "About"
