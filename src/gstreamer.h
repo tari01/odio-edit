@@ -59,6 +59,7 @@ void gstreader_Free(GstReader *pGstGstReader);
 typedef struct
 {
     GstBase *pGstBase;
+    gchar *sFilePath;
     
 } GstWriter;
 

@@ -21,6 +21,7 @@
 #include <gst/app/gstappsrc.h>
 #include <gst/app/gstappsink.h>
 #include <gst/pbutils/pbutils.h>
+#include <gio/gio.h>
 #include "gstreamer.h"
 
 typedef struct
@@ -477,6 +478,7 @@ GstWriter* gstwriter_New(gchar *sFilePath, GstAudioInfo *pAudioInfo)
     GstWriter *pGstWriter = g_malloc(sizeof(GstWriter));
     pGstWriter->pGstBase = gstbase_New();
     pGstWriter->pGstBase->pAudioInfo = pAudioInfo;
+    pGstWriter->sFilePath = sFilePath;
     gstbase_Init(pGstWriter->pGstBase, "appsrc name=src block=TRUE caps=\"\tCAPS\t\" ! wavenc ! filesink location=\"\tFILE\t\"", FALSE, sFilePath, pAudioInfo); 
     gstbase_Play(pGstWriter->pGstBase);
 
@@ -521,6 +523,53 @@ guint gstwriter_Write(GstWriter *pGstWriter, guint nFrames, gchar *lBytes, gbool
     {   
         gst_app_src_end_of_stream(pAppSrc);
         gstbase_Wait(pGstWriter->pGstBase);
+        
+        // Fix the AudioFormat to PCM
+        GstAudioChannelPosition lPositionsQuad[64];
+        GstAudioChannelPosition lPositions50[64];
+        GstAudioChannelPosition lPositions71[64];
+        
+        for (guint nPosition = 4; nPosition < 64; nPosition++)
+        {
+            lPositionsQuad[nPosition] = GST_AUDIO_CHANNEL_POSITION_INVALID;
+            lPositions50[nPosition] = GST_AUDIO_CHANNEL_POSITION_INVALID;
+            lPositions71[nPosition] = GST_AUDIO_CHANNEL_POSITION_INVALID;
+        }
+        
+        lPositionsQuad[0] = GST_AUDIO_CHANNEL_POSITION_FRONT_LEFT;
+        lPositionsQuad[1] = GST_AUDIO_CHANNEL_POSITION_FRONT_RIGHT;
+        lPositionsQuad[2] = GST_AUDIO_CHANNEL_POSITION_REAR_LEFT;
+        lPositionsQuad[3] = GST_AUDIO_CHANNEL_POSITION_REAR_RIGHT;
+        lPositions50[0] = GST_AUDIO_CHANNEL_POSITION_FRONT_LEFT;
+        lPositions50[1] = GST_AUDIO_CHANNEL_POSITION_FRONT_RIGHT;
+        lPositions50[2] = GST_AUDIO_CHANNEL_POSITION_FRONT_CENTER;
+        lPositions50[3] = GST_AUDIO_CHANNEL_POSITION_REAR_LEFT;
+        lPositions50[4] = GST_AUDIO_CHANNEL_POSITION_REAR_RIGHT;
+        lPositions71[0] = GST_AUDIO_CHANNEL_POSITION_FRONT_LEFT;
+        lPositions71[1] = GST_AUDIO_CHANNEL_POSITION_FRONT_RIGHT;
+        lPositions71[2] = GST_AUDIO_CHANNEL_POSITION_FRONT_CENTER;
+        lPositions71[3] = GST_AUDIO_CHANNEL_POSITION_LFE1;
+        lPositions71[4] = GST_AUDIO_CHANNEL_POSITION_REAR_LEFT;
+        lPositions71[5] = GST_AUDIO_CHANNEL_POSITION_REAR_RIGHT;
+        lPositions71[6] = GST_AUDIO_CHANNEL_POSITION_SIDE_LEFT;
+        lPositions71[7] = GST_AUDIO_CHANNEL_POSITION_SIDE_RIGHT;
+        
+        gint nQuadResult = memcmp(pGstWriter->pGstBase->pAudioInfo->position, lPositionsQuad, sizeof(pGstWriter->pGstBase->pAudioInfo->position));
+        gint n50Result = memcmp(pGstWriter->pGstBase->pAudioInfo->position, lPositions50, sizeof(pGstWriter->pGstBase->pAudioInfo->position));
+        gint n71Result = memcmp(pGstWriter->pGstBase->pAudioInfo->position, lPositions71, sizeof(pGstWriter->pGstBase->pAudioInfo->position));
+        
+        if (nQuadResult == 0 || n50Result == 0 || n71Result == 0)
+        {
+            gchar pBuffer[2] = {0x01, 0x00};
+            GFile *pFile = g_file_new_for_path(pGstWriter->sFilePath);
+            GFileIOStream *pIOStream = g_file_open_readwrite(pFile, NULL, NULL);
+            GOutputStream *pOutputStream = g_io_stream_get_output_stream(G_IO_STREAM(pIOStream));
+            g_seekable_seek(G_SEEKABLE(pOutputStream), 20, G_SEEK_SET, NULL, NULL);
+            g_output_stream_write(G_OUTPUT_STREAM(pOutputStream), pBuffer, 2, NULL, NULL);
+            g_output_stream_close(G_OUTPUT_STREAM(pOutputStream), NULL, NULL);
+            g_object_unref(pOutputStream);
+            g_object_unref(pFile);
+        }
     }
     
     gst_object_unref(pAppSrc);
