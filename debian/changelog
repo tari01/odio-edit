@@ -1,10 +1,17 @@
+odio-edit (22.6.15) unstable; urgency=medium
+
+  * Translated using Weblate (Spanish)
+  * Fix the AudioFormat to PCM for multichannel files
+
+ -- Robert Tari <robert@tari.in>  Wed, 6 Jun 2022 23:53:00 +0200
+ 
 odio-edit (21.11.13) unstable; urgency=medium
 
   * Replace the [Ctrl+D] accelerator with [Del]
 
  -- Robert Tari <robert@tari.in>  Sat, 13 Nov 2021 22:51:00 +0200
  
- odio-edit (21.4.30) unstable; urgency=medium
+odio-edit (21.4.30) unstable; urgency=medium
 
   * Return cursor to selection start when playback ends
   * src/mainwindow.c: Set play button to play selection by default
