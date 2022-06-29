@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2021-01-05 14:20+0100\n"
+"POT-Creation-Date: 2022-06-29 02:54+0200\n"
 "PO-Revision-Date: 2021-03-01 12:50+0000\n"
 "Last-Translator: HelaBasa <R45XvezA@protonmail.ch>\n"
 "Language-Team: Sinhala <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -39,7 +39,10 @@ msgstr ""
 
 #: src/chunk.c:385
 #, c-format
-msgid "File %s may be destroyed since saving failed. Try to free some disk space and save again. If you exit now, the file's contents could be left in a bad state."
+msgid ""
+"File %s may be destroyed since saving failed. Try to free some disk space "
+"and save again. If you exit now, the file's contents could be left in a bad "
+"state."
 msgstr ""
 
 #: src/chunk.c:431
@@ -303,7 +306,7 @@ msgid "Delete"
 msgstr ""
 
 #: src/mainwindow.c:1486
-msgid "Delete selection [Ctrl+D]"
+msgid "Delete selection [Del]"
 msgstr ""
 
 #: src/mainwindow.c:1494
@@ -311,7 +314,7 @@ msgid "Play all"
 msgstr ""
 
 #: src/mainwindow.c:1498
-msgid "Play selection"
+msgid "Play from cursor position"
 msgstr ""
 
 #: src/mainwindow.c:1503
@@ -319,7 +322,7 @@ msgid "Play"
 msgstr ""
 
 #: src/mainwindow.c:1504
-msgid "Play from cursor position"
+msgid "Play selection"
 msgstr ""
 
 #: src/mainwindow.c:1511

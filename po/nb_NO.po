@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2021-01-05 14:20+0100\n"
+"POT-Creation-Date: 2022-06-29 02:54+0200\n"
 "PO-Revision-Date: 2020-10-19 04:26+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/odio-"
@@ -310,24 +310,24 @@ msgid "Delete"
 msgstr "Slett"
 
 #: src/mainwindow.c:1486
-msgid "Delete selection [Ctrl+D]"
-msgstr "Slett utvalg [Ctrl+D]"
+msgid "Delete selection [Del]"
+msgstr ""
 
 #: src/mainwindow.c:1494
 msgid "Play all"
 msgstr "Spill av alle"
 
 #: src/mainwindow.c:1498
-msgid "Play selection"
-msgstr "Spill av utvalg"
+msgid "Play from cursor position"
+msgstr "Spill av fra nåværende posisjon"
 
 #: src/mainwindow.c:1503
 msgid "Play"
 msgstr "Spill av"
 
 #: src/mainwindow.c:1504
-msgid "Play from cursor position"
-msgstr "Spill av fra nåværende posisjon"
+msgid "Play selection"
+msgstr "Spill av utvalg"
 
 #: src/mainwindow.c:1511
 msgid "Stop"
@@ -372,3 +372,6 @@ msgstr "Nei"
 #: src/message.c:55
 msgid "Cancel"
 msgstr "Avbryt"
+
+#~ msgid "Delete selection [Ctrl+D]"
+#~ msgstr "Slett utvalg [Ctrl+D]"

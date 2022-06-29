@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit_fr\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2021-01-05 14:20+0100\n"
+"POT-Creation-Date: 2022-06-29 02:54+0200\n"
 "PO-Revision-Date: 2020-10-16 18:26+0000\n"
 "Last-Translator: J. Lavoie <j.lavoie@net-c.ca>\n"
 "Language-Team: French <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -314,24 +314,24 @@ msgid "Delete"
 msgstr "Supprimer"
 
 #: src/mainwindow.c:1486
-msgid "Delete selection [Ctrl+D]"
-msgstr "Supprimer la sélection [Ctrl + D]"
+msgid "Delete selection [Del]"
+msgstr ""
 
 #: src/mainwindow.c:1494
 msgid "Play all"
 msgstr "Tout lire"
 
 #: src/mainwindow.c:1498
-msgid "Play selection"
-msgstr "Lire la sélection"
+msgid "Play from cursor position"
+msgstr "Lire depuis le curseur"
 
 #: src/mainwindow.c:1503
 msgid "Play"
 msgstr "Lecture"
 
 #: src/mainwindow.c:1504
-msgid "Play from cursor position"
-msgstr "Lire depuis le curseur"
+msgid "Play selection"
+msgstr "Lire la sélection"
 
 #: src/mainwindow.c:1511
 msgid "Stop"
@@ -376,3 +376,6 @@ msgstr "Non"
 #: src/message.c:55
 msgid "Cancel"
 msgstr "Annuler"
+
+#~ msgid "Delete selection [Ctrl+D]"
+#~ msgstr "Supprimer la sélection [Ctrl + D]"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2021-01-05 14:20+0100\n"
+"POT-Creation-Date: 2022-06-29 02:54+0200\n"
 "PO-Revision-Date: 2021-01-15 20:32+0000\n"
 "Last-Translator: Burak Hüseyin Ekseli <burakekseli@yandex.com>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -39,7 +39,10 @@ msgstr "Yazma işlemi başarısız'%s'!"
 
 #: src/chunk.c:385
 #, c-format
-msgid "File %s may be destroyed since saving failed. Try to free some disk space and save again. If you exit now, the file's contents could be left in a bad state."
+msgid ""
+"File %s may be destroyed since saving failed. Try to free some disk space "
+"and save again. If you exit now, the file's contents could be left in a bad "
+"state."
 msgstr ""
 "Açma işlemi başarısız olduğundan dolayı '%s' dosyası bozulmuş olabilir. "
 "Gerekli depolama alanını açın ve tekrar kaydetmeyi deneyin. Eğer şimdi "
@@ -306,24 +309,24 @@ msgid "Delete"
 msgstr "Sil"
 
 #: src/mainwindow.c:1486
-msgid "Delete selection [Ctrl+D]"
-msgstr "Seçimi sil [Ctrl+D]"
+msgid "Delete selection [Del]"
+msgstr ""
 
 #: src/mainwindow.c:1494
 msgid "Play all"
 msgstr "Hepsini oynat"
 
 #: src/mainwindow.c:1498
-msgid "Play selection"
-msgstr "Seçimi oynat"
+msgid "Play from cursor position"
+msgstr "İmleç konumundan itibaren oynat"
 
 #: src/mainwindow.c:1503
 msgid "Play"
 msgstr "Oynat"
 
 #: src/mainwindow.c:1504
-msgid "Play from cursor position"
-msgstr "İmleç konumundan itibaren oynat"
+msgid "Play selection"
+msgstr "Seçimi oynat"
 
 #: src/mainwindow.c:1511
 msgid "Stop"
@@ -368,3 +371,6 @@ msgstr "Hayır"
 #: src/message.c:55
 msgid "Cancel"
 msgstr "İptal"
+
+#~ msgid "Delete selection [Ctrl+D]"
+#~ msgstr "Seçimi sil [Ctrl+D]"

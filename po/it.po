@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2021-01-05 14:20+0100\n"
+"POT-Creation-Date: 2022-06-29 02:54+0200\n"
 "PO-Revision-Date: 2020-04-04 07:55+0000\n"
 "Last-Translator: Robert Tari <Unknown>\n"
 "Language-Team: Italian <IT@li.org>\n"
@@ -306,7 +306,7 @@ msgid "Delete"
 msgstr ""
 
 #: src/mainwindow.c:1486
-msgid "Delete selection [Ctrl+D]"
+msgid "Delete selection [Del]"
 msgstr ""
 
 #: src/mainwindow.c:1494
@@ -314,16 +314,16 @@ msgid "Play all"
 msgstr ""
 
 #: src/mainwindow.c:1498
-msgid "Play selection"
-msgstr ""
+msgid "Play from cursor position"
+msgstr "Suona dal cursore"
 
 #: src/mainwindow.c:1503
 msgid "Play"
 msgstr ""
 
 #: src/mainwindow.c:1504
-msgid "Play from cursor position"
-msgstr "Suona dal cursore"
+msgid "Play selection"
+msgstr ""
 
 #: src/mainwindow.c:1511
 msgid "Stop"
