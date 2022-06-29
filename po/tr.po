@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2022-06-29 02:54+0200\n"
-"PO-Revision-Date: 2021-01-15 20:32+0000\n"
-"Last-Translator: Burak Hüseyin Ekseli <burakekseli@yandex.com>\n"
+"PO-Revision-Date: 2022-06-30 05:16+0000\n"
+"Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/odio-edit/master/"
 "tr/>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.5-dev\n"
+"X-Generator: Weblate 4.13.1-dev\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -310,7 +310,7 @@ msgstr "Sil"
 
 #: src/mainwindow.c:1486
 msgid "Delete selection [Del]"
-msgstr ""
+msgstr "Seçimi sil [Del]"
 
 #: src/mainwindow.c:1494
 msgid "Play all"
