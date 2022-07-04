@@ -8,7 +8,7 @@ Homepage: https://tari.in/www/software/odio-edit/
 
 Package: odio-edit
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libgstreamer-plugins-base1.0-0, gstreamer1.0-libav, libgtk-3-0, dconf-gsettings-backend | gsettings-backend, libodiosacd
+Depends: ${shlibs:Depends}, ${misc:Depends}, gstreamer1.0-plugins-good, gstreamer1.0-plugins-bad, gstreamer1.0-plugins-ugly, gstreamer1.0-libav, libgtk-3-0, dconf-gsettings-backend | gsettings-backend, libodiosacd
 Description: A lightweight audio wave editor
  A light and fast audio editor with a simple GTK+ interface.
  Works with all media formats recognised by your GStreamer
