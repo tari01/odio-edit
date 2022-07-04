@@ -175,7 +175,6 @@ static GstAudioFormat gstbase_GetAudioFormat(GstAudioFormat nAudioFormat)
         case GST_AUDIO_FORMAT_F32BE:
         case GST_AUDIO_FORMAT_F64LE:
         case GST_AUDIO_FORMAT_F64BE:
-        case GST_AUDIO_FORMAT_F32:
         {
             return GST_AUDIO_FORMAT_F32LE;
         }
@@ -184,14 +183,12 @@ static GstAudioFormat gstbase_GetAudioFormat(GstAudioFormat nAudioFormat)
         case GST_AUDIO_FORMAT_S16BE:
         case GST_AUDIO_FORMAT_U16LE:
         case GST_AUDIO_FORMAT_U16BE:
-        case GST_AUDIO_FORMAT_S16:
         {
             return GST_AUDIO_FORMAT_S16LE;
         }
         case GST_AUDIO_FORMAT_S32BE:
         case GST_AUDIO_FORMAT_U32LE:
         case GST_AUDIO_FORMAT_U32BE:
-        case GST_AUDIO_FORMAT_S32:
         {
             return GST_AUDIO_FORMAT_S32LE;
         }
@@ -210,7 +207,6 @@ static GstAudioFormat gstbase_GetAudioFormat(GstAudioFormat nAudioFormat)
         case GST_AUDIO_FORMAT_S18BE:
         case GST_AUDIO_FORMAT_U18LE:
         case GST_AUDIO_FORMAT_U18BE:
-        case GST_AUDIO_FORMAT_S24:
         {
             return GST_AUDIO_FORMAT_S24LE;
         }
