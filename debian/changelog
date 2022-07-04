@@ -1,3 +1,12 @@
+odio-edit (22.7.5) unstable; urgency=medium
+
+  * Updated translation files
+  * Translated using Weblate (Turkish)
+  * debian/control: Update runtime dependencies
+  * gstreamer.c: Drop cases with native endianness
+
+ -- Robert Tari <robert@tari.in>  Mon, 5 Jul 2022 00:26:00 +0200
+ 
 odio-edit (22.6.15) unstable; urgency=medium
 
   * Translated using Weblate (Spanish)
