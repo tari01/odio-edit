@@ -1175,7 +1175,7 @@ static void mainwindow_OnAbout(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
     gtk_window_set_transient_for(GTK_WINDOW(pAboutDialog), GTK_WINDOW(g_pFocusedWindow));
     gtk_about_dialog_set_license_type(pAboutDialog, GTK_LICENSE_GPL_3_0);
     gtk_about_dialog_set_program_name(pAboutDialog, "Odio Edit");
-    gtk_about_dialog_set_copyright(pAboutDialog, "Robert Tari 2019-2021");
+    gtk_about_dialog_set_copyright(pAboutDialog, "Robert Tari 2019-2022");
     gtk_about_dialog_set_comments(pAboutDialog, _("A lightweight audio wave editor"));
     gtk_about_dialog_set_authors(pAboutDialog, &sAuthors);
     gtk_about_dialog_set_translator_credits(pAboutDialog, _("translator-credits"));
