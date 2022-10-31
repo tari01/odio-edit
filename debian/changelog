@@ -1,3 +1,10 @@
+odio-edit (22.10.31) unstable; urgency=medium
+
+  * Translated using Weblate (Spanish)
+  * src/mainwindow.c: Update copyright year
+
+ -- Robert Tari <robert@tari.in>  Mon, 31 Oct 2022 17:36:00 +0200
+ 
 odio-edit (22.7.5) unstable; urgency=medium
 
   * Updated translation files
