@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2021, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2023, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2006 2007 2008 2009 2010 2011 2012 2013 2018, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -66,19 +66,19 @@ static void mainwindow_OnGetFileName(GtkDialog *pDialog, gint nResponse, gpointe
         gchar *strFilename = gtk_file_chooser_get_filename(GTK_FILE_CHOOSER(pDialog));
 
         if (strFilename != NULL)
-        {            
+        {
             if (!g_str_has_suffix(strFilename, ".wav"))
             {
                 g_free(strFilename);
                 message_Warning(_("The file extension should be \".wav\""));
-                
+
                 return;
             }
-            
+
             g_free(strFilename);
         }
     }
-    
+
     pResponse->bResponded = TRUE;
     pResponse->nResponse = nResponse;
 }
@@ -88,7 +88,7 @@ static gchar *mainwindow_GetFileName(gchar *sCurrentName, gchar *sTitle, gboolea
     GtkFileChooserAction pFileChooserAction = bSave ? GTK_FILE_CHOOSER_ACTION_SAVE : GTK_FILE_CHOOSER_ACTION_OPEN;
     GtkWidget *pWidget = gtk_file_chooser_dialog_new(sTitle, GTK_WINDOW(g_pFocusedWindow), pFileChooserAction, bSave ? _("_Save") : _("_Open"), GTK_RESPONSE_ACCEPT, _("_Cancel"), GTK_RESPONSE_CANCEL, NULL);
     GtkFileChooser *pFileChooser = GTK_FILE_CHOOSER(pWidget);
-    
+
     if (bSave == FALSE)
     {
         g_object_ref_sink(g_pFileFilter);
@@ -215,13 +215,13 @@ void mainwindow_EndProgress(MainWindow *pMainWindow)
     g_list_foreach(g_lMainWindows, (GFunc)mainwindow_ResetStatusBar, pMainWindow);
     g_list_foreach(g_lMainWindows, (GFunc)mainwindow_UpdateDesc, NULL);
     gtk_grab_remove(GTK_WIDGET(pMainWindow));
-    
+
     if (pMainWindow->bCloseWhenDone == TRUE)
     {
         GdkEventAny cEvent = {GDK_DELETE, gtk_widget_get_window(GTK_WIDGET(pMainWindow)), TRUE};
         gtk_main_do_event((GdkEvent*)&cEvent);
     }
-    
+
     pMainWindow->bStatusBarWorking = FALSE;
     m_nStatusBarsWorking--;
 }
@@ -232,9 +232,9 @@ gboolean mainwindow_Progress(MainWindow *pMainWindow, gfloat fProgress)
     {
         fProgress = 1.0;
     }
-    
+
     gint64 nTime = g_get_real_time();
-    
+
     if ((nTime - pMainWindow->nStatusBarTimeLast) >= 40000)
     {
         gtk_progress_bar_set_fraction(GTK_PROGRESS_BAR(pMainWindow->pProgressBar), fProgress);
@@ -247,7 +247,7 @@ gboolean mainwindow_Progress(MainWindow *pMainWindow, gfloat fProgress)
     {
         mainLoop();
     }
-    
+
     return pMainWindow->bStatusBarBreak;
 }
 
@@ -267,7 +267,7 @@ static void mainwindow_OnRecentFile(GtkMenuItem *pMenuItem, MainWindow *pMainWin
     GList *lstRecentMenuItems = gtk_container_get_children(GTK_CONTAINER(pMainWindow->pRecentMenu));
     GList *pRecentFilename = m_lstRecentFilenames;
     GList *pRecentMenuItem = g_list_first(lstRecentMenuItems);
-    
+
     while (pRecentMenuItem->data != pMenuItem)
     {
         pRecentMenuItem = pRecentMenuItem->next;
@@ -280,7 +280,7 @@ static void mainwindow_OnRecentFile(GtkMenuItem *pMenuItem, MainWindow *pMainWin
     if (pDocument == NULL)
     {
         g_free(sFileName);
-        
+
         return;
     }
 
@@ -300,7 +300,7 @@ static void mainwindow_UpdateRecentFiles(MainWindow *pMainWindow)
     for (GList *pRecentFilename = m_lstRecentFilenames; pRecentFilename != NULL; pRecentFilename = pRecentFilename->next)
     {
         gchar *sBaseName = g_path_get_basename((gchar *)pRecentFilename->data);
-        
+
         if (pRecentMenuItem != NULL && nPos < g_list_length(lstRecentMenuItems) - 2)
         {
             gtk_label_set_text(GTK_LABEL(gtk_bin_get_child(GTK_BIN(pRecentMenuItem->data))), sBaseName);
@@ -313,11 +313,11 @@ static void mainwindow_UpdateRecentFiles(MainWindow *pMainWindow)
             gtk_menu_shell_insert(GTK_MENU_SHELL(pMainWindow->pRecentMenu), pMenuItem, nPos);
             gtk_widget_show_all(pMainWindow->pRecentMenu);
         }
-        
+
         g_free(sBaseName);
         nPos++;
     }
-    
+
     if (m_lstRecentFilenames != NULL && gtk_menu_tool_button_get_menu(GTK_MENU_TOOL_BUTTON(pMainWindow->pToolItemRecent)) == NULL)
     {
         GtkWidget *pMenuItem = gtk_separator_menu_item_new();
@@ -329,7 +329,7 @@ static void mainwindow_UpdateRecentFiles(MainWindow *pMainWindow)
         gtk_menu_tool_button_set_menu(GTK_MENU_TOOL_BUTTON(pMainWindow->pToolItemRecent), pMainWindow->pRecentMenu);
         gtk_widget_show_all(pMainWindow->pRecentMenu);
     }
-    
+
     g_list_free(lstRecentMenuItems);
 }
 
@@ -344,7 +344,7 @@ static void mainwindow_AddRecentFile(gchar *sFilePath)
             m_lstRecentFilenames = g_list_remove_link(m_lstRecentFilenames, pRecentFilename);
             g_free(pRecentFilename->data);
             g_list_free_1(pRecentFilename);
-            
+
             break;
         }
         else
@@ -354,7 +354,7 @@ static void mainwindow_AddRecentFile(gchar *sFilePath)
     }
 
     m_lstRecentFilenames = g_list_prepend(m_lstRecentFilenames, g_strdup(sFilePath));
-    
+
     if (g_list_length(m_lstRecentFilenames) > MAINWINDOW_RECENT_MAX)
     {
         pRecentFilename = g_list_last(m_lstRecentFilenames);
@@ -362,19 +362,19 @@ static void mainwindow_AddRecentFile(gchar *sFilePath)
         g_free(pRecentFilename->data);
         g_list_free_1(pRecentFilename);
     }
-    
+
     g_list_foreach(g_lMainWindows, (GFunc)mainwindow_UpdateRecentFiles, NULL);
 
     guint nFile = 0;
     pRecentFilename = m_lstRecentFilenames;
     gchar **lstFiles = g_malloc0(sizeof(gchar *) * (g_list_length(m_lstRecentFilenames) + 1));
-    
+
     while (pRecentFilename != NULL)
     {
         lstFiles[nFile++] = pRecentFilename->data;
         pRecentFilename = pRecentFilename->next;
     }
-					
+
     g_settings_set_strv(g_pGSettings, "recent-files", (const gchar * const *)lstFiles);
     g_free(lstFiles);
 }
@@ -393,7 +393,7 @@ void mainwindow_SetStatusBarInfo(MainWindow *pMainWindow, gint64 nCursorPos, gbo
     if (!pMainWindow->bStatusBarWorking)
     {
         gboolean bCursorDiff = FALSE;
-        
+
         if (bRolling != pMainWindow->bStatusBarRolling)
         {
             bCursorDiff = TRUE;
@@ -420,7 +420,7 @@ void mainwindow_SetStatusBarInfo(MainWindow *pMainWindow, gint64 nCursorPos, gbo
         }
 
         gchar sText[256];
-        
+
         if (bCursorDiff)
         {
             g_snprintf(sText, 150, "<span font-weight=\"bold\">%s:</span> %s", _("Cursor"), getTime(nSampleRate, nCursorPos, sText + 150, TRUE));
@@ -442,13 +442,13 @@ void mainwindow_SetStatusBarInfo(MainWindow *pMainWindow, gint64 nCursorPos, gbo
             if (nSelStart != nSelEnd)
             {
                 g_snprintf(sText, 150, "<span font-weight=\"bold\">%s:</span> %s + %s", _("Selection"), getTime(nSampleRate, nSelStart, sText + 150, TRUE), getTime(nSampleRate, nSelEnd - nSelStart, sText + 200, TRUE));
-                
+
             }
             else
             {
                 g_snprintf(sText, 150, "<span font-weight=\"bold\">%s:</span> 00:00.000 + 00:00.000", _("Selection"));
             }
-            
+
             gtk_label_set_markup(GTK_LABEL(pMainWindow->pLabelSel), sText);
             pMainWindow->nStatusBarSelStart = nSelStart;
             pMainWindow->nStatusBarSelEnd = nSelEnd;
@@ -469,7 +469,7 @@ static void mainwindow_UpdateDesc(MainWindow *pMainWindow)
 }
 
 static void mainwindow_Open(MainWindow *pMainWindow, gchar *sFilePath)
-{    
+{
     Document *pDocument = document_NewWithFile(sFilePath, pMainWindow);
 
     if (pDocument == NULL)
@@ -492,7 +492,7 @@ static gchar *mainwindow_GetSaveFileName(gchar *sOldFileName, gchar *sTitle)
     }
 
     gchar *sLastSavedDir = NULL;
-    
+
     if (sLastSavedFile != NULL)
     {
         sLastSavedDir = g_strdup(sLastSavedFile);
@@ -510,7 +510,7 @@ static gchar *mainwindow_GetSaveFileName(gchar *sOldFileName, gchar *sTitle)
     }
 
     gchar *sFilePath;
-    
+
     if (sLastSavedDir == NULL)
     {
         sFilePath = mainwindow_GetFileName(sOldFileName, sTitle, TRUE);
@@ -529,7 +529,7 @@ static gchar *mainwindow_GetSaveFileName(gchar *sOldFileName, gchar *sTitle)
             {
                 sBaseName = sBaseName + 1;
             }
-            
+
             gchar *sPath = g_strjoin("/", sLastSavedDir, sBaseName, NULL);
             sFilePath = mainwindow_GetFileName(sPath, sTitle, TRUE);
             g_free(sPath);
@@ -560,7 +560,7 @@ static gboolean mainwindow_Save(MainWindow *pMainWindow, gchar *sFilePath)
         g_free(sFilePath);
         bGetSaveFileName = TRUE;
     }
-    
+
     if (bGetSaveFileName)
     {
         sFilePath = mainwindow_GetSaveFileName(pMainWindow->pDocument->sFilePath, _("Save file"));
@@ -574,7 +574,7 @@ static gboolean mainwindow_Save(MainWindow *pMainWindow, gchar *sFilePath)
     }
 
     g_assert(sFilePath != NULL);
-    
+
     gboolean bError = document_Save(pMainWindow->pDocument, sFilePath);
 
     if (bError)
@@ -654,7 +654,7 @@ static void mainwindow_OnDestroy(GtkWidget *pWidget)
         m_pClipboard = NULL;
         g_bQuitFlag = TRUE;
     }
-    
+
     GTK_WIDGET_CLASS(mainwindow_parent_class)->destroy(pWidget);
 }
 
@@ -667,12 +667,12 @@ static gint mainwindow_OnDeleteEvent(GtkWidget *pWidget, GdkEventAny *pEventAny)
     {
         return TRUE;
     }
-    
+
     if (pMainWindow->bStatusBarWorking == TRUE)
     {
         pMainWindow->bStatusBarBreak = TRUE;
         pMainWindow->bCloseWhenDone = TRUE;
-        
+
         return TRUE;
     }
 
@@ -774,16 +774,16 @@ static void mainwindow_OnDragDataReceived(GtkWidget *pWidget, GdkDragContext *pD
         gtk_drag_finish(pDragContext, TRUE, FALSE, nTime);
 
         for (gchar *sUri = strtok(sData, "\n\r"); sUri != NULL; sUri = strtok(NULL, "\n\r"))
-        {    
+        {
             gchar *sFilePath = g_filename_from_uri(sUri, NULL, NULL);
-            
+
             if (sFilePath != NULL)
             {
                 if (g_file_test(sFilePath, G_FILE_TEST_EXISTS) && checkExtension(g_pFileFilter, sFilePath))
                 {
                     mainwindow_Open(OE_MAINWINDOW(pWidget), sFilePath);
                 }
-                
+
                 g_free(sFilePath);
             }
         }
@@ -799,7 +799,7 @@ static void mainwindow_OnDragDataReceived(GtkWidget *pWidget, GdkDragContext *pD
 static gboolean mainwindow_OnFocusIn(GtkWidget *pWidget, GdkEventFocus *pEventFocus)
 {
     g_pFocusedWindow = OE_MAINWINDOW(pWidget);
-    
+
     return FALSE;
 }
 
@@ -822,7 +822,7 @@ static MainWindow *mainwindow_SetDocument(MainWindow *pMainWindow, Document *pDo
     }
 
     pMainWindow->pDocument = pDocument;
-    document_SetFollowMode(pDocument, pMainWindow->bFollowMode);   
+    document_SetFollowMode(pDocument, pMainWindow->bFollowMode);
     g_signal_connect(pDocument, "view_changed", G_CALLBACK(mainwindow_OnViewChanged), pMainWindow);
     g_signal_connect(pDocument, "selection_changed", G_CALLBACK(mainwindow_OnSelectionChanged), pMainWindow);
     g_signal_connect(pDocument, "cursor_changed", G_CALLBACK(mainwindow_OnCursorChanged), pMainWindow);
@@ -834,19 +834,19 @@ static MainWindow *mainwindow_SetDocument(MainWindow *pMainWindow, Document *pDo
     mainwindow_Enable(pMainWindow->lNeedChunkItems, TRUE);
     g_lMainWindows = g_list_append(g_lMainWindows, pMainWindow);
     mainwindow_OnViewChanged(pMainWindow->pDocument, pMainWindow);
-    
+
     return pMainWindow;
 }
 
 static MainWindow *mainwindow_SetChunk(MainWindow *pMainWindow, Chunk *pChunk)
 {
     Document *pDocument = document_NewWithChunk(pChunk, NULL, pMainWindow);
-    
+
     return mainwindow_SetDocument(pMainWindow, pDocument, NULL);
 }
 
 static void mainwindow_OnOpen(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
-{    
+{
     gchar *strFilePath = NULL;
 
     if (pMainWindow->pDocument != NULL && pMainWindow->pDocument->sFilePath != NULL)
@@ -856,7 +856,7 @@ static void mainwindow_OnOpen(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
     else
     {
         gchar *strFilePathSettings = g_settings_get_string(g_pGSettings, "last-opened");
-        
+
         if (strFilePathSettings == NULL)
         {
             strFilePathSettings = g_settings_get_string(g_pGSettings, "last-saved");
@@ -965,7 +965,7 @@ static void mainwindow_OnCut(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
     Chunk *pChunkPart = chunk_GetPart(pMainWindow->pDocument->pChunk, pMainWindow->pDocument->nSelStart, pMainWindow->pDocument->nSelEnd - pMainWindow->pDocument->nSelStart);
     Chunk *pChunk = chunk_RemovePart(pMainWindow->pDocument->pChunk, pMainWindow->pDocument->nSelStart, pMainWindow->pDocument->nSelEnd - pMainWindow->pDocument->nSelStart);
     m_pClipboard = pChunkPart;
-    
+
     document_Update(pMainWindow->pDocument, pChunk, pMainWindow->pDocument->nSelStart, -(m_pClipboard->nFrames));
     g_list_foreach(g_lMainWindows, (GFunc)mainwindow_UpdateClipboardItems, (gpointer)pMainWindow);
 }
@@ -985,7 +985,7 @@ static void mainwindow_OnCopy(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
         g_object_unref(m_pClipboard);
     }
 
-    m_pClipboard = chunk_GetPart(pMainWindow->pDocument->pChunk, pMainWindow->pDocument->nSelStart, pMainWindow->pDocument->nSelEnd - pMainWindow->pDocument->nSelStart);   
+    m_pClipboard = chunk_GetPart(pMainWindow->pDocument->pChunk, pMainWindow->pDocument->nSelStart, pMainWindow->pDocument->nSelEnd - pMainWindow->pDocument->nSelStart);
     g_list_foreach(g_lMainWindows, (GFunc)mainwindow_UpdateClipboardItems, (gpointer)pMainWindow);
 }
 
@@ -1000,10 +1000,10 @@ static void mainwindow_OnPaste(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
     if (gst_audio_info_is_equal(pMainWindow->pDocument->pChunk->pAudioInfo, m_pClipboard->pAudioInfo) == FALSE)
     {
         message_Warning(_("You cannot mix different sound formats"));
-        
+
         return;
     }
-    
+
     Chunk *pChunk = chunk_Insert(pMainWindow->pDocument->pChunk, m_pClipboard, pMainWindow->pDocument->nCursorPos);
     document_Update(pMainWindow->pDocument, pChunk, pMainWindow->pDocument->nCursorPos, m_pClipboard->nFrames);
     document_SetSelection(pMainWindow->pDocument, pMainWindow->pDocument->nCursorPos - m_pClipboard->nFrames, pMainWindow->pDocument->nCursorPos);
@@ -1014,21 +1014,21 @@ static void mainwindow_OnPasteOver(GtkMenuItem *pMenuItem, MainWindow *pMainWind
     if (pMainWindow->pDocument == NULL)
     {
         mainwindow_SetChunk(pMainWindow, m_pClipboard);
-        
+
         return;
     }
-    
+
     if (gst_audio_info_is_equal(pMainWindow->pDocument->pChunk->pAudioInfo, m_pClipboard->pAudioInfo) == FALSE)
     {
         message_Warning(_("You cannot mix different sound formats"));
-        
+
         return;
     }
 
     gint64 nFrames = m_pClipboard->nFrames;
     gint64 nFramesOrig = MIN(pMainWindow->pDocument->pChunk->nFrames - pMainWindow->pDocument->nCursorPos, nFrames);
     Chunk *pChunk = chunk_ReplacePart(pMainWindow->pDocument->pChunk, pMainWindow->pDocument->nCursorPos, nFramesOrig, m_pClipboard);
-    
+
     document_Update(pMainWindow->pDocument, pChunk, 0, 0);
     document_SetSelection(pMainWindow->pDocument, pMainWindow->pDocument->nCursorPos, pMainWindow->pDocument->nCursorPos + nFrames);
 }
@@ -1038,17 +1038,17 @@ static void mainwindow_OnMixPaste(GtkMenuItem *pMenuItem, MainWindow *pMainWindo
     if (pMainWindow->pDocument == NULL)
     {
         mainwindow_SetChunk(pMainWindow, m_pClipboard);
-        
+
         return;
     }
 
     if (gst_audio_info_is_equal(pMainWindow->pDocument->pChunk->pAudioInfo, m_pClipboard->pAudioInfo) == FALSE)
     {
         message_Warning(_("You cannot mix different sound formats"));
-        
+
         return;
     }
-    
+
     Chunk *pChunkPart = chunk_GetPart(pMainWindow->pDocument->pChunk, pMainWindow->pDocument->nCursorPos, m_pClipboard->nFrames);
     gint64 nPartFrames = pChunkPart->nFrames;
     Chunk *pChunkMixed = chunk_Mix(pChunkPart, m_pClipboard, pMainWindow);
@@ -1124,7 +1124,7 @@ gboolean mainwindow_UpdateCaches()
         if (chunkview_UpdateCache(pMainWindow->pChunkView))
         {
             nLast = nCurrent;
-            
+
             return TRUE;
         }
 
@@ -1164,18 +1164,22 @@ static Chunk *mainwindow_FadeOut(Chunk *pChunk, MainWindow *pMainWindow)
 
 static void mainwindow_OnAboutResponse(GtkDialog *pDialog, gint nResponse, gpointer pUserData)
 {
-    gboolean *bResponded = (gboolean *)pUserData;   
+    gboolean *bResponded = (gboolean *)pUserData;
     *bResponded = TRUE;
 }
 
 static void mainwindow_OnAbout(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
-{   
+{
     static const gchar *sAuthors = "Robert Tari <robert@tari.in>";
     GtkAboutDialog *pAboutDialog = GTK_ABOUT_DIALOG(gtk_about_dialog_new());
     gtk_window_set_transient_for(GTK_WINDOW(pAboutDialog), GTK_WINDOW(g_pFocusedWindow));
     gtk_about_dialog_set_license_type(pAboutDialog, GTK_LICENSE_GPL_3_0);
     gtk_about_dialog_set_program_name(pAboutDialog, "Odio Edit");
-    gtk_about_dialog_set_copyright(pAboutDialog, "Robert Tari 2019-2022");
+    gchar *sYear = g_strndup (APPVERSION, 2);
+    gchar *sCopyright = g_strdup_printf (_("Robert Tari 2019-20%s"), sYear);
+    g_free (sYear);
+    gtk_about_dialog_set_copyright(pAboutDialog, sCopyright);
+    g_free (sCopyright);
     gtk_about_dialog_set_comments(pAboutDialog, _("A lightweight audio wave editor"));
     gtk_about_dialog_set_authors(pAboutDialog, &sAuthors);
     gtk_about_dialog_set_translator_credits(pAboutDialog, _("translator-credits"));
@@ -1185,17 +1189,17 @@ static void mainwindow_OnAbout(GtkMenuItem *pMenuItem, MainWindow *pMainWindow)
     gtk_about_dialog_set_logo_icon_name(pAboutDialog, "odio-edit");
     gtk_window_set_position(GTK_WINDOW(pAboutDialog), GTK_WIN_POS_CENTER);
     gtk_window_set_modal(GTK_WINDOW(pAboutDialog), TRUE);
-    
+
     gboolean bResponded = FALSE;
-    
+
     g_signal_connect(pAboutDialog, "response", G_CALLBACK(mainwindow_OnAboutResponse), &bResponded);
     gtk_widget_show(GTK_WIDGET(pAboutDialog));
-    
+
     while (!bResponded)
     {
         mainLoop();
     }
-    
+
     gtk_widget_destroy(GTK_WIDGET(pAboutDialog));
 }
 
@@ -1224,7 +1228,7 @@ static gboolean mainwindow_OnSelectAll(GtkAccelGroup *pAccelGroup, GObject *pObj
             document_SetSelection(pMainWindow->pDocument, 0, 0);
         }
     }
-    
+
     return TRUE;
 }
 
@@ -1336,7 +1340,7 @@ static gint mainwindow_OnScalePress(GtkWidget *pWidget, GdkEventButton *pEventBu
     if (pEventButton->button == 3)
     {
         gtk_adjustment_set_value(pMainWindow->pAdjustmentZoomV, 0);
-        
+
         return TRUE;
     }
 
@@ -1348,9 +1352,9 @@ static void mainwindow_init(MainWindow *pMainWindow)
     if (m_lstRecentFilenames == NULL)
     {
         g_assert(m_lstRecentFilenames == NULL);
-        
+
         gchar **lstFiles = g_settings_get_strv(g_pGSettings, "recent-files");
-        
+
         if (lstFiles != NULL)
         {
             for (guint i = 0; i < g_strv_length(lstFiles); i++)
@@ -1358,10 +1362,10 @@ static void mainwindow_init(MainWindow *pMainWindow)
                 m_lstRecentFilenames = g_list_append(m_lstRecentFilenames, lstFiles[i]);
             }
         }
-        
+
         g_free(lstFiles);
     }
-    
+
     pMainWindow->bCloseWhenDone = FALSE;
     pMainWindow->bSensitive = TRUE;
     pMainWindow->lNeedChunkItems = NULL;
@@ -1374,7 +1378,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     g_signal_connect(pMainWindow->pAdjustmentZoomH, "value-changed", G_CALLBACK(mainwindow_OnHorizZoomChanged), pMainWindow);
     pMainWindow->pAdjustmentZoomV = GTK_ADJUSTMENT(gtk_adjustment_new(0, 0, 0.2 + log(MAINWINDOW_VZOOM_MAX) / log(100.0), 0.01, 0.1, 0.2));
     g_signal_connect(pMainWindow->pAdjustmentZoomV, "value-changed", G_CALLBACK(mainwindow_OnVertZoomChanged), pMainWindow);
-    
+
     GtkAccelGroup *pAccelGroup = gtk_accel_group_new();
     pMainWindow->pToolBar = gtk_toolbar_new();
     GtkWidget *pMenu;
@@ -1385,13 +1389,13 @@ static void mainwindow_init(MainWindow *pMainWindow)
     GEmblem *pEmblem;
     gtk_window_add_accel_group(GTK_WINDOW(pMainWindow), pAccelGroup);
     gtk_accel_group_connect(pAccelGroup, GDK_KEY_A, GDK_CONTROL_MASK, 0, g_cclosure_new(G_CALLBACK(mainwindow_OnSelectAll), pMainWindow, 0));
-    pMainWindow->pRecentMenu = gtk_menu_new();   
+    pMainWindow->pRecentMenu = gtk_menu_new();
     pMainWindow->pToolItemRecent = gtk_menu_tool_button_new(gtk_image_new_from_icon_name("document-open", GTK_ICON_SIZE_LARGE_TOOLBAR), _("Open"));
     gtk_widget_add_accelerator(GTK_WIDGET(pMainWindow->pToolItemRecent), "clicked", pAccelGroup, GDK_KEY_O, GDK_CONTROL_MASK, 0);
     gtk_tool_item_set_tooltip_text(pMainWindow->pToolItemRecent, _("Load new file [Ctrl+O]"));
     g_signal_connect(pMainWindow->pToolItemRecent, "clicked", G_CALLBACK(mainwindow_OnOpen), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pMainWindow->pToolItemRecent, -1);
-    
+
     pMenu = gtk_menu_new();
     pMenuItem = gtk_menu_item_new_with_label(_("Save as..."));
     g_signal_connect(pMenuItem, "activate", G_CALLBACK(mainwindow_OnSaveAs), pMainWindow);
@@ -1413,37 +1417,37 @@ static void mainwindow_init(MainWindow *pMainWindow)
     mainwindow_AppendWidget(&pMainWindow->lNeedChunkItems, pToolItem);
 
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), gtk_separator_tool_item_new(), -1);
-    
+
     pToolItem = gtk_tool_button_new(gtk_image_new_from_icon_name("edit-undo", GTK_ICON_SIZE_LARGE_TOOLBAR), _("Undo"));
     gtk_widget_add_accelerator(GTK_WIDGET(pToolItem), "clicked", pAccelGroup, GDK_KEY_Z, GDK_CONTROL_MASK, 0);
     gtk_tool_item_set_tooltip_text(pToolItem, _("Undo last change [Ctrl+Z]"));
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnUndo), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedUndoItems, pToolItem);
-    
+
     pToolItem = gtk_tool_button_new(gtk_image_new_from_icon_name("edit-redo", GTK_ICON_SIZE_LARGE_TOOLBAR), _("Redo"));
     gtk_widget_add_accelerator(GTK_WIDGET(pToolItem), "clicked", pAccelGroup, GDK_KEY_Z, GDK_CONTROL_MASK | GDK_SHIFT_MASK, 0);
     gtk_tool_item_set_tooltip_text(pToolItem, _("Redo last undo operation [Ctrl+Shift+Z]"));
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnRedo), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedRedoItems, pToolItem);
-    
-    gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), gtk_separator_tool_item_new(), -1);    
-    
+
+    gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), gtk_separator_tool_item_new(), -1);
+
     pToolItem = gtk_tool_button_new(gtk_image_new_from_icon_name("edit-cut", GTK_ICON_SIZE_LARGE_TOOLBAR), _("Cut"));
     gtk_widget_add_accelerator(GTK_WIDGET(pToolItem), "clicked", pAccelGroup, GDK_KEY_X, GDK_CONTROL_MASK, 0);
     gtk_tool_item_set_tooltip_text(pToolItem, _("Remove and copy current selection [Ctrl+X]"));
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnCut), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pToolItem);
-    
+
     pToolItem = gtk_tool_button_new(gtk_image_new_from_icon_name("edit-copy", GTK_ICON_SIZE_LARGE_TOOLBAR), _("Copy"));
     gtk_widget_add_accelerator(GTK_WIDGET(pToolItem), "clicked", pAccelGroup, GDK_KEY_C, GDK_CONTROL_MASK, 0);
     gtk_tool_item_set_tooltip_text(pToolItem, _("Copy current selection [Ctrl+C]"));
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnCopy), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pToolItem);
-    
+
     pMenu = gtk_menu_new();
     pMenuItem = gtk_menu_item_new_with_label(_("Paste over"));
     g_signal_connect(pMenuItem, "activate", G_CALLBACK(mainwindow_OnPasteOver), pMainWindow);
@@ -1480,16 +1484,16 @@ static void mainwindow_init(MainWindow *pMainWindow)
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnCrop), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pToolItem);
-    
+
     pToolItem = gtk_tool_button_new(gtk_image_new_from_icon_name("edit-delete", GTK_ICON_SIZE_LARGE_TOOLBAR), _("Delete"));
     gtk_widget_add_accelerator(GTK_WIDGET(pToolItem), "clicked", pAccelGroup, GDK_KEY_Delete, 0, 0);
     gtk_tool_item_set_tooltip_text(pToolItem, _("Delete selection [Del]"));
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnDelete), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pToolItem);
-    
+
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), gtk_separator_tool_item_new(), -1);
-    
+
     pMenu = gtk_menu_new();
     pMenuItem = gtk_menu_item_new_with_label(_("Play all"));
     g_signal_connect(pMenuItem, "activate", G_CALLBACK(mainwindow_OnPlayAll), pMainWindow);
@@ -1513,9 +1517,9 @@ static void mainwindow_init(MainWindow *pMainWindow)
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnStop), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedChunkItems, pToolItem);
-    
+
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), gtk_separator_tool_item_new(), -1);
-    
+
     pIconThemed = g_themed_icon_new_with_default_fallbacks("go-up");
     pEmblem = g_emblem_new(pIconThemed);
     g_object_unref(pIconThemed);
@@ -1529,7 +1533,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnFadeIn), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pToolItem);
-    
+
     pIconThemed = g_themed_icon_new_with_default_fallbacks("go-down");
     pEmblem = g_emblem_new(pIconThemed);
     g_object_unref(pIconThemed);
@@ -1543,19 +1547,19 @@ static void mainwindow_init(MainWindow *pMainWindow)
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnFadeOut), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
     mainwindow_AppendWidget(&pMainWindow->lNeedSelectionItems, pToolItem);
-    
+
     GtkToolItem *pSeparatorToolItem = gtk_separator_tool_item_new();
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pSeparatorToolItem, -1);
-    
+
     pToolItem = gtk_tool_button_new(gtk_image_new_from_icon_name("help-about", GTK_ICON_SIZE_LARGE_TOOLBAR), _("About"));
     gtk_tool_item_set_tooltip_text(pToolItem, _("About Odio Edit"));
     g_signal_connect(pToolItem, "clicked", G_CALLBACK(mainwindow_OnAbout), pMainWindow);
     gtk_toolbar_insert(GTK_TOOLBAR(pMainWindow->pToolBar), pToolItem, -1);
-    
+
     gtk_toolbar_set_style(GTK_TOOLBAR(pMainWindow->pToolBar), GTK_TOOLBAR_BOTH);
     gtk_style_context_add_class(gtk_widget_get_style_context(pMainWindow->pToolBar), GTK_STYLE_CLASS_PRIMARY_TOOLBAR);
     mainwindow_UpdateRecentFiles(pMainWindow);
-    
+
     gtk_widget_set_hexpand(pMainWindow->pToolBar, TRUE);
     pMainWindow->pChunkView = chunkview_new();
     gtk_widget_set_hexpand(GTK_WIDGET(pMainWindow->pChunkView), TRUE);
@@ -1570,7 +1574,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     gtk_widget_set_margin_end(pMainWindow->pScale, 5);
     gtk_widget_set_margin_top(pMainWindow->pScale, 5);
     mainwindow_AppendWidget(&pMainWindow->lNeedChunkItems, pMainWindow->pScale);
-    
+
     gchar sText[256];
     g_snprintf(sText, 150, "<span font-weight=\"bold\">%s:</span> 00:00.000", _("Cursor"));
     pMainWindow->pLabelCursor = GTK_LABEL(gtk_widget_new(GTK_TYPE_LABEL, "use-markup", TRUE, "label", sText, "margin", 5, NULL));
@@ -1580,7 +1584,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     pMainWindow->pLabelSel = GTK_LABEL(gtk_widget_new(GTK_TYPE_LABEL, "use-markup", TRUE, "label", sText, "margin", 5, NULL));
     pMainWindow->pProgressBar = GTK_PROGRESS_BAR(gtk_widget_new(GTK_TYPE_PROGRESS_BAR, "margin", 5, "hexpand", TRUE, NULL));
     gtk_progress_bar_set_show_text(pMainWindow->pProgressBar, TRUE);
-    
+
     GtkCssProvider *pCssProvider = gtk_css_provider_new();
     GtkStyleContext *pStyleContext = gtk_widget_get_style_context(GTK_WIDGET(pMainWindow->pProgressBar));
     GValue cMinHeight = G_VALUE_INIT;
@@ -1588,7 +1592,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     gtk_style_context_get_property(pStyleContext, "min-height", nStateFlags, &cMinHeight);
     gint nMinHeight = g_value_get_int(&cMinHeight);
     gchar *sMinheight = "";
-    
+
     if (nMinHeight == 0)
     {
         nMinHeight = 16;
@@ -1601,7 +1605,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     gtk_css_provider_load_from_data(pCssProvider, sCSS, -1, NULL);
     g_free(sCSS);
     g_object_unref(pCssProvider);
-    
+
     GtkWidget *pScrollbar = gtk_scrollbar_new(GTK_ORIENTATION_HORIZONTAL, pMainWindow->pAdjustmentView);
     GtkWidget *pGrid = gtk_grid_new();
     gtk_grid_attach(GTK_GRID(pGrid), pMainWindow->pToolBar, 0, 0, 2, 1);
@@ -1616,7 +1620,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     gtk_grid_attach(GTK_GRID(pGrid), GTK_WIDGET(pGridStatus), 0, 3, 2, 1);
     gtk_container_add(GTK_CONTAINER(pMainWindow), pGrid);
     gtk_widget_show_all(GTK_WIDGET(pMainWindow));
-    
+
     mainwindow_Enable(pMainWindow->lNeedChunkItems, FALSE);
     mainwindow_Enable(pMainWindow->lNeedSelectionItems, FALSE);
     mainwindow_Enable(pMainWindow->lNeedClipboardItems, m_pClipboard != NULL);
@@ -1624,7 +1628,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     mainwindow_Enable(pMainWindow->lNeedRedoItems, FALSE);
     gtk_widget_set_size_request(GTK_WIDGET(pMainWindow), 640, 480);
     gtk_window_maximize(GTK_WINDOW(pMainWindow));
-    
+
     GtkTargetEntry gte;
     gte.target = "text/uri-list";
     gte.flags = gte.info = 0;
@@ -1633,7 +1637,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
     mainwindow_ResetStatusBar(pMainWindow);
     mainwindow_SetStatusBarInfo(pMainWindow, 0, FALSE, 0, 0, 0, 0, 0, 0);
     mainwindow_FixTitle(pMainWindow);
-    
+
     /*
     {N_("/Edit/Silence selection"), NULL, edit_silence, 0, NULL},
     {N_("/Edit/Clear clipboard"), NULL, edit_clearclipboard, 0, NULL},
@@ -1651,7 +1655,7 @@ static void mainwindow_init(MainWindow *pMainWindow)
 }
 
 GtkWidget *mainwindow_new()
-{   
+{
     return g_object_new(OE_TYPE_MAINWINDOW, NULL);
 }
 
@@ -1669,7 +1673,7 @@ GtkWidget *mainwindow_NewWithFile(gchar *sFilePath)
     }
 
     g_free(sFilePathNew);
-    
+
     return GTK_WIDGET(pMainWindow);
 }
 
