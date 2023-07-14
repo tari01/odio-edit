@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2023, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2007 2008 2010 2011 2012, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -91,6 +91,19 @@ void mainLoop()
     gtk_main_iteration();
 }
 
+    static void onColorSchemeChanged (GSettings *pSettings, const gchar *sKey, gpointer pData)
+    {
+        gchar *sColorScheme = g_settings_get_string (pSettings, sKey);
+        gboolean bDark = g_str_equal (sColorScheme, "prefer-dark");
+        g_free (sColorScheme);
+        GtkSettings *pGtkSettings = gtk_settings_get_default ();
+        
+        if (pGtkSettings)
+        {
+            g_object_set (pGtkSettings, "gtk-application-prefer-dark-theme", bDark, NULL);
+        }
+    }
+    
 gint main(gint argc, gchar **argv)
 {
     setlocale(LC_ALL, "");
@@ -101,6 +114,9 @@ gint main(gint argc, gchar **argv)
     bind_textdomain_codeset("odio-edit", "UTF-8");
     gtk_init(&argc, &argv);
     gst_init(&argc, &argv);
+    GSettings *pGnomeSettings = g_settings_new ("org.gnome.desktop.interface");
+    g_signal_connect (pGnomeSettings, "changed::color-scheme", G_CALLBACK (onColorSchemeChanged), NULL);
+    onColorSchemeChanged (pGnomeSettings, "color-scheme", NULL);
     mkdir("/tmp/odio-edit", 0755);
     g_log_set_handler(G_LOG_DOMAIN, G_LOG_LEVEL_MASK, g_log_default_handler, NULL);
     g_pFileFilterWav = gtk_file_filter_new();
@@ -154,6 +170,11 @@ gint main(gint argc, gchar **argv)
 
     g_list_free(g_lMainWindows);
     g_list_free(g_lDocuments);
+    
+    if (pGnomeSettings)
+    {
+        g_clear_object (&pGnomeSettings);
+    }
 
     g_info("chunk_AliveCount: %d", chunk_AliveCount());
     g_info("datasource_Count: %d", datasource_Count());
