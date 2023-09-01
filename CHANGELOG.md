@@ -1,3 +1,7 @@
+# 23.9.1
+
+ - Translated using Weblate (German) (0bf2d65)
+ 
 # 23.8.1
 
  - src/main.c: Add colour scheme handler (884263b)
