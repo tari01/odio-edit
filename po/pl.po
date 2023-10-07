@@ -8,13 +8,17 @@ msgstr ""
 "Project-Id-Version: odio-edit_pl\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2022-06-29 02:54+0200\n"
-"PO-Revision-Date: 2020-04-04 07:56+0000\n"
-"Last-Translator: Robert Tari <Unknown>\n"
-"Language-Team: polish <robwoj44@poczta.onet.pl>\n"
+"PO-Revision-Date: 2023-10-08 21:03+0000\n"
+"Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
+"Language-Team: Polish <https://hosted.weblate.org/projects/odio-edit/master/"
+"pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
+"|| n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -68,7 +72,7 @@ msgstr ""
 
 #: src/chunk.c:850
 msgid "Fading"
-msgstr ""
+msgstr "Przenikanie"
 
 #: src/datasource.c:179
 #, c-format
@@ -83,7 +87,7 @@ msgstr "Błąd czytania %s: %s"
 #: src/document.c:149
 #, c-format
 msgid "Untitled %d"
-msgstr ""
+msgstr "Bez nazwy %d"
 
 #: src/file.c:53
 #, c-format
@@ -146,7 +150,7 @@ msgstr ""
 
 #: src/mainwindow.c:89
 msgid "_Open"
-msgstr ""
+msgstr "_Otwórz"
 
 #: src/mainwindow.c:89
 msgid "_Cancel"
@@ -163,7 +167,7 @@ msgstr ""
 
 #: src/mainwindow.c:191
 msgid "Ready"
-msgstr ""
+msgstr "Gotowe"
 
 #: src/mainwindow.c:325
 msgid "Close"
@@ -179,7 +183,7 @@ msgstr "Kursor"
 
 #: src/mainwindow.c:434 src/mainwindow.c:1577
 msgid "View"
-msgstr ""
+msgstr "Widok"
 
 #: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1579
 msgid "Selection"
@@ -187,7 +191,7 @@ msgstr "Wybór"
 
 #: src/mainwindow.c:566
 msgid "Save file"
-msgstr ""
+msgstr "Zapisz plik"
 
 #: src/mainwindow.c:607
 #, c-format
@@ -196,7 +200,7 @@ msgstr "Zapisz zmiany do %s?"
 
 #: src/mainwindow.c:854 src/mainwindow.c:865
 msgid "Load file"
-msgstr ""
+msgstr "Wczytaj plik"
 
 #: src/mainwindow.c:890 src/mainwindow.c:1400
 msgid "Save selection as..."
@@ -219,7 +223,7 @@ msgstr ""
 
 #: src/mainwindow.c:1389
 msgid "Open"
-msgstr ""
+msgstr "Otwórz"
 
 #: src/mainwindow.c:1391
 msgid "Load new file [Ctrl+O]"
@@ -227,11 +231,11 @@ msgstr ""
 
 #: src/mainwindow.c:1396
 msgid "Save as..."
-msgstr ""
+msgstr "Zapisz jako..."
 
 #: src/mainwindow.c:1406
 msgid "Save"
-msgstr ""
+msgstr "Zapisz"
 
 #: src/mainwindow.c:1408
 msgid "Save current file [Ctrl+S]"
@@ -243,7 +247,7 @@ msgstr ""
 
 #: src/mainwindow.c:1417
 msgid "Undo"
-msgstr ""
+msgstr "Cofnij"
 
 #: src/mainwindow.c:1419
 msgid "Undo last change [Ctrl+Z]"
@@ -251,7 +255,7 @@ msgstr ""
 
 #: src/mainwindow.c:1424
 msgid "Redo"
-msgstr ""
+msgstr "Przywróć"
 
 #: src/mainwindow.c:1426
 msgid "Redo last undo operation [Ctrl+Shift+Z]"
@@ -259,7 +263,7 @@ msgstr ""
 
 #: src/mainwindow.c:1433
 msgid "Cut"
-msgstr ""
+msgstr "Wytnij"
 
 #: src/mainwindow.c:1435
 msgid "Remove and copy current selection [Ctrl+X]"
@@ -267,7 +271,7 @@ msgstr ""
 
 #: src/mainwindow.c:1440
 msgid "Copy"
-msgstr ""
+msgstr "Kopiuj"
 
 #: src/mainwindow.c:1442
 msgid "Copy current selection [Ctrl+C]"
@@ -287,7 +291,7 @@ msgstr ""
 
 #: src/mainwindow.c:1461
 msgid "Paste"
-msgstr ""
+msgstr "Wklej"
 
 #: src/mainwindow.c:1463
 msgid "Paste at cursor position [Ctrl+V]"
@@ -295,7 +299,7 @@ msgstr ""
 
 #: src/mainwindow.c:1477
 msgid "Crop"
-msgstr ""
+msgstr "Przytnij"
 
 #: src/mainwindow.c:1479
 msgid "Crop to selection"
@@ -303,7 +307,7 @@ msgstr ""
 
 #: src/mainwindow.c:1484
 msgid "Delete"
-msgstr ""
+msgstr "Usuń"
 
 #: src/mainwindow.c:1486
 msgid "Delete selection [Del]"
@@ -311,7 +315,7 @@ msgstr ""
 
 #: src/mainwindow.c:1494
 msgid "Play all"
-msgstr ""
+msgstr "Odtwórz wszystko"
 
 #: src/mainwindow.c:1498
 msgid "Play from cursor position"
@@ -319,19 +323,19 @@ msgstr "Odtwórz od pozycji kursora"
 
 #: src/mainwindow.c:1503
 msgid "Play"
-msgstr ""
+msgstr "Odtwórz"
 
 #: src/mainwindow.c:1504
 msgid "Play selection"
-msgstr ""
+msgstr "Odtwórz zaznaczone"
 
 #: src/mainwindow.c:1511
 msgid "Stop"
-msgstr ""
+msgstr "Zatrzymaj"
 
 #: src/mainwindow.c:1512
 msgid "Stop playback"
-msgstr ""
+msgstr "Zatrzymaj odtwarzanie"
 
 #: src/mainwindow.c:1526
 msgid "Fade in"
@@ -351,7 +355,7 @@ msgstr ""
 
 #: src/mainwindow.c:1550
 msgid "About"
-msgstr ""
+msgstr "O programie"
 
 #: src/mainwindow.c:1551
 msgid "About Odio Edit"
