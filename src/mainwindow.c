@@ -678,7 +678,7 @@ static gint mainwindow_OnDeleteEvent(GtkWidget *pWidget, GdkEventAny *pEventAny)
 
     if (g_pPlayingDocument == pMainWindow->pDocument)
     {
-        player_Stop(GTK_WINDOW(pWidget));
+        player_Stop ();
     }
 
     if (pWidgetClass->delete_event)
@@ -916,7 +916,7 @@ static void mainwindow_OnClose(GtkMenuItem *pMenuItem, gpointer pUserData)
 
     if (g_pPlayingDocument == pMainWindow->pDocument)
     {
-        player_Stop(GTK_WINDOW(pUserData));
+        player_Stop ();
     }
 
     if (g_list_length(g_lMainWindows) == 1 && pMainWindow->pDocument != NULL)

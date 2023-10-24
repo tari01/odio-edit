@@ -160,7 +160,7 @@ gint main(gint argc, gchar **argv)
         mainLoop();
     }
 
-    player_Stop(NULL);
+    player_Stop ();
 
     if (g_pPlayingDocument != NULL)
     {
