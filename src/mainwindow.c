@@ -167,13 +167,10 @@ void mainwindow_BeginProgress(MainWindow *pMainWindow, gchar *sDescription)
     {
         sDescription = _("Processing data");
     }
-    else
-    {
-        gchar *sText = g_strdup_printf(_("%s... Press ESC to cancel."), sDescription);
-        gtk_progress_bar_set_text(GTK_PROGRESS_BAR(pMainWindow->pProgressBar), sText);
-        g_free(sText);
-    }
 
+    gchar *sText = g_strdup_printf (_("%s... Press ESC to cancel."), sDescription);
+    gtk_progress_bar_set_text (GTK_PROGRESS_BAR (pMainWindow->pProgressBar), sText);
+    g_free (sText);
     pMainWindow->nStatusBarTimeLast = 0;
     pMainWindow->bStatusBarWorking = TRUE;
     pMainWindow->bStatusBarBreak = FALSE;

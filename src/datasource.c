@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2023, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2006 2009 2010 2012, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -467,7 +467,6 @@ gboolean datasource_BackupUnlink(gchar *sFilePath)
         pDataSource->pData.pGstReader.sFilePath = sTmpFilePath;
         pDataSource->nType = DATASOURCE_GSTTEMP;
         pDataSourceBackup = pDataSource;
-        sLastFilePath = sTmpFilePath;
     }
 
     g_list_free(lDataSources);
