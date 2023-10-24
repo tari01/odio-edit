@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit 1.4.8\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2022-06-29 02:54+0200\n"
+"POT-Creation-Date: 2023-10-24 08:54+0200\n"
 "PO-Revision-Date: 2023-08-21 01:50+0000\n"
 "Last-Translator: Ettore Atalan <atalanttore@googlemail.com>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -30,17 +30,17 @@ msgid "Saving"
 msgstr "Speichere"
 
 #: src/chunk.c:303
-#, c-format
+#, python-format
 msgid "Failed to open '%s'!"
 msgstr "Fehler beim Öffnen von '%s'!"
 
 #: src/chunk.c:349
-#, c-format
+#, python-format
 msgid "Failed to write to '%s'!"
 msgstr "Fehler beim Schreiben nach '%s'!"
 
 #: src/chunk.c:385
-#, c-format
+#, python-format
 msgid ""
 "File %s may be destroyed since saving failed. Try to free some disk space "
 "and save again. If you exit now, the file's contents could be left in a bad "
@@ -51,17 +51,17 @@ msgstr ""
 "du jetzt beendest, könnte die Datei unbrauchbar zurückbleiben."
 
 #: src/chunk.c:431
-#, c-format
+#, python-format
 msgid "File %s does not exist!"
 msgstr "Datei %s existiert nicht!"
 
 #: src/chunk.c:440
-#, c-format
+#, python-format
 msgid "File %s is not a regular file!"
 msgstr "Datei %s ist keine reguläre Datei!"
 
 #: src/chunk.c:466 src/chunk.c:537
-#, c-format
+#, python-format
 msgid "Failed to open '%s'"
 msgstr "„%s“ konnte nicht geöffnet werden"
 
@@ -70,7 +70,7 @@ msgid "Loading"
 msgstr "Lade"
 
 #: src/chunk.c:486
-#, c-format
+#, python-format
 msgid "Failed to decode '%s'"
 msgstr "Konnte '%s' nicht dekodieren"
 
@@ -79,68 +79,67 @@ msgid "Fading"
 msgstr "Fading"
 
 #: src/datasource.c:179
-#, c-format
+#, python-format
 msgid "Could not open %s"
 msgstr "Konnte '%s' nicht öffnen"
 
 #: src/datasource.c:392
-#, c-format
+#, python-format
 msgid "Error reading %s: %s"
 msgstr "Fehler beim Lesen %s: %s"
 
 #: src/document.c:149
-#, c-format
+#, python-format
 msgid "Untitled %d"
 msgstr "Ohne Titel %d"
 
 #: src/file.c:53
-#, c-format
+#, python-format
 msgid "Could not open %s: %s"
 msgstr "Kann %s nicht öffnen: %s"
 
 #: src/file.c:57
-#, c-format
+#, python-format
 msgid "Unexpected error: %s %s"
 msgstr "Unerwarteter Fehler: %s %s"
 
 #: src/file.c:84
-#, c-format
+#, python-format
 msgid "Error closing %s: %s"
 msgstr "Fehler beim Schließen von %s: %s"
 
 #: src/file.c:105
-#, c-format
+#, python-format
 msgid "Could not seek in %s: %s"
 msgstr "Kann in %s nicht suchen: %s"
 
 #: src/file.c:136 src/file.c:190
-#, c-format
+#, python-format
 msgid "Could not read from %s: %s"
 msgstr "Kann von %s nicht lesen: %s"
 
-#. Translators: %s will be the name of the file
 #: src/file.c:154
-#, c-format
+#, python-format
 msgid "Unexpected end of file reading %s"
 msgstr "Unerwartetes Dateiende beim Lesen von %s"
 
 #: src/file.c:176
-#, c-format
+#, python-format
 msgid "Could not write data to %s"
 msgstr "Konnte Daten nicht nach %s schreiben"
 
 #: src/file.c:210
-#, c-format
+#, python-format
 msgid "Could not get file position in %s: %s"
 msgstr "Kann die Dateiposition in %s nicht bekommen: %s"
 
 #: src/file.c:336
-#, c-format
+#, python-format
 msgid "Could not delete '%s': %s"
 msgstr "Konnte '%s' nicht löschen: %s"
 
 #: src/file.c:363
-#, c-format
+#, python-format
 msgid "Error creating link to '%s': %s"
 msgstr "Fehler beim Erzeugen der Verknüpfung nach '%s': %s"
 
@@ -165,7 +164,7 @@ msgid "Processing data"
 msgstr "Bearbeite Daten"
 
 #: src/mainwindow.c:172
-#, c-format
+#, python-format
 msgid "%s... Press ESC to cancel."
 msgstr "%s... ESC zum Abbrechen."
 
@@ -181,15 +180,15 @@ msgstr "Schließen"
 msgid "Click here for recent files"
 msgstr "Zuletzt verwendete Dateien"
 
-#: src/mainwindow.c:426 src/mainwindow.c:1575
+#: src/mainwindow.c:426 src/mainwindow.c:1579
 msgid "Cursor"
 msgstr "Cursor"
 
-#: src/mainwindow.c:434 src/mainwindow.c:1577
+#: src/mainwindow.c:434 src/mainwindow.c:1581
 msgid "View"
 msgstr "Anzeigen"
 
-#: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1579
+#: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1583
 msgid "Selection"
 msgstr "Markierung"
 
@@ -198,7 +197,7 @@ msgid "Save file"
 msgstr "Datei speichern"
 
 #: src/mainwindow.c:607
-#, c-format
+#, python-format
 msgid "Save changes to %s?"
 msgstr "Speichere Änderungen nach %s?"
 
@@ -206,7 +205,7 @@ msgstr "Speichere Änderungen nach %s?"
 msgid "Load file"
 msgstr "Datei öffnen"
 
-#: src/mainwindow.c:890 src/mainwindow.c:1400
+#: src/mainwindow.c:890 src/mainwindow.c:1404
 msgid "Save selection as..."
 msgstr "Auswahl speichern als..."
 
@@ -215,155 +214,161 @@ msgid "You cannot mix different sound formats"
 msgstr "Du kannst verschiedene Audioformate nicht vermischen"
 
 #: src/mainwindow.c:1179
+#, python-format
+msgid "Robert Tari 2019-20%s"
+msgstr ""
+
+#: src/mainwindow.c:1183 data/odio-edit.desktop.in:44
+#: data/odio-edit.desktop.in:49
 msgid "A lightweight audio wave editor"
 msgstr "Ein leichtgewichtiger Wave-Editor"
 
-#: src/mainwindow.c:1181
+#: src/mainwindow.c:1185
 msgid "translator-credits"
 msgstr ""
 "Launchpad Contributions:\n"
 "  Georg  Funke https://launchpad.net/~schorsch-funke\n"
 "  Robert Tari https://launchpad.net/~robert-tari"
 
-#: src/mainwindow.c:1389
+#: src/mainwindow.c:1393
 msgid "Open"
 msgstr "Öffnen"
 
-#: src/mainwindow.c:1391
+#: src/mainwindow.c:1395
 msgid "Load new file [Ctrl+O]"
 msgstr "Neue Datei öffnen [Ctrl+O]"
 
-#: src/mainwindow.c:1396
+#: src/mainwindow.c:1400
 msgid "Save as..."
 msgstr "Speichern als..."
 
-#: src/mainwindow.c:1406
+#: src/mainwindow.c:1410
 msgid "Save"
 msgstr "Speichern"
 
-#: src/mainwindow.c:1408
+#: src/mainwindow.c:1412
 msgid "Save current file [Ctrl+S]"
 msgstr "Aktuelle Datei speichern [Ctrl+S]"
 
-#: src/mainwindow.c:1409 src/mainwindow.c:1464 src/mainwindow.c:1505
+#: src/mainwindow.c:1413 src/mainwindow.c:1468 src/mainwindow.c:1509
 msgid "Click here for more options"
 msgstr "Hier für weitere Optionen klicken"
 
-#: src/mainwindow.c:1417
+#: src/mainwindow.c:1421
 msgid "Undo"
 msgstr "Rückgängig"
 
-#: src/mainwindow.c:1419
+#: src/mainwindow.c:1423
 msgid "Undo last change [Ctrl+Z]"
 msgstr "Letzte Änderung rückgängig machen [Ctrl+Z]"
 
-#: src/mainwindow.c:1424
+#: src/mainwindow.c:1428
 msgid "Redo"
 msgstr "Wiederherstellen"
 
-#: src/mainwindow.c:1426
+#: src/mainwindow.c:1430
 msgid "Redo last undo operation [Ctrl+Shift+Z]"
 msgstr "Letzte Rückgängig-Operation wiederherstellen [Ctrl+Shift+Z]"
 
-#: src/mainwindow.c:1433
+#: src/mainwindow.c:1437
 msgid "Cut"
 msgstr "Ausschneiden"
 
-#: src/mainwindow.c:1435
+#: src/mainwindow.c:1439
 msgid "Remove and copy current selection [Ctrl+X]"
 msgstr "Entferne und kopiere die aktuelle Auswahl [Ctrl+X]"
 
-#: src/mainwindow.c:1440
+#: src/mainwindow.c:1444
 msgid "Copy"
 msgstr "Kopieren"
 
-#: src/mainwindow.c:1442
+#: src/mainwindow.c:1446
 msgid "Copy current selection [Ctrl+C]"
 msgstr "Kopiere die aktuelle Auswahl [Ctrl+C]"
 
-#: src/mainwindow.c:1448
+#: src/mainwindow.c:1452
 #, fuzzy
 msgid "Paste over"
 msgstr "Überkleben ('Paste over')"
 
-#: src/mainwindow.c:1452
+#: src/mainwindow.c:1456
 msgid "Paste mixed"
 msgstr "Gemischt einfügen"
 
-#: src/mainwindow.c:1456
+#: src/mainwindow.c:1460
 #, fuzzy
 msgid "Paste to new"
 msgstr "Einfügen zu neu"
 
-#: src/mainwindow.c:1461
+#: src/mainwindow.c:1465
 msgid "Paste"
 msgstr "Einfügen"
 
-#: src/mainwindow.c:1463
+#: src/mainwindow.c:1467
 msgid "Paste at cursor position [Ctrl+V]"
 msgstr "Füge bei aktueller Zeigerposition ein [Ctrl+V]"
 
-#: src/mainwindow.c:1477
+#: src/mainwindow.c:1481
 msgid "Crop"
 msgstr "Zurechtschneiden"
 
-#: src/mainwindow.c:1479
+#: src/mainwindow.c:1483
 msgid "Crop to selection"
 msgstr "Auf Auswahl zurechtschneiden"
 
-#: src/mainwindow.c:1484
+#: src/mainwindow.c:1488
 msgid "Delete"
 msgstr "Löschen"
 
-#: src/mainwindow.c:1486
+#: src/mainwindow.c:1490
 msgid "Delete selection [Del]"
 msgstr "Auswahl löschen [Entf]"
 
-#: src/mainwindow.c:1494
+#: src/mainwindow.c:1498
 msgid "Play all"
 msgstr "Alle abspielen"
 
-#: src/mainwindow.c:1498
+#: src/mainwindow.c:1502
 msgid "Play from cursor position"
 msgstr "Spiele ab der Cursor Position"
 
-#: src/mainwindow.c:1503
+#: src/mainwindow.c:1507
 msgid "Play"
 msgstr "Abspielen"
 
-#: src/mainwindow.c:1504
+#: src/mainwindow.c:1508
 msgid "Play selection"
 msgstr "Auswahl abspielen"
 
-#: src/mainwindow.c:1511
+#: src/mainwindow.c:1515
 msgid "Stop"
 msgstr "Stopp"
 
-#: src/mainwindow.c:1512
+#: src/mainwindow.c:1516
 msgid "Stop playback"
 msgstr "Wiedergabe stoppen"
 
-#: src/mainwindow.c:1526
+#: src/mainwindow.c:1530
 msgid "Fade in"
 msgstr "Einblenden (Fadein)"
 
-#: src/mainwindow.c:1528
+#: src/mainwindow.c:1532
 msgid "Fade in selection"
 msgstr "Auswahl einblenden (Fadein)"
 
-#: src/mainwindow.c:1540
+#: src/mainwindow.c:1544
 msgid "Fade out"
 msgstr "Ausblenden (Fadeout)"
 
-#: src/mainwindow.c:1542
+#: src/mainwindow.c:1546
 msgid "Fade out selection"
 msgstr "Auswahl ausblenden (Fadeout)"
 
-#: src/mainwindow.c:1550
+#: src/mainwindow.c:1554
 msgid "About"
 msgstr "Über"
 
-#: src/mainwindow.c:1551
+#: src/mainwindow.c:1555
 msgid "About Odio Edit"
 msgstr "Über Odio Edit"
 
@@ -378,6 +383,30 @@ msgstr "Nein"
 #: src/message.c:55
 msgid "Cancel"
 msgstr "Abbruch"
+
+#: data/in.tari.odio-edit.gschema.xml:6
+msgid "List of recently accessed files"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:7
+msgid "Stores the list of files last accessed by the application."
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:11
+msgid "Last file opened"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:12
+msgid "The last file opened by the application."
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:16
+msgid "Last file saved"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:17
+msgid "The last file saved by the application."
+msgstr ""
 
 #~ msgid "Delete selection [Ctrl+D]"
 #~ msgstr "Auswahl löschen [Ctrl+D]"

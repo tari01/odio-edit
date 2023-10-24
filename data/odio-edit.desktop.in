@@ -1,0 +1,64 @@
+[Desktop Entry]
+Name=Odio Edit
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment[de]=Ein leichtgewichtiger Wave-Editor
+Comment[es]=Un editor de audio de onda ligero
+Comment[fr]=Un éditeur audio léger
+Comment[nb_NO]=En lettvektig lydbølgeredigerer
+Comment[tr]=Hafif ses editörü
+Comment=A lightweight audio wave editor
+Categories=GNOME;AudioVideo;GTK;
+Exec=@CMAKE_INSTALL_FULL_BINDIR@/odio-edit
+Icon=odio-edit
+StartupNotify=true
+Terminal=false
+Type=Application
+
+
+
+
+

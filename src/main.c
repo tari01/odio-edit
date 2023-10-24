@@ -109,7 +109,7 @@ gint main(gint argc, gchar **argv)
     setlocale(LC_ALL, "");
     setlocale(LC_NUMERIC, "POSIX");
     gtk_disable_setlocale();
-    bindtextdomain("odio-edit", "/usr/share/locale");
+    bindtextdomain("odio-edit", LOCALEDIR);
     textdomain("odio-edit");
     bind_textdomain_codeset("odio-edit", "UTF-8");
     gtk_init(&argc, &argv);

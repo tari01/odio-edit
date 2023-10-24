@@ -24,7 +24,6 @@
 
 #include <gtk/gtk.h>
 
-#define APPVERSION "23.9.1"
 #define ARRAY_LENGTH(arr) (sizeof(arr)/sizeof((arr)[0]))
 #define GFLOAT(x) ((gfloat)(x))
 #define GDOUBLE(x) ((gdouble)(x))

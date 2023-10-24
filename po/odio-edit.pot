@@ -1,20 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR 2019-2021 Robert Tari
+# Translation of odio-edit in LANGUAGE
+# Copyright (C) 2023 Robert Tari
 # This file is distributed under the same license as the odio-edit package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: odio-edit\n"
+"Project-Id-Version: odio-edit 23.9.1\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2022-06-29 02:54+0200\n"
+"POT-Creation-Date: 2023-10-24 08:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/chunk.c:130
@@ -26,32 +26,32 @@ msgid "Saving"
 msgstr ""
 
 #: src/chunk.c:303
-#, c-format
+#, python-format
 msgid "Failed to open '%s'!"
 msgstr ""
 
 #: src/chunk.c:349
-#, c-format
+#, python-format
 msgid "Failed to write to '%s'!"
 msgstr ""
 
 #: src/chunk.c:385
-#, c-format
+#, python-format
 msgid "File %s may be destroyed since saving failed. Try to free some disk space and save again. If you exit now, the file's contents could be left in a bad state."
 msgstr ""
 
 #: src/chunk.c:431
-#, c-format
+#, python-format
 msgid "File %s does not exist!"
 msgstr ""
 
 #: src/chunk.c:440
-#, c-format
+#, python-format
 msgid "File %s is not a regular file!"
 msgstr ""
 
 #: src/chunk.c:466 src/chunk.c:537
-#, c-format
+#, python-format
 msgid "Failed to open '%s'"
 msgstr ""
 
@@ -60,7 +60,7 @@ msgid "Loading"
 msgstr ""
 
 #: src/chunk.c:486
-#, c-format
+#, python-format
 msgid "Failed to decode '%s'"
 msgstr ""
 
@@ -69,68 +69,67 @@ msgid "Fading"
 msgstr ""
 
 #: src/datasource.c:179
-#, c-format
+#, python-format
 msgid "Could not open %s"
 msgstr ""
 
 #: src/datasource.c:392
-#, c-format
+#, python-format
 msgid "Error reading %s: %s"
 msgstr ""
 
 #: src/document.c:149
-#, c-format
+#, python-format
 msgid "Untitled %d"
 msgstr ""
 
 #: src/file.c:53
-#, c-format
+#, python-format
 msgid "Could not open %s: %s"
 msgstr ""
 
 #: src/file.c:57
-#, c-format
+#, python-format
 msgid "Unexpected error: %s %s"
 msgstr ""
 
 #: src/file.c:84
-#, c-format
+#, python-format
 msgid "Error closing %s: %s"
 msgstr ""
 
 #: src/file.c:105
-#, c-format
+#, python-format
 msgid "Could not seek in %s: %s"
 msgstr ""
 
 #: src/file.c:136 src/file.c:190
-#, c-format
+#, python-format
 msgid "Could not read from %s: %s"
 msgstr ""
 
-#. Translators: %s will be the name of the file
 #: src/file.c:154
-#, c-format
+#, python-format
 msgid "Unexpected end of file reading %s"
 msgstr ""
 
 #: src/file.c:176
-#, c-format
+#, python-format
 msgid "Could not write data to %s"
 msgstr ""
 
 #: src/file.c:210
-#, c-format
+#, python-format
 msgid "Could not get file position in %s: %s"
 msgstr ""
 
 #: src/file.c:336
-#, c-format
+#, python-format
 msgid "Could not delete '%s': %s"
 msgstr ""
 
 #: src/file.c:363
-#, c-format
+#, python-format
 msgid "Error creating link to '%s': %s"
 msgstr ""
 
@@ -155,7 +154,7 @@ msgid "Processing data"
 msgstr ""
 
 #: src/mainwindow.c:172
-#, c-format
+#, python-format
 msgid "%s... Press ESC to cancel."
 msgstr ""
 
@@ -171,15 +170,15 @@ msgstr ""
 msgid "Click here for recent files"
 msgstr ""
 
-#: src/mainwindow.c:426 src/mainwindow.c:1575
+#: src/mainwindow.c:426 src/mainwindow.c:1579
 msgid "Cursor"
 msgstr ""
 
-#: src/mainwindow.c:434 src/mainwindow.c:1577
+#: src/mainwindow.c:434 src/mainwindow.c:1581
 msgid "View"
 msgstr ""
 
-#: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1579
+#: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1583
 msgid "Selection"
 msgstr ""
 
@@ -188,7 +187,7 @@ msgid "Save file"
 msgstr ""
 
 #: src/mainwindow.c:607
-#, c-format
+#, python-format
 msgid "Save changes to %s?"
 msgstr ""
 
@@ -196,7 +195,7 @@ msgstr ""
 msgid "Load file"
 msgstr ""
 
-#: src/mainwindow.c:890 src/mainwindow.c:1400
+#: src/mainwindow.c:890 src/mainwindow.c:1404
 msgid "Save selection as..."
 msgstr ""
 
@@ -205,150 +204,156 @@ msgid "You cannot mix different sound formats"
 msgstr ""
 
 #: src/mainwindow.c:1179
+#, python-format
+msgid "Robert Tari 2019-20%s"
+msgstr ""
+
+#: src/mainwindow.c:1183 data/odio-edit.desktop.in:44
+#: data/odio-edit.desktop.in:49
 msgid "A lightweight audio wave editor"
 msgstr ""
 
-#: src/mainwindow.c:1181
+#: src/mainwindow.c:1185
 msgid "translator-credits"
 msgstr ""
 
-#: src/mainwindow.c:1389
+#: src/mainwindow.c:1393
 msgid "Open"
 msgstr ""
 
-#: src/mainwindow.c:1391
+#: src/mainwindow.c:1395
 msgid "Load new file [Ctrl+O]"
 msgstr ""
 
-#: src/mainwindow.c:1396
+#: src/mainwindow.c:1400
 msgid "Save as..."
 msgstr ""
 
-#: src/mainwindow.c:1406
+#: src/mainwindow.c:1410
 msgid "Save"
 msgstr ""
 
-#: src/mainwindow.c:1408
+#: src/mainwindow.c:1412
 msgid "Save current file [Ctrl+S]"
 msgstr ""
 
-#: src/mainwindow.c:1409 src/mainwindow.c:1464 src/mainwindow.c:1505
+#: src/mainwindow.c:1413 src/mainwindow.c:1468 src/mainwindow.c:1509
 msgid "Click here for more options"
 msgstr ""
 
-#: src/mainwindow.c:1417
+#: src/mainwindow.c:1421
 msgid "Undo"
 msgstr ""
 
-#: src/mainwindow.c:1419
+#: src/mainwindow.c:1423
 msgid "Undo last change [Ctrl+Z]"
 msgstr ""
 
-#: src/mainwindow.c:1424
+#: src/mainwindow.c:1428
 msgid "Redo"
 msgstr ""
 
-#: src/mainwindow.c:1426
+#: src/mainwindow.c:1430
 msgid "Redo last undo operation [Ctrl+Shift+Z]"
 msgstr ""
 
-#: src/mainwindow.c:1433
+#: src/mainwindow.c:1437
 msgid "Cut"
 msgstr ""
 
-#: src/mainwindow.c:1435
+#: src/mainwindow.c:1439
 msgid "Remove and copy current selection [Ctrl+X]"
 msgstr ""
 
-#: src/mainwindow.c:1440
+#: src/mainwindow.c:1444
 msgid "Copy"
 msgstr ""
 
-#: src/mainwindow.c:1442
+#: src/mainwindow.c:1446
 msgid "Copy current selection [Ctrl+C]"
 msgstr ""
 
-#: src/mainwindow.c:1448
+#: src/mainwindow.c:1452
 msgid "Paste over"
 msgstr ""
 
-#: src/mainwindow.c:1452
+#: src/mainwindow.c:1456
 msgid "Paste mixed"
 msgstr ""
 
-#: src/mainwindow.c:1456
+#: src/mainwindow.c:1460
 msgid "Paste to new"
 msgstr ""
 
-#: src/mainwindow.c:1461
+#: src/mainwindow.c:1465
 msgid "Paste"
 msgstr ""
 
-#: src/mainwindow.c:1463
+#: src/mainwindow.c:1467
 msgid "Paste at cursor position [Ctrl+V]"
 msgstr ""
 
-#: src/mainwindow.c:1477
+#: src/mainwindow.c:1481
 msgid "Crop"
 msgstr ""
 
-#: src/mainwindow.c:1479
+#: src/mainwindow.c:1483
 msgid "Crop to selection"
 msgstr ""
 
-#: src/mainwindow.c:1484
+#: src/mainwindow.c:1488
 msgid "Delete"
 msgstr ""
 
-#: src/mainwindow.c:1486
+#: src/mainwindow.c:1490
 msgid "Delete selection [Del]"
 msgstr ""
 
-#: src/mainwindow.c:1494
+#: src/mainwindow.c:1498
 msgid "Play all"
 msgstr ""
 
-#: src/mainwindow.c:1498
+#: src/mainwindow.c:1502
 msgid "Play from cursor position"
 msgstr ""
 
-#: src/mainwindow.c:1503
+#: src/mainwindow.c:1507
 msgid "Play"
 msgstr ""
 
-#: src/mainwindow.c:1504
+#: src/mainwindow.c:1508
 msgid "Play selection"
 msgstr ""
 
-#: src/mainwindow.c:1511
+#: src/mainwindow.c:1515
 msgid "Stop"
 msgstr ""
 
-#: src/mainwindow.c:1512
+#: src/mainwindow.c:1516
 msgid "Stop playback"
 msgstr ""
 
-#: src/mainwindow.c:1526
+#: src/mainwindow.c:1530
 msgid "Fade in"
 msgstr ""
 
-#: src/mainwindow.c:1528
+#: src/mainwindow.c:1532
 msgid "Fade in selection"
 msgstr ""
 
-#: src/mainwindow.c:1540
+#: src/mainwindow.c:1544
 msgid "Fade out"
 msgstr ""
 
-#: src/mainwindow.c:1542
+#: src/mainwindow.c:1546
 msgid "Fade out selection"
 msgstr ""
 
-#: src/mainwindow.c:1550
+#: src/mainwindow.c:1554
 msgid "About"
 msgstr ""
 
-#: src/mainwindow.c:1551
+#: src/mainwindow.c:1555
 msgid "About Odio Edit"
 msgstr ""
 
@@ -362,4 +367,28 @@ msgstr ""
 
 #: src/message.c:55
 msgid "Cancel"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:6
+msgid "List of recently accessed files"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:7
+msgid "Stores the list of files last accessed by the application."
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:11
+msgid "Last file opened"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:12
+msgid "The last file opened by the application."
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:16
+msgid "Last file saved"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:17
+msgid "The last file saved by the application."
 msgstr ""

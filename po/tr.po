@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2022-06-29 02:54+0200\n"
+"POT-Creation-Date: 2023-10-24 08:54+0200\n"
 "PO-Revision-Date: 2022-06-30 05:16+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -28,17 +28,17 @@ msgid "Saving"
 msgstr "Kaydediliyor"
 
 #: src/chunk.c:303
-#, c-format
+#, python-format
 msgid "Failed to open '%s'!"
 msgstr "Açma işlemi başarısız '%s'!"
 
 #: src/chunk.c:349
-#, c-format
+#, python-format
 msgid "Failed to write to '%s'!"
 msgstr "Yazma işlemi başarısız'%s'!"
 
 #: src/chunk.c:385
-#, c-format
+#, python-format
 msgid ""
 "File %s may be destroyed since saving failed. Try to free some disk space "
 "and save again. If you exit now, the file's contents could be left in a bad "
@@ -49,17 +49,17 @@ msgstr ""
 "çıkarsanız dosyanın içeriği bozuk kalabilir."
 
 #: src/chunk.c:431
-#, c-format
+#, python-format
 msgid "File %s does not exist!"
 msgstr "%s adlı dosya bulunamadı!"
 
 #: src/chunk.c:440
-#, c-format
+#, python-format
 msgid "File %s is not a regular file!"
 msgstr "%s dosyası normal bir dosya değil!"
 
 #: src/chunk.c:466 src/chunk.c:537
-#, c-format
+#, python-format
 msgid "Failed to open '%s'"
 msgstr "'%s' açılamadı"
 
@@ -68,7 +68,7 @@ msgid "Loading"
 msgstr "Yükleniyor"
 
 #: src/chunk.c:486
-#, c-format
+#, python-format
 msgid "Failed to decode '%s'"
 msgstr "Çözme işlemi başarısız '%s'"
 
@@ -77,68 +77,67 @@ msgid "Fading"
 msgstr "Azaltılıyor"
 
 #: src/datasource.c:179
-#, c-format
+#, python-format
 msgid "Could not open %s"
 msgstr "%s açılamaz"
 
 #: src/datasource.c:392
-#, c-format
+#, python-format
 msgid "Error reading %s: %s"
 msgstr "%s okuma hatası:%s"
 
 #: src/document.c:149
-#, c-format
+#, python-format
 msgid "Untitled %d"
 msgstr "İsimsiz %d"
 
 #: src/file.c:53
-#, c-format
+#, python-format
 msgid "Could not open %s: %s"
 msgstr "%s açılamaz: %s"
 
 #: src/file.c:57
-#, c-format
+#, python-format
 msgid "Unexpected error: %s %s"
 msgstr "Beklenmedik hata: %s.%s"
 
 #: src/file.c:84
-#, c-format
+#, python-format
 msgid "Error closing %s: %s"
 msgstr "%s kapatma hatası:%s"
 
 #: src/file.c:105
-#, c-format
+#, python-format
 msgid "Could not seek in %s: %s"
 msgstr "%s aranamaz:%s"
 
 #: src/file.c:136 src/file.c:190
-#, c-format
+#, python-format
 msgid "Could not read from %s: %s"
 msgstr "%s içerisinden okunamaz: %s"
 
-#. Translators: %s will be the name of the file
 #: src/file.c:154
-#, c-format
+#, python-format
 msgid "Unexpected end of file reading %s"
 msgstr "Beklenmedik dosya sonu %s"
 
 #: src/file.c:176
-#, c-format
+#, python-format
 msgid "Could not write data to %s"
 msgstr "Veri %s üzerine yazılamaz"
 
 #: src/file.c:210
-#, c-format
+#, python-format
 msgid "Could not get file position in %s: %s"
 msgstr "%s dosyası konumuna ulaşılamadı:%s"
 
 #: src/file.c:336
-#, c-format
+#, python-format
 msgid "Could not delete '%s': %s"
 msgstr "'%s' silinemez:%s"
 
 #: src/file.c:363
-#, c-format
+#, python-format
 msgid "Error creating link to '%s': %s"
 msgstr "'%s'e link oluşturma hatası: %s"
 
@@ -163,7 +162,7 @@ msgid "Processing data"
 msgstr "Veri işleniyor"
 
 #: src/mainwindow.c:172
-#, c-format
+#, python-format
 msgid "%s... Press ESC to cancel."
 msgstr "%s... İptal etmek için ESC tuşuna basın."
 
@@ -179,15 +178,15 @@ msgstr "Kapat"
 msgid "Click here for recent files"
 msgstr "Son kullanılan dosyalar için buraya tıklayın"
 
-#: src/mainwindow.c:426 src/mainwindow.c:1575
+#: src/mainwindow.c:426 src/mainwindow.c:1579
 msgid "Cursor"
 msgstr "İmleç"
 
-#: src/mainwindow.c:434 src/mainwindow.c:1577
+#: src/mainwindow.c:434 src/mainwindow.c:1581
 msgid "View"
 msgstr "Görüntüle"
 
-#: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1579
+#: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1583
 msgid "Selection"
 msgstr "Seçim"
 
@@ -196,7 +195,7 @@ msgid "Save file"
 msgstr "Dosyayı kaydet"
 
 #: src/mainwindow.c:607
-#, c-format
+#, python-format
 msgid "Save changes to %s?"
 msgstr "Değişiklikleri %s'a kaydet?"
 
@@ -204,7 +203,7 @@ msgstr "Değişiklikleri %s'a kaydet?"
 msgid "Load file"
 msgstr "Dosya yükle"
 
-#: src/mainwindow.c:890 src/mainwindow.c:1400
+#: src/mainwindow.c:890 src/mainwindow.c:1404
 msgid "Save selection as..."
 msgstr "Seçimi şu şekilde kaydet..."
 
@@ -213,150 +212,156 @@ msgid "You cannot mix different sound formats"
 msgstr "Farklı ses biçimlerini karıştıramazsınız"
 
 #: src/mainwindow.c:1179
+#, python-format
+msgid "Robert Tari 2019-20%s"
+msgstr ""
+
+#: src/mainwindow.c:1183 data/odio-edit.desktop.in:44
+#: data/odio-edit.desktop.in:49
 msgid "A lightweight audio wave editor"
 msgstr "Hafif ses editörü"
 
-#: src/mainwindow.c:1181
+#: src/mainwindow.c:1185
 msgid "translator-credits"
 msgstr "Çevirmen: Burak Hüseyin Ekseli"
 
-#: src/mainwindow.c:1389
+#: src/mainwindow.c:1393
 msgid "Open"
 msgstr "Aç"
 
-#: src/mainwindow.c:1391
+#: src/mainwindow.c:1395
 msgid "Load new file [Ctrl+O]"
 msgstr "Yeni dosya yükle [Ctrl+O]"
 
-#: src/mainwindow.c:1396
+#: src/mainwindow.c:1400
 msgid "Save as..."
 msgstr "Farklı kaydet..."
 
-#: src/mainwindow.c:1406
+#: src/mainwindow.c:1410
 msgid "Save"
 msgstr "Kaydet"
 
-#: src/mainwindow.c:1408
+#: src/mainwindow.c:1412
 msgid "Save current file [Ctrl+S]"
 msgstr "Mevcut dosyayı kaydet [Ctrl+s]"
 
-#: src/mainwindow.c:1409 src/mainwindow.c:1464 src/mainwindow.c:1505
+#: src/mainwindow.c:1413 src/mainwindow.c:1468 src/mainwindow.c:1509
 msgid "Click here for more options"
 msgstr "Daha fazla seçenek için tıklayın"
 
-#: src/mainwindow.c:1417
+#: src/mainwindow.c:1421
 msgid "Undo"
 msgstr "Geri al"
 
-#: src/mainwindow.c:1419
+#: src/mainwindow.c:1423
 msgid "Undo last change [Ctrl+Z]"
 msgstr "Son değişikliği geri al [Ctrl+Z]"
 
-#: src/mainwindow.c:1424
+#: src/mainwindow.c:1428
 msgid "Redo"
 msgstr "Yinele"
 
-#: src/mainwindow.c:1426
+#: src/mainwindow.c:1430
 msgid "Redo last undo operation [Ctrl+Shift+Z]"
 msgstr "Son geri alma işlemini geri al [Ctrl+Shift+Z]"
 
-#: src/mainwindow.c:1433
+#: src/mainwindow.c:1437
 msgid "Cut"
 msgstr "Kes"
 
-#: src/mainwindow.c:1435
+#: src/mainwindow.c:1439
 msgid "Remove and copy current selection [Ctrl+X]"
 msgstr "Seçimi kopyala ve sil [Ctrl+X]"
 
-#: src/mainwindow.c:1440
+#: src/mainwindow.c:1444
 msgid "Copy"
 msgstr "Kopyala"
 
-#: src/mainwindow.c:1442
+#: src/mainwindow.c:1446
 msgid "Copy current selection [Ctrl+C]"
 msgstr "Seçimi kopyala [Ctrl+C]"
 
-#: src/mainwindow.c:1448
+#: src/mainwindow.c:1452
 msgid "Paste over"
 msgstr "Üzerine yapıştır"
 
-#: src/mainwindow.c:1452
+#: src/mainwindow.c:1456
 msgid "Paste mixed"
 msgstr "Birleştirileni yapıştır"
 
-#: src/mainwindow.c:1456
+#: src/mainwindow.c:1460
 msgid "Paste to new"
 msgstr "Yeniye yapıştır"
 
-#: src/mainwindow.c:1461
+#: src/mainwindow.c:1465
 msgid "Paste"
 msgstr "Yapıştır"
 
-#: src/mainwindow.c:1463
+#: src/mainwindow.c:1467
 msgid "Paste at cursor position [Ctrl+V]"
 msgstr "İmleç konumuna yapıştır [Ctrl+V}"
 
-#: src/mainwindow.c:1477
+#: src/mainwindow.c:1481
 msgid "Crop"
 msgstr "Kırp"
 
-#: src/mainwindow.c:1479
+#: src/mainwindow.c:1483
 msgid "Crop to selection"
 msgstr "Seçimi kırp"
 
-#: src/mainwindow.c:1484
+#: src/mainwindow.c:1488
 msgid "Delete"
 msgstr "Sil"
 
-#: src/mainwindow.c:1486
+#: src/mainwindow.c:1490
 msgid "Delete selection [Del]"
 msgstr "Seçimi sil [Del]"
 
-#: src/mainwindow.c:1494
+#: src/mainwindow.c:1498
 msgid "Play all"
 msgstr "Hepsini oynat"
 
-#: src/mainwindow.c:1498
+#: src/mainwindow.c:1502
 msgid "Play from cursor position"
 msgstr "İmleç konumundan itibaren oynat"
 
-#: src/mainwindow.c:1503
+#: src/mainwindow.c:1507
 msgid "Play"
 msgstr "Oynat"
 
-#: src/mainwindow.c:1504
+#: src/mainwindow.c:1508
 msgid "Play selection"
 msgstr "Seçimi oynat"
 
-#: src/mainwindow.c:1511
+#: src/mainwindow.c:1515
 msgid "Stop"
 msgstr "Durdur"
 
-#: src/mainwindow.c:1512
+#: src/mainwindow.c:1516
 msgid "Stop playback"
 msgstr "Kayıttan çalmayı durdur"
 
-#: src/mainwindow.c:1526
+#: src/mainwindow.c:1530
 msgid "Fade in"
 msgstr "Arttır"
 
-#: src/mainwindow.c:1528
+#: src/mainwindow.c:1532
 msgid "Fade in selection"
 msgstr "Seçimi arttır"
 
-#: src/mainwindow.c:1540
+#: src/mainwindow.c:1544
 msgid "Fade out"
 msgstr "Azalt"
 
-#: src/mainwindow.c:1542
+#: src/mainwindow.c:1546
 msgid "Fade out selection"
 msgstr "Seçimi azalt"
 
-#: src/mainwindow.c:1550
+#: src/mainwindow.c:1554
 msgid "About"
 msgstr "Hakkında"
 
-#: src/mainwindow.c:1551
+#: src/mainwindow.c:1555
 msgid "About Odio Edit"
 msgstr "Odio Edit hakkında"
 
@@ -371,6 +376,30 @@ msgstr "Hayır"
 #: src/message.c:55
 msgid "Cancel"
 msgstr "İptal"
+
+#: data/in.tari.odio-edit.gschema.xml:6
+msgid "List of recently accessed files"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:7
+msgid "Stores the list of files last accessed by the application."
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:11
+msgid "Last file opened"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:12
+msgid "The last file opened by the application."
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:16
+msgid "Last file saved"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:17
+msgid "The last file saved by the application."
+msgstr ""
 
 #~ msgid "Delete selection [Ctrl+D]"
 #~ msgstr "Seçimi sil [Ctrl+D]"
