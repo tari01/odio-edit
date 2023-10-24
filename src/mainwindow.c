@@ -560,7 +560,7 @@ static gboolean mainwindow_Save(MainWindow *pMainWindow, gchar *sFilePath)
 
     if (bGetSaveFileName)
     {
-        sFilePath = mainwindow_GetSaveFileName(pMainWindow->pDocument->sFilePath, _("Save file"));
+        sFilePath = mainwindow_GetSaveFileName(NULL, _("Save file"));
 
         if (sFilePath == NULL)
         {
