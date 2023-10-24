@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2023, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2007 2009, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -456,7 +456,7 @@ void viewcache_DrawPart(ViewCache *pViewCache, cairo_t *pCairo, gint nWidth, gin
         return;
     }
 
-    guint nChannels = (pViewCache->pChunk) ? pViewCache->pChunk->pAudioInfo->channels : 0;
+    guint nChannels = (pViewCache->pChunk) ? pViewCache->pChunk->pAudioInfo->channels : 1;
     gfloat nChannelHeight = nHeight / (2 * nChannels) - 5;
     Segment *pSegment1 = g_malloc(((nChannels + 1) / 2) * nWidth * sizeof(Segment));
     Segment *pSegment2;
