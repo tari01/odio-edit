@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2023, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2006 2007 2008 2009 2011 2012, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -286,7 +286,7 @@ gboolean chunk_Save(Chunk *pChunk, gchar *sFilePath, struct _MainWindow *pMainWi
 {
     if (g_file_test(sFilePath, G_FILE_TEST_EXISTS))
     {
-        if (datasource_BackupUnlink(sFilePath))
+        if (file_Unlink (sFilePath))
         {
             return TRUE;
         }
@@ -447,90 +447,81 @@ Chunk *chunk_Load(gchar *sFilePath, struct _MainWindow *pMainWindow)
     guint nType;
     gchar *sTempFile = NULL;
     GstReader *pGstReaderData;
+    gchar *sFilePathLower = g_utf8_strdown(sFilePath, -1);
+    ConvertParams cConvertParams;
+    cConvertParams.sFilePath = NULL;
+    cConvertParams.pMainWindow = pMainWindow;
+    cConvertParams.fProgress = 0.0;
+    cConvertParams.bCancel = FALSE;
 
-    if (!checkExtension(g_pFileFilterWav, sFilePath))
+    if (g_str_has_suffix(sFilePathLower, ".dff") || g_str_has_suffix(sFilePathLower, ".dsf"))
     {
-        gchar *sFilePathLower = g_utf8_strdown(sFilePath, -1);
-        ConvertParams cConvertParams;
-        cConvertParams.sFilePath = NULL;
-        cConvertParams.pMainWindow = pMainWindow;
-        cConvertParams.fProgress = 0.0;
-        cConvertParams.bCancel = FALSE;
+        bool bError = odiolibsacd_Open(sFilePath, AREA_AUTO);
 
-        if (g_str_has_suffix(sFilePathLower, ".dff") || g_str_has_suffix(sFilePathLower, ".dsf"))
+        if (bError)
         {
-            bool bError = odiolibsacd_Open(sFilePath, AREA_AUTO);
+            gchar *sMessage = g_strdup_printf(_("Failed to open '%s'"), sFilePath);
+            message_Error(sMessage);
+            g_free(sMessage);
 
-            if (bError)
-            {
-                gchar *sMessage = g_strdup_printf(_("Failed to open '%s'"), sFilePath);
-                message_Error(sMessage);
-                g_free(sMessage);
-
-                return NULL;
-            }
-
-            mainwindow_BeginProgress(pMainWindow, _("Loading"));
-            GThread *pThread = g_thread_new(NULL, (GThreadFunc)chunk_SacdConvert, &cConvertParams);
-
-            while (cConvertParams.fProgress < 1 && !cConvertParams.bCancel)
-            {
-                g_usleep(40000);
-                cConvertParams.bCancel = mainwindow_Progress(pMainWindow, cConvertParams.fProgress);
-            }
-
-            bError = g_thread_join(pThread);
-
-            if (bError)
-            {
-                gchar *sMessage = g_strdup_printf(_("Failed to decode '%s'"), sFilePath);
-                message_Error(sMessage);
-                g_free(sMessage);
-
-                return NULL;
-            }
-
-            if (!cConvertParams.bCancel)
-            {
-                sTempFile = cConvertParams.sFilePath;
-            }
-
-            odiolibsacd_Close();
-            mainwindow_EndProgress(pMainWindow);
-        }
-        else
-        {
-            sTempFile = tempfile_GetFileName();
-            GstConverter *pGstConverter = gstconverter_New(sFilePath, chunk_OnGstConvert, &cConvertParams);
-            mainwindow_BeginProgress(pMainWindow, _("Loading"));
-
-            if (gstconverter_ConvertFile(pGstConverter, sTempFile))
-            {
-                file_Unlink(sTempFile);
-                g_free(sTempFile);
-                cConvertParams.bCancel = TRUE;
-            }
-
-            mainwindow_EndProgress(pMainWindow);
-            gstconverter_Free(pGstConverter);
-            pGstConverter = NULL;
-        }
-
-        g_free(sFilePathLower);
-
-        if (cConvertParams.bCancel)
-        {
             return NULL;
         }
 
-        nType = DATASOURCE_GSTTEMP;
-        pGstReaderData = gstreader_New(sTempFile);
+        mainwindow_BeginProgress(pMainWindow, _("Loading"));
+        GThread *pThread = g_thread_new(NULL, (GThreadFunc)chunk_SacdConvert, &cConvertParams);
+
+        while (cConvertParams.fProgress < 1 && !cConvertParams.bCancel)
+        {
+            g_usleep(40000);
+            cConvertParams.bCancel = mainwindow_Progress(pMainWindow, cConvertParams.fProgress);
+        }
+
+        bError = g_thread_join(pThread);
+
+        if (bError)
+        {
+            gchar *sMessage = g_strdup_printf(_("Failed to decode '%s'"), sFilePath);
+            message_Error(sMessage);
+            g_free(sMessage);
+
+            return NULL;
+        }
+
+        if (!cConvertParams.bCancel)
+        {
+            sTempFile = cConvertParams.sFilePath;
+        }
+
+        odiolibsacd_Close();
+        mainwindow_EndProgress(pMainWindow);
     }
     else
     {
-        nType = DATASOURCE_GSTFILE;
-        pGstReaderData = gstreader_New(sFilePath);
+        sTempFile = tempfile_GetFileName();
+        GstConverter *pGstConverter = gstconverter_New(sFilePath, chunk_OnGstConvert, &cConvertParams);
+        mainwindow_BeginProgress(pMainWindow, _("Loading"));
+
+        if (gstconverter_ConvertFile(pGstConverter, sTempFile))
+        {
+            file_Unlink(sTempFile);
+            g_free(sTempFile);
+            cConvertParams.bCancel = TRUE;
+        }
+
+        mainwindow_EndProgress(pMainWindow);
+        gstconverter_Free(pGstConverter);
+        pGstConverter = NULL;
     }
+
+    g_free(sFilePathLower);
+
+    if (cConvertParams.bCancel)
+    {
+        return NULL;
+    }
+
+    nType = DATASOURCE_GSTTEMP;
+    pGstReaderData = gstreader_New(sTempFile);
 
     if (!pGstReaderData)
     {

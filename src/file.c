@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2023, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2006 2011, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -213,44 +213,6 @@ gint64 file_Tell(File *pFile)
     }
     
     return nResult;
-}
-
-gboolean file_IsSame(gchar *sFileName1, gchar *sFileName2)
-{
-    if (!strcmp(sFileName1, sFileName2))
-    {
-        return TRUE;
-    }
-    
-    struct stat cStat1;
-
-    if (stat(sFileName1, &cStat1))
-    {
-        if (errno == ENOENT)
-        {
-            return FALSE;
-        }
-        else
-        {
-            return TRUE;
-        }
-    }
-    
-    struct stat cStat2;
-    
-    if (stat(sFileName2, &cStat2))
-    {
-        if (errno == ENOENT)
-        {
-            return FALSE;
-        }
-        else
-        {
-            return TRUE;
-        }
-    }
-    
-    return (cStat1.st_dev == cStat2.st_dev && cStat1.st_ino == cStat2.st_ino);
 }
 
 gboolean file_Copy(gchar *sFrom, gchar *sTo)

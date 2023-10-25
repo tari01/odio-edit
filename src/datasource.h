@@ -1,5 +1,5 @@
 /*
-    Copyright (C) 2019-2020, Robert Tari <robert@tari.in>
+    Copyright (C) 2019-2023, Robert Tari <robert@tari.in>
     Copyright (C) 2002 2003 2004 2005 2006 2009, Magnus Hjorth
 
     This file is part of Odio Edit.
@@ -31,8 +31,7 @@ G_DECLARE_FINAL_TYPE(DataSource, datasource, OE, DATASOURCE, GObject)
 #define DATASOURCE_REAL 1
 #define DATASOURCE_TEMPFILE 2
 #define DATASOURCE_SILENCE 3
-#define DATASOURCE_GSTFILE 4
-#define DATASOURCE_GSTTEMP 5
+#define DATASOURCE_GSTTEMP 4
 
 struct _DataSource
 {
@@ -76,7 +75,6 @@ DataSource *datasource_new();
 gboolean datasource_Open(DataSource *pDataSource, gboolean bPlayer);
 void datasource_Close(DataSource *pDataSource, gboolean bPlayer);
 guint datasource_Read(DataSource *pDataSource, gint64 nStartFrame, guint nFrames, gchar *lBuffer, gboolean bFloat, gboolean bPlayer);
-gboolean datasource_BackupUnlink(gchar *sFilePath);
 guint datasource_Count();
 
 #endif

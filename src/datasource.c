@@ -103,28 +103,6 @@ static void datasource_OnDispose(GObject *pObject)
                 pDataSource->pData.pGstReader.sTempFilePath = NULL;
             }
         }
-        case DATASOURCE_GSTFILE:
-        {
-            if (pDataSource->pData.pGstReader.sFilePath)
-            {
-                g_free(pDataSource->pData.pGstReader.sFilePath);
-                pDataSource->pData.pGstReader.sFilePath = NULL;
-            }
- 
-            if (pDataSource->pData.pGstReader.pHandleData != NULL)
-            {
-                gstreader_Free(pDataSource->pData.pGstReader.pHandleData);
-                pDataSource->pData.pGstReader.pHandleData = NULL;
-            }
-            
-            if (pDataSource->pData.pGstReader.pHandlePlayer != NULL)
-            {
-                gstreader_Free(pDataSource->pData.pGstReader.pHandlePlayer);
-                pDataSource->pData.pGstReader.pHandlePlayer = NULL;
-            }
-
-            break;
-        }
     }
 
     gst_audio_info_free(pDataSource->pAudioInfo);
@@ -158,7 +136,6 @@ gboolean datasource_Open(DataSource *pDataSource, gboolean bPlayer)
 
                 break;
             }
-            case DATASOURCE_GSTFILE:
             case DATASOURCE_GSTTEMP:
             {
                 gchar *sFilePath;
@@ -242,7 +219,6 @@ void datasource_Close(DataSource *pDataSource, gboolean bPlayer)
             
             break;
         }
-        case DATASOURCE_GSTFILE:
         case DATASOURCE_GSTTEMP:
         {
             if (bPlayer)
@@ -350,7 +326,6 @@ guint datasource_Read(DataSource *pDataSource, gint64 nStartFrame, guint nFrames
             
             return nFrames;
         }
-        case DATASOURCE_GSTFILE:
         case DATASOURCE_GSTTEMP:
         {
             guint nFramesRead = 0;
@@ -405,72 +380,6 @@ guint datasource_Read(DataSource *pDataSource, gint64 nStartFrame, guint nFrames
 
         return 0;
     }
-}
-
-static gboolean datasource_UsesFile(DataSource *pDataSource, gchar *sFilePath)
-{
-    return (pDataSource->nType == DATASOURCE_GSTFILE && file_IsSame(pDataSource->pData.pGstReader.sFilePath, sFilePath));
-}
-
-gboolean datasource_BackupUnlink(gchar *sFilePath)
-{
-    GList *lDataSources = NULL;
-
-    for (GList *l = m_lDataSources; l != NULL; l = l->next)
-    {
-        DataSource *pDataSource = (DataSource *)l->data;
-
-        if (datasource_UsesFile(pDataSource, sFilePath))
-        {
-            lDataSources = g_list_append(lDataSources, pDataSource);
-        }
-    }
-
-    DataSource *pDataSourceBackup = NULL;
-    
-    for (GList *l = lDataSources; l != NULL; l = l->next)
-    {
-        DataSource *pDataSource = (DataSource *)l->data;
-        gchar *sTmpFilePath;
-        gchar *sLastFilePath = sFilePath;
-
-        if (!datasource_UsesFile(pDataSource, sFilePath))
-        {
-            continue;
-        }
-
-        if (pDataSourceBackup == NULL)
-        {
-            sTmpFilePath = tempfile_GetFileName();
-            gint nRetVal = file_Rename(sLastFilePath, sTmpFilePath);
-
-            if (nRetVal)
-            {
-                g_free(sTmpFilePath);
-
-                return TRUE;
-            }
-        }
-        else
-        {
-            sTmpFilePath = tempfile_GetFileName();
-
-            if (file_Copy(sLastFilePath, sTmpFilePath))
-            {
-                g_free(sTmpFilePath);
-
-                return TRUE;
-            }
-        }
-
-        g_free(pDataSource->pData.pGstReader.sFilePath);
-        pDataSource->pData.pGstReader.sFilePath = sTmpFilePath;
-        pDataSource->nType = DATASOURCE_GSTTEMP;
-        pDataSourceBackup = pDataSource;
-    }
-
-    g_list_free(lDataSources);
-    return file_Unlink(sFilePath);
 }
 
 /*DataSource *datasource_NewSilent(GstAudioInfo *pAudioInfo, gint64 nFrames)
