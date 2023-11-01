@@ -1,11 +1,22 @@
+# 23.11.1
+
+ - Translated using Weblate (Spanish) (fd3074f)
+ - Drop DATASOURCE_GSTFILE and use temp file for WAV also (d8e7fef)
+ - src/viewcache.c: Fall back to one channel if AudioInfo returns zero (3683adc)
+ - src/mainwindow.c: Use NULL instead of freed variable (a5d77c5)
+ - Fix unused variables (ca54304)
+ - Do not pass arguments to player_Stop (4d2c085)
+ - Build using CMake (96fd92a)
+ - Translated using Weblate (Polish) (d27445b)
+
 # 23.9.1
 
  - Translated using Weblate (German) (0bf2d65)
- 
+
 # 23.8.1
 
  - src/main.c: Add colour scheme handler (884263b)
- 
+
 # 23.1.31
 
  - src/mainwindow.c: Read copyright year from APPVERSION (05e25f2)

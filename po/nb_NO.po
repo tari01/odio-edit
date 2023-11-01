@@ -218,7 +218,7 @@ msgid "Robert Tari 2019-20%s"
 msgstr ""
 
 #: src/mainwindow.c:1183 data/odio-edit.desktop.in:44
-#: data/odio-edit.desktop.in:49
+#: data/odio-edit.desktop.in:49 data/odio-edit.desktop.in:54
 msgid "A lightweight audio wave editor"
 msgstr "En lettvektig lydbølgeredigerer"
 
