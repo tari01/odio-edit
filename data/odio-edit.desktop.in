@@ -62,8 +62,4 @@ Icon=odio-edit
 StartupNotify=true
 Terminal=false
 Type=Application
-
-
-
-
-
+MimeType=audio/mp4;audio/flac;audio/ogg;audio/mpeg;audio/wav;video/webm;audio/x-monkeys-audio;video/x-matroska;audio/x-wavpack;audio/x-dsf;audio/x-dff;
