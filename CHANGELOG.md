@@ -1,3 +1,8 @@
+# 23.12.1
+
+ - data/odio-edit.desktop.in: Drop duplicate translations (82a2c71)
+ - data/odio-edit.desktop.in: Add mime types (49f309c)
+ 
 # 23.11.1
 
  - Translated using Weblate (Spanish) (fd3074f)
