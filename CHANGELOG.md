@@ -1,3 +1,7 @@
+# 24.1.1
+
+ - Translated using Weblate (Turkish) (48e5af5)
+
 # 23.12.1
 
  - data/odio-edit.desktop.in: Drop duplicate translations (82a2c71)
