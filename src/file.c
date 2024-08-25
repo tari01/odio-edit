@@ -32,7 +32,7 @@
 File *file_Open(gchar *sFilePath, gint nMode, gboolean bReportError)
 {
     gint nFlag;
-    
+
     if (nMode == FILE_READ)
     {
         nFlag = O_RDONLY;
@@ -41,13 +41,13 @@ File *file_Open(gchar *sFilePath, gint nMode, gboolean bReportError)
     {
         nFlag = O_WRONLY | O_CREAT | O_TRUNC;
     }
-    
+
     gint nFile = open(sFilePath, nFlag, 0666);
 
     if (nFile == -1)
     {
         gchar *sMessage = NULL;
-        
+
         if (bReportError)
         {
             sMessage = g_strdup_printf(_("Could not open %s: %s"), sFilePath, strerror(errno));
@@ -56,22 +56,22 @@ File *file_Open(gchar *sFilePath, gint nMode, gboolean bReportError)
         {
             sMessage = g_strdup_printf(_("Unexpected error: %s %s"), sFilePath, strerror(errno));
         }
-        
+
         message_Error(sMessage);
-        
+
         if (sMessage != NULL)
         {
             g_free(sMessage);
         }
-        
+
         return NULL;
     }
-            
+
     File *pFile;
     pFile = g_malloc(sizeof(*pFile));
     pFile->nFile = nFile;
     pFile->sFilePath = g_strdup(sFilePath);
-    
+
     return pFile;
 }
 
@@ -86,15 +86,15 @@ gboolean file_Close(File *pFile, gboolean bUnlink)
         g_free(sMessage);
         bError = TRUE;
     }
-    
+
     if (bUnlink && file_Unlink(pFile->sFilePath))
     {
         bError = TRUE;
     }
-    
+
     g_free(pFile->sFilePath);
     g_free(pFile);
-    
+
     return bError;
 }
 
@@ -105,10 +105,10 @@ gboolean file_Seek(File *pFile, gint64 nByte, gint nWhence)
         gchar *sMessage = g_strdup_printf(_("Could not seek in %s: %s"), pFile->sFilePath, strerror(errno));
         message_Error(sMessage);
         g_free(sMessage);
-        
+
         return TRUE;
     }
-    
+
     return FALSE;
 }
 
@@ -132,20 +132,20 @@ gboolean file_Read(gchar *lBytes, gint64 nBytes, File *pFile)
             {
                 continue;
             }
-            
+
             sMessage = g_strdup_printf(_("Could not read from %s: %s"), pFile->sFilePath, strerror(errno));
             message_Error(sMessage);
             g_free(sMessage);
-            
+
             nPos = -1;
-            
+
             break;
         }
-        
+
         nPos += nRead;
         nBytes -= nRead;
     }
-    
+
     if (nPos < nBytes)
     {
         if (nPos >= 0)
@@ -155,17 +155,17 @@ gboolean file_Read(gchar *lBytes, gint64 nBytes, File *pFile)
             message_Error(sMessage);
             g_free(sMessage);
         }
-        
+
         return TRUE;
     }
-    
+
     return FALSE;
 }
 
 gboolean file_Write(gchar *lBytes, gint64 nBytes, File *pFile)
 {
     gint64 nPos = 0;
-    
+
     while (nBytes > 0)
     {
         gint64 nWritten = write(pFile->nFile, lBytes + nPos, nBytes);
@@ -176,10 +176,10 @@ gboolean file_Write(gchar *lBytes, gint64 nBytes, File *pFile)
             sMessage = g_strdup_printf(_("Could not write data to %s"), pFile->sFilePath);
             message_Error(sMessage);
             g_free(sMessage);
-            
+
             return TRUE;
         }
-        
+
         if (nWritten < 0)
         {
             if (errno == EINTR)
@@ -187,17 +187,17 @@ gboolean file_Write(gchar *lBytes, gint64 nBytes, File *pFile)
                 continue;
             }
 
-            sMessage = g_strdup_printf(_("Could not read from %s: %s"), pFile->sFilePath, strerror(errno));
+            sMessage = g_strdup_printf(_("Could not read from file %s, here's the error: %s"), pFile->sFilePath, strerror(errno));
             message_Error(sMessage);
             g_free(sMessage);
-            
+
             return TRUE;
         }
-        
+
         nPos += nWritten;
         nBytes -= nWritten;
     }
-    
+
     return FALSE;
 }
 
@@ -211,7 +211,7 @@ gint64 file_Tell(File *pFile)
         message_Error(sMessage);
         g_free(sMessage);
     }
-    
+
     return nResult;
 }
 
@@ -227,10 +227,10 @@ gboolean file_Copy(gchar *sFrom, gchar *sTo)
     if (file_Seek(pFile, 0, SEEK_END))
     {
         file_Close(pFile, FALSE);
-        
+
         return TRUE;
     }
-    
+
     gint64 nSize = file_Tell(pFile);
     file_Close(pFile, FALSE);
 
@@ -238,34 +238,34 @@ gboolean file_Copy(gchar *sFrom, gchar *sTo)
     {
         return TRUE;
     }
-    
+
     File *pFileFrom = file_Open(sFrom, FILE_READ, TRUE);
 
     if (!pFileFrom)
     {
         return TRUE;
     }
-    
+
     File *pFileTo = file_Open(sTo, FILE_WRITE, TRUE);
 
     if (!pFileTo)
     {
         file_Close(pFileFrom, FALSE);
-        
+
         return TRUE;
     }
-    
+
     gboolean bError = FALSE;
     gchar lBuf[BUFFER_SIZE];
     gint64 nCount = nSize / sizeof(lBuf);
     gint64 nRest = nSize % sizeof(lBuf);
-    
+
     for (; nCount > 0; nCount--)
     {
         if (file_Read(lBuf, sizeof(lBuf), pFileFrom) || file_Write(lBuf, sizeof(lBuf), pFileTo))
         {
             bError = TRUE;
-            
+
             break;
         }
     }
@@ -274,7 +274,7 @@ gboolean file_Copy(gchar *sFrom, gchar *sTo)
     {
         bError = (file_Read(lBuf, nRest, pFileFrom) || file_Write(lBuf, nRest, pFileTo));
     }
-    
+
     file_Close(pFileFrom, FALSE);
 
     if (bError)
@@ -285,7 +285,7 @@ gboolean file_Copy(gchar *sFrom, gchar *sTo)
     {
         file_Close(pFileTo, FALSE);
     }
-    
+
     return bError;
 }
 
@@ -298,10 +298,10 @@ gboolean file_Unlink(gchar *sFilePath)
         sMessage = g_strdup_printf(_("Could not delete '%s': %s"), sFilePath, strerror(errno));
         message_Error(sMessage);
         g_free(sMessage);
-        
+
         return TRUE;
     }
-    
+
     return FALSE;
 }
 
@@ -325,7 +325,7 @@ gint file_Rename(gchar *sOldName, gchar *sNewName)
         sMessage = g_strdup_printf(_("Error creating link to '%s': %s"), sOldName, strerror(errno));
         message_Error(sMessage);
         g_free(sMessage);
-        
+
         return 1;
     }
 }
@@ -351,7 +351,7 @@ gchar *file_Canonicalize(const gchar *filename, const gchar *relative_to)
         {
             cwd = cwd_allocated = g_get_current_dir ();
         }
-        
+
         canon = g_build_filename (cwd, filename, NULL);
         g_free (cwd_allocated);
     }
@@ -365,17 +365,17 @@ gchar *file_Canonicalize(const gchar *filename, const gchar *relative_to)
     if (start == NULL)
     {
         g_free (canon);
-        
+
         return g_build_filename (G_DIR_SEPARATOR_S, filename, NULL);
     }
 
     i = 0;
-    
+
     for (p = start - 1; (p >= canon) && G_IS_DIR_SEPARATOR (*p); p--)
     {
         i++;
     }
-    
+
     if (i > 2)
     {
         i -= 1;
@@ -384,14 +384,14 @@ gchar *file_Canonicalize(const gchar *filename, const gchar *relative_to)
     }
 
     p++;
-    
+
     while (p < start && G_IS_DIR_SEPARATOR (*p))
     {
         *p++ = G_DIR_SEPARATOR;
     }
-    
+
     p = start;
-    
+
     while (*p != 0)
     {
         if (p[0] == '.' && (p[1] == 0 || G_IS_DIR_SEPARATOR (p[1])))
@@ -402,22 +402,22 @@ gchar *file_Canonicalize(const gchar *filename, const gchar *relative_to)
         {
             q = p + 2;
             p = p - 2;
-            
+
             if (p < start)
             {
                 p = start;
             }
-            
+
             while (p > start && !G_IS_DIR_SEPARATOR (*p))
             {
                 p--;
             }
-            
+
             if (G_IS_DIR_SEPARATOR (*p))
             {
                 *p++ = G_DIR_SEPARATOR;
             }
-            
+
             memmove (p, q, strlen (q)+1);
         }
         else
@@ -426,7 +426,7 @@ gchar *file_Canonicalize(const gchar *filename, const gchar *relative_to)
             {
                 p++;
             }
-            
+
             if (*p != 0)
             {
                 *p++ = G_DIR_SEPARATOR;
@@ -434,12 +434,12 @@ gchar *file_Canonicalize(const gchar *filename, const gchar *relative_to)
         }
 
         q = p;
-        
+
         while (*q && G_IS_DIR_SEPARATOR (*q))
         {
             q++;
         }
-        
+
         if (p != q)
         {
             memmove (p, q, strlen (q) + 1);

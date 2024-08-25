@@ -61,7 +61,7 @@ static void viewcache_Clear(ViewCache *pViewCache)
     pViewCache->lValues = NULL;
     g_free(pViewCache->lOffsets);
     pViewCache->lOffsets = NULL;
-    
+
     if (pViewCache->lCalced != NULL)
     {
         g_free(pViewCache->lCalced);
@@ -70,7 +70,7 @@ static void viewcache_Clear(ViewCache *pViewCache)
 }
 
 void viewcache_Reset(ViewCache *pViewCache)
-{   
+{
     g_free(pViewCache->lCalced);
     pViewCache->lCalced = NULL;
 }
@@ -84,7 +84,7 @@ void viewcache_Free(ViewCache *pViewCache)
 }
 
 gboolean viewcache_Update(ViewCache *pCache, Chunk *pChunk, gint64 nStartFrame, gint64 nEndFrame, gint nWidth, gint *nUpdatedLeft, gint *nUpdatedRight)
-{  
+{
     if (pCache->bReading)
     {
         return FALSE;
@@ -136,7 +136,7 @@ gboolean viewcache_Update(ViewCache *pCache, Chunk *pChunk, gint64 nStartFrame, 
     {
         return FALSE;
     }
-    
+
     guint nChannels = pChunk ? pChunk->pAudioInfo->channels : 0;
 
     if (bRangeChanged)
@@ -160,7 +160,7 @@ gboolean viewcache_Update(ViewCache *pCache, Chunk *pChunk, gint64 nStartFrame, 
 
         if (bChunkChanged || nEndFrame <= pCache->nStart || nStartFrame >= pCache->nEnd)
         {
-            // No overlap - don't do anything
+            g_debug ("viewcache_Update: No overlap - don't do anything");
         }
         else if (nWidth == pCache->nWidth && nEndFrame - nStartFrame == pCache->nEnd - pCache->nStart)
         {
@@ -450,7 +450,7 @@ gboolean viewcache_Updated(ViewCache *pViewCache)
 }
 
 void viewcache_DrawPart(ViewCache *pViewCache, cairo_t *pCairo, gint nWidth, gint nHeight, gfloat fScale)
-{   
+{
     if (pViewCache->lCalced == NULL)
     {
         return;
@@ -469,18 +469,18 @@ void viewcache_DrawPart(ViewCache *pViewCache, cairo_t *pCairo, gint nWidth, gin
     {
         pSegment2 = NULL;
     }
-    
+
     gint nSegment1 = 0;
     gint nSegment2 = 0;
     gint nMin = 0;
     gint nMax = 0;
-    
+
     for (gint nChannel = 0; nChannel < nChannels; nChannel++)
     {
         Segment *pSegmentCurr;
         gint nSegmentCurr;
         gint *pSegment;
-        
+
         if ((nChannel & 1) == 0)
         {
             pSegmentCurr = pSegment1;
@@ -508,12 +508,12 @@ void viewcache_DrawPart(ViewCache *pViewCache, cairo_t *pCairo, gint nWidth, gin
                 {
                     pDirtyPos = pCalcedPos;
                 }
-                
+
                 if (pDirtyPos == NULL)
                 {
                     break;
                 }
-                
+
                 nWidthIter = pDirtyPos - pViewCache->lCalced;
                 bHasLast = FALSE;
             }
