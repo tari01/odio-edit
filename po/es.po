@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2024-09-01 21:41+0200\n"
-"PO-Revision-Date: 2023-10-25 12:02+0000\n"
+"PO-Revision-Date: 2024-09-02 20:09+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/odio-edit/master/"
 "es/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.1.1-dev\n"
+"X-Generator: Weblate 5.8-dev\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -30,12 +30,12 @@ msgstr "Guardando"
 #: src/chunk.c:303
 #, c-format
 msgid "Failed to open '%s'!"
-msgstr "No se pudo abrir '%s'!"
+msgstr "¡No se pudo abrir '%s'!"
 
 #: src/chunk.c:349
 #, c-format
 msgid "Failed to write to '%s'!"
-msgstr "No se pudo escribir en '%s'!"
+msgstr "¡No se pudo escribir en '%s'!"
 
 #: src/chunk.c:385
 #, c-format
@@ -51,7 +51,7 @@ msgstr ""
 #: src/chunk.c:431
 #, c-format
 msgid "File %s does not exist!"
-msgstr "El archivo %s no existe!"
+msgstr "¡El archivo %s no existe!"
 
 #: src/chunk.c:440
 #, c-format
@@ -129,7 +129,7 @@ msgstr "No se pudo escribir datos en %s"
 #: src/file.c:190
 #, c-format
 msgid "Could not read from file %s, here's the error: %s"
-msgstr ""
+msgstr "No se pudo leer del archivo %s, aquí está el error: %s"
 
 #: src/file.c:210
 #, c-format
