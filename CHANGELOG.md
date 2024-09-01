@@ -1,3 +1,7 @@
+# 24.9.1
+
+ - Refactor translation code (62d1816)
+
 # 24.1.1
 
  - Translated using Weblate (Turkish) (48e5af5)

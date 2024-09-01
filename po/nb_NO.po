@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2023-10-24 08:54+0200\n"
+"POT-Creation-Date: 2024-09-01 21:41+0200\n"
 "PO-Revision-Date: 2022-12-28 03:48+0000\n"
 "Last-Translator: Allan Nordhøy <epost@anotheragency.no>\n"
 "Language-Team: Norwegian Bokmål <https://hosted.weblate.org/projects/odio-"
@@ -28,17 +28,17 @@ msgid "Saving"
 msgstr "Lagring"
 
 #: src/chunk.c:303
-#, python-format
+#, c-format
 msgid "Failed to open '%s'!"
 msgstr "Klarte ikke å åpne «%s»."
 
 #: src/chunk.c:349
-#, python-format
+#, c-format
 msgid "Failed to write to '%s'!"
 msgstr "Klarte ikke å skrive til «%s»."
 
 #: src/chunk.c:385
-#, python-format
+#, c-format
 msgid ""
 "File %s may be destroyed since saving failed. Try to free some disk space "
 "and save again. If you exit now, the file's contents could be left in a bad "
@@ -49,95 +49,100 @@ msgstr ""
 "uoptimal tilstand."
 
 #: src/chunk.c:431
-#, python-format
+#, c-format
 msgid "File %s does not exist!"
 msgstr "Filen %s finnes ikke."
 
 #: src/chunk.c:440
-#, python-format
+#, c-format
 msgid "File %s is not a regular file!"
 msgstr "Filen %s er ikke en vanlig fil."
 
-#: src/chunk.c:466 src/chunk.c:537
-#, python-format
+#: src/chunk.c:463 src/chunk.c:528
+#, c-format
 msgid "Failed to open '%s'"
 msgstr "Klarte ikke å åpne «%s»."
 
-#: src/chunk.c:473 src/chunk.c:505
+#: src/chunk.c:470 src/chunk.c:502
 msgid "Loading"
 msgstr "Laster inn"
 
-#: src/chunk.c:486
-#, python-format
+#: src/chunk.c:483
+#, c-format
 msgid "Failed to decode '%s'"
 msgstr "Klarte ikke å dekode «%s»."
 
-#: src/chunk.c:850
+#: src/chunk.c:841
 msgid "Fading"
 msgstr "Uttoning"
 
-#: src/datasource.c:179
-#, python-format
+#: src/datasource.c:156
+#, c-format
 msgid "Could not open %s"
 msgstr "Kunne ikke åpne %s"
 
-#: src/datasource.c:392
-#, python-format
+#: src/datasource.c:367
+#, c-format
 msgid "Error reading %s: %s"
 msgstr "Klarte ikke å lese %s: %s"
 
 #: src/document.c:149
-#, python-format
+#, c-format
 msgid "Untitled %d"
 msgstr "Uten tittel %d"
 
 #: src/file.c:53
-#, python-format
+#, c-format
 msgid "Could not open %s: %s"
 msgstr "Kunne ikke åpne %s: %s"
 
 #: src/file.c:57
-#, python-format
+#, c-format
 msgid "Unexpected error: %s %s"
 msgstr "Uventet feil: %s %s"
 
 #: src/file.c:84
-#, python-format
+#, c-format
 msgid "Error closing %s: %s"
 msgstr "Klarte ikke å lukke %s: %s"
 
 #: src/file.c:105
-#, python-format
+#, c-format
 msgid "Could not seek in %s: %s"
 msgstr "Kunne ikke blafre i %s: %s"
 
-#: src/file.c:136 src/file.c:190
-#, python-format
+#: src/file.c:136
+#, c-format
 msgid "Could not read from %s: %s"
 msgstr "Kunne ikke lese fra %s: %s"
 
 #: src/file.c:154
-#, fuzzy, python-format
+#, fuzzy, c-format
 msgid "Unexpected end of file reading %s"
 msgstr "Uventet slutt på fillesing %s"
 
 #: src/file.c:176
-#, python-format
+#, c-format
 msgid "Could not write data to %s"
 msgstr "Kunne ikke skrive data til %s"
 
+#: src/file.c:190
+#, c-format
+msgid "Could not read from file %s, here's the error: %s"
+msgstr ""
+
 #: src/file.c:210
-#, python-format
+#, c-format
 msgid "Could not get file position in %s: %s"
 msgstr "Kunne ikke hente filposisjon i %s: %s"
 
-#: src/file.c:336
-#, python-format
+#: src/file.c:298
+#, c-format
 msgid "Could not delete '%s': %s"
 msgstr "Kunne ikke slette «%s»: %s"
 
-#: src/file.c:363
-#, python-format
+#: src/file.c:325
+#, c-format
 msgid "Error creating link to '%s': %s"
 msgstr "Klarte ikke å opprette lenke til «%s»: %s"
 
@@ -162,208 +167,206 @@ msgstr "_Avbryt"
 msgid "Processing data"
 msgstr "Behandler data"
 
-#: src/mainwindow.c:172
-#, fuzzy, python-format
+#: src/mainwindow.c:171
+#, fuzzy, c-format
 msgid "%s... Press ESC to cancel."
 msgstr "%s… Trykk Esc for å avbryte."
 
-#: src/mainwindow.c:191
+#: src/mainwindow.c:188
 msgid "Ready"
 msgstr "Klar"
 
-#: src/mainwindow.c:325
+#: src/mainwindow.c:322
 msgid "Close"
 msgstr "Lukk"
 
-#: src/mainwindow.c:328
+#: src/mainwindow.c:325
 msgid "Click here for recent files"
 msgstr "Klikk her for nylige filer"
 
-#: src/mainwindow.c:426 src/mainwindow.c:1579
+#: src/mainwindow.c:423 src/mainwindow.c:1576
 msgid "Cursor"
 msgstr "Peker"
 
-#: src/mainwindow.c:434 src/mainwindow.c:1581
+#: src/mainwindow.c:431 src/mainwindow.c:1578
 msgid "View"
 msgstr "Vis"
 
-#: src/mainwindow.c:444 src/mainwindow.c:449 src/mainwindow.c:1583
+#: src/mainwindow.c:441 src/mainwindow.c:446 src/mainwindow.c:1580
 msgid "Selection"
 msgstr "Utvalg"
 
-#: src/mainwindow.c:566
+#: src/mainwindow.c:563
 msgid "Save file"
 msgstr "Lagre fil"
 
-#: src/mainwindow.c:607
-#, python-format
+#: src/mainwindow.c:604
+#, c-format
 msgid "Save changes to %s?"
 msgstr "Lagre endringer i %s?"
 
-#: src/mainwindow.c:854 src/mainwindow.c:865
+#: src/mainwindow.c:851 src/mainwindow.c:862
 msgid "Load file"
 msgstr "Last inn fil"
 
-#: src/mainwindow.c:890 src/mainwindow.c:1404
+#: src/mainwindow.c:887 src/mainwindow.c:1401
 msgid "Save selection as..."
 msgstr "Lagre utvalg som…"
 
-#: src/mainwindow.c:1002 src/mainwindow.c:1023 src/mainwindow.c:1047
+#: src/mainwindow.c:999 src/mainwindow.c:1020 src/mainwindow.c:1044
 msgid "You cannot mix different sound formats"
 msgstr "Du kan ikke blande forskjellige lydformater"
 
-#: src/mainwindow.c:1179
-#, python-format
+#: src/mainwindow.c:1176
+#, c-format
 msgid "Robert Tari 2019-20%s"
 msgstr ""
 
-#: src/mainwindow.c:1183 data/odio-edit.desktop.in:44
-#: data/odio-edit.desktop.in:49 data/odio-edit.desktop.in:54
-#: data/odio-edit.desktop.in:9
+#: src/mainwindow.c:1180 data/odio-edit.desktop.intl:4
 msgid "A lightweight audio wave editor"
 msgstr "En lettvektig lydbølgeredigerer"
 
-#: src/mainwindow.c:1185
+#: src/mainwindow.c:1182
 msgid "translator-credits"
 msgstr "Oversatt av Allan Nordhøy"
 
-#: src/mainwindow.c:1393
+#: src/mainwindow.c:1390
 msgid "Open"
 msgstr "Åpne"
 
-#: src/mainwindow.c:1395
+#: src/mainwindow.c:1392
 msgid "Load new file [Ctrl+O]"
 msgstr "Last inn ny fil [Ctrl+O]"
 
-#: src/mainwindow.c:1400
+#: src/mainwindow.c:1397
 msgid "Save as..."
 msgstr "Lagre som…"
 
-#: src/mainwindow.c:1410
+#: src/mainwindow.c:1407
 msgid "Save"
 msgstr "Lagre"
 
-#: src/mainwindow.c:1412
+#: src/mainwindow.c:1409
 msgid "Save current file [Ctrl+S]"
 msgstr "Lagre nåværende fil [Ctrl+S]"
 
-#: src/mainwindow.c:1413 src/mainwindow.c:1468 src/mainwindow.c:1509
+#: src/mainwindow.c:1410 src/mainwindow.c:1465 src/mainwindow.c:1506
 msgid "Click here for more options"
 msgstr "Klikk her for flere valg"
 
-#: src/mainwindow.c:1421
+#: src/mainwindow.c:1418
 msgid "Undo"
 msgstr "Angre"
 
-#: src/mainwindow.c:1423
+#: src/mainwindow.c:1420
 msgid "Undo last change [Ctrl+Z]"
 msgstr "Angre siste endring [Ctrl+Z]"
 
-#: src/mainwindow.c:1428
+#: src/mainwindow.c:1425
 msgid "Redo"
 msgstr "Gjenta"
 
-#: src/mainwindow.c:1430
+#: src/mainwindow.c:1427
 msgid "Redo last undo operation [Ctrl+Shift+Z]"
 msgstr "Gjenta siste operasjon [Ctrl+Shift+Z]"
 
-#: src/mainwindow.c:1437
+#: src/mainwindow.c:1434
 msgid "Cut"
 msgstr "Klipp ut"
 
-#: src/mainwindow.c:1439
+#: src/mainwindow.c:1436
 msgid "Remove and copy current selection [Ctrl+X]"
 msgstr "Fjern og kopier nåværende utvalg [Ctrl+X]"
 
-#: src/mainwindow.c:1444
+#: src/mainwindow.c:1441
 msgid "Copy"
 msgstr "Kopier"
 
-#: src/mainwindow.c:1446
+#: src/mainwindow.c:1443
 msgid "Copy current selection [Ctrl+C]"
 msgstr "Kopier nåværende utvalg [Ctrl+C]"
 
-#: src/mainwindow.c:1452
+#: src/mainwindow.c:1449
 msgid "Paste over"
 msgstr "Lim inn over"
 
-#: src/mainwindow.c:1456
+#: src/mainwindow.c:1453
 msgid "Paste mixed"
 msgstr "Lim inn blandet"
 
-#: src/mainwindow.c:1460
+#: src/mainwindow.c:1457
 msgid "Paste to new"
 msgstr "Lim inn som ny"
 
-#: src/mainwindow.c:1465
+#: src/mainwindow.c:1462
 msgid "Paste"
 msgstr "Lim inn"
 
-#: src/mainwindow.c:1467
+#: src/mainwindow.c:1464
 msgid "Paste at cursor position [Ctrl+V]"
 msgstr "Lim inn ved pekerposisjon [Ctrl+V]"
 
-#: src/mainwindow.c:1481
+#: src/mainwindow.c:1478
 msgid "Crop"
 msgstr "Beskjær"
 
-#: src/mainwindow.c:1483
+#: src/mainwindow.c:1480
 msgid "Crop to selection"
 msgstr "Beskjær til utvalg"
 
-#: src/mainwindow.c:1488
+#: src/mainwindow.c:1485
 msgid "Delete"
 msgstr "Slett"
 
-#: src/mainwindow.c:1490
+#: src/mainwindow.c:1487
 msgid "Delete selection [Del]"
 msgstr "Slett del [Del]"
 
-#: src/mainwindow.c:1498
+#: src/mainwindow.c:1495
 msgid "Play all"
 msgstr "Spill av alle"
 
-#: src/mainwindow.c:1502
+#: src/mainwindow.c:1499
 msgid "Play from cursor position"
 msgstr "Spill av fra nåværende posisjon"
 
-#: src/mainwindow.c:1507
+#: src/mainwindow.c:1504
 msgid "Play"
 msgstr "Spill av"
 
-#: src/mainwindow.c:1508
+#: src/mainwindow.c:1505
 msgid "Play selection"
 msgstr "Spill av utvalg"
 
-#: src/mainwindow.c:1515
+#: src/mainwindow.c:1512
 msgid "Stop"
 msgstr "Stopp"
 
-#: src/mainwindow.c:1516
+#: src/mainwindow.c:1513
 msgid "Stop playback"
 msgstr "Stopp avspilling"
 
-#: src/mainwindow.c:1530
+#: src/mainwindow.c:1527
 msgid "Fade in"
 msgstr "Ton inn"
 
-#: src/mainwindow.c:1532
+#: src/mainwindow.c:1529
 msgid "Fade in selection"
 msgstr "Ton inn utvalg"
 
-#: src/mainwindow.c:1544
+#: src/mainwindow.c:1541
 msgid "Fade out"
 msgstr "Ton ut"
 
-#: src/mainwindow.c:1546
+#: src/mainwindow.c:1543
 msgid "Fade out selection"
 msgstr "Ton ut utvalg"
 
-#: src/mainwindow.c:1554
+#: src/mainwindow.c:1551
 msgid "About"
 msgstr "Om"
 
-#: src/mainwindow.c:1555
+#: src/mainwindow.c:1552
 msgid "About Odio Edit"
 msgstr "Om Odio Edit"
 
