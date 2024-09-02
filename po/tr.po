@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2024-09-01 21:41+0200\n"
-"PO-Revision-Date: 2023-12-10 12:05+0000\n"
+"PO-Revision-Date: 2024-09-02 20:09+0000\n"
 "Last-Translator: Oğuz Ersen <oguz@ersen.moe>\n"
 "Language-Team: Turkish <https://hosted.weblate.org/projects/odio-edit/master/"
 "tr/>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.3-dev\n"
+"X-Generator: Weblate 5.8-dev\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -129,7 +129,7 @@ msgstr "Veri %s üzerine yazılamaz"
 #: src/file.c:190
 #, c-format
 msgid "Could not read from file %s, here's the error: %s"
-msgstr ""
+msgstr "%s dosyasından okunamadı, alınan hata: %s"
 
 #: src/file.c:210
 #, c-format
