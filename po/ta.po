@@ -1,0 +1,397 @@
+# Translation of odio-edit in LANGUAGE
+# Copyright (C) 2024 Robert Tari
+# This file is distributed under the same license as the odio-edit package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: odio-edit\n"
+"Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
+"POT-Creation-Date: 2024-09-01 21:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: ta\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/chunk.c:130
+msgid "Mixing"
+msgstr ""
+
+#: src/chunk.c:295
+msgid "Saving"
+msgstr ""
+
+#: src/chunk.c:303
+#, c-format
+msgid "Failed to open '%s'!"
+msgstr ""
+
+#: src/chunk.c:349
+#, c-format
+msgid "Failed to write to '%s'!"
+msgstr ""
+
+#: src/chunk.c:385
+#, c-format
+msgid "File %s may be destroyed since saving failed. Try to free some disk space and save again. If you exit now, the file's contents could be left in a bad state."
+msgstr ""
+
+#: src/chunk.c:431
+#, c-format
+msgid "File %s does not exist!"
+msgstr ""
+
+#: src/chunk.c:440
+#, c-format
+msgid "File %s is not a regular file!"
+msgstr ""
+
+#: src/chunk.c:463 src/chunk.c:528
+#, c-format
+msgid "Failed to open '%s'"
+msgstr ""
+
+#: src/chunk.c:470 src/chunk.c:502
+msgid "Loading"
+msgstr ""
+
+#: src/chunk.c:483
+#, c-format
+msgid "Failed to decode '%s'"
+msgstr ""
+
+#: src/chunk.c:841
+msgid "Fading"
+msgstr ""
+
+#: src/datasource.c:156
+#, c-format
+msgid "Could not open %s"
+msgstr ""
+
+#: src/datasource.c:367
+#, c-format
+msgid "Error reading %s: %s"
+msgstr ""
+
+#: src/document.c:149
+#, c-format
+msgid "Untitled %d"
+msgstr ""
+
+#: src/file.c:53
+#, c-format
+msgid "Could not open %s: %s"
+msgstr ""
+
+#: src/file.c:57
+#, c-format
+msgid "Unexpected error: %s %s"
+msgstr ""
+
+#: src/file.c:84
+#, c-format
+msgid "Error closing %s: %s"
+msgstr ""
+
+#: src/file.c:105
+#, c-format
+msgid "Could not seek in %s: %s"
+msgstr ""
+
+#: src/file.c:136
+#, c-format
+msgid "Could not read from %s: %s"
+msgstr ""
+
+#: src/file.c:154
+#, c-format
+msgid "Unexpected end of file reading %s"
+msgstr ""
+
+#: src/file.c:176
+#, c-format
+msgid "Could not write data to %s"
+msgstr ""
+
+#: src/file.c:190
+#, c-format
+msgid "Could not read from file %s, here's the error: %s"
+msgstr ""
+
+#: src/file.c:210
+#, c-format
+msgid "Could not get file position in %s: %s"
+msgstr ""
+
+#: src/file.c:298
+#, c-format
+msgid "Could not delete '%s': %s"
+msgstr ""
+
+#: src/file.c:325
+#, c-format
+msgid "Error creating link to '%s': %s"
+msgstr ""
+
+#: src/mainwindow.c:73
+msgid "The file extension should be \".wav\""
+msgstr ""
+
+#: src/mainwindow.c:89
+msgid "_Save"
+msgstr ""
+
+#: src/mainwindow.c:89
+msgid "_Open"
+msgstr ""
+
+#: src/mainwindow.c:89
+msgid "_Cancel"
+msgstr ""
+
+#: src/mainwindow.c:168
+msgid "Processing data"
+msgstr ""
+
+#: src/mainwindow.c:171
+#, c-format
+msgid "%s... Press ESC to cancel."
+msgstr ""
+
+#: src/mainwindow.c:188
+msgid "Ready"
+msgstr ""
+
+#: src/mainwindow.c:322
+msgid "Close"
+msgstr ""
+
+#: src/mainwindow.c:325
+msgid "Click here for recent files"
+msgstr ""
+
+#: src/mainwindow.c:423 src/mainwindow.c:1576
+msgid "Cursor"
+msgstr ""
+
+#: src/mainwindow.c:431 src/mainwindow.c:1578
+msgid "View"
+msgstr ""
+
+#: src/mainwindow.c:441 src/mainwindow.c:446 src/mainwindow.c:1580
+msgid "Selection"
+msgstr ""
+
+#: src/mainwindow.c:563
+msgid "Save file"
+msgstr ""
+
+#: src/mainwindow.c:604
+#, c-format
+msgid "Save changes to %s?"
+msgstr ""
+
+#: src/mainwindow.c:851 src/mainwindow.c:862
+msgid "Load file"
+msgstr ""
+
+#: src/mainwindow.c:887 src/mainwindow.c:1401
+msgid "Save selection as..."
+msgstr ""
+
+#: src/mainwindow.c:999 src/mainwindow.c:1020 src/mainwindow.c:1044
+msgid "You cannot mix different sound formats"
+msgstr ""
+
+#: src/mainwindow.c:1176
+#, c-format
+msgid "Robert Tari 2019-20%s"
+msgstr ""
+
+#: src/mainwindow.c:1180 data/odio-edit.desktop.intl:4
+msgid "A lightweight audio wave editor"
+msgstr ""
+
+#: src/mainwindow.c:1182
+msgid "translator-credits"
+msgstr ""
+
+#: src/mainwindow.c:1390
+msgid "Open"
+msgstr ""
+
+#: src/mainwindow.c:1392
+msgid "Load new file [Ctrl+O]"
+msgstr ""
+
+#: src/mainwindow.c:1397
+msgid "Save as..."
+msgstr ""
+
+#: src/mainwindow.c:1407
+msgid "Save"
+msgstr ""
+
+#: src/mainwindow.c:1409
+msgid "Save current file [Ctrl+S]"
+msgstr ""
+
+#: src/mainwindow.c:1410 src/mainwindow.c:1465 src/mainwindow.c:1506
+msgid "Click here for more options"
+msgstr ""
+
+#: src/mainwindow.c:1418
+msgid "Undo"
+msgstr ""
+
+#: src/mainwindow.c:1420
+msgid "Undo last change [Ctrl+Z]"
+msgstr ""
+
+#: src/mainwindow.c:1425
+msgid "Redo"
+msgstr ""
+
+#: src/mainwindow.c:1427
+msgid "Redo last undo operation [Ctrl+Shift+Z]"
+msgstr ""
+
+#: src/mainwindow.c:1434
+msgid "Cut"
+msgstr ""
+
+#: src/mainwindow.c:1436
+msgid "Remove and copy current selection [Ctrl+X]"
+msgstr ""
+
+#: src/mainwindow.c:1441
+msgid "Copy"
+msgstr ""
+
+#: src/mainwindow.c:1443
+msgid "Copy current selection [Ctrl+C]"
+msgstr ""
+
+#: src/mainwindow.c:1449
+msgid "Paste over"
+msgstr ""
+
+#: src/mainwindow.c:1453
+msgid "Paste mixed"
+msgstr ""
+
+#: src/mainwindow.c:1457
+msgid "Paste to new"
+msgstr ""
+
+#: src/mainwindow.c:1462
+msgid "Paste"
+msgstr ""
+
+#: src/mainwindow.c:1464
+msgid "Paste at cursor position [Ctrl+V]"
+msgstr ""
+
+#: src/mainwindow.c:1478
+msgid "Crop"
+msgstr ""
+
+#: src/mainwindow.c:1480
+msgid "Crop to selection"
+msgstr ""
+
+#: src/mainwindow.c:1485
+msgid "Delete"
+msgstr ""
+
+#: src/mainwindow.c:1487
+msgid "Delete selection [Del]"
+msgstr ""
+
+#: src/mainwindow.c:1495
+msgid "Play all"
+msgstr ""
+
+#: src/mainwindow.c:1499
+msgid "Play from cursor position"
+msgstr ""
+
+#: src/mainwindow.c:1504
+msgid "Play"
+msgstr ""
+
+#: src/mainwindow.c:1505
+msgid "Play selection"
+msgstr ""
+
+#: src/mainwindow.c:1512
+msgid "Stop"
+msgstr ""
+
+#: src/mainwindow.c:1513
+msgid "Stop playback"
+msgstr ""
+
+#: src/mainwindow.c:1527
+msgid "Fade in"
+msgstr ""
+
+#: src/mainwindow.c:1529
+msgid "Fade in selection"
+msgstr ""
+
+#: src/mainwindow.c:1541
+msgid "Fade out"
+msgstr ""
+
+#: src/mainwindow.c:1543
+msgid "Fade out selection"
+msgstr ""
+
+#: src/mainwindow.c:1551
+msgid "About"
+msgstr ""
+
+#: src/mainwindow.c:1552
+msgid "About Odio Edit"
+msgstr ""
+
+#: src/message.c:55
+msgid "Yes"
+msgstr ""
+
+#: src/message.c:55
+msgid "No"
+msgstr ""
+
+#: src/message.c:55
+msgid "Cancel"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:6
+msgid "List of recently accessed files"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:7
+msgid "Stores the list of files last accessed by the application."
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:11
+msgid "Last file opened"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:12
+msgid "The last file opened by the application."
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:16
+msgid "Last file saved"
+msgstr ""
+
+#: data/in.tari.odio-edit.gschema.xml:17
+msgid "The last file saved by the application."
+msgstr ""
