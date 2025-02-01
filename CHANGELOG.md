@@ -1,3 +1,8 @@
+# 25.2.1
+
+ - Translated using Weblate (Tamil) (1332a47)
+ - Added translation using Weblate (Tamil) (27c79d4)
+
 # 24.10.1
 
  - Translated using Weblate (Turkish) (3c397bf)
