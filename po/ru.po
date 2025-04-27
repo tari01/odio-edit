@@ -8,13 +8,17 @@ msgstr ""
 "Project-Id-Version: odio-edit 1.3.8\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
 "POT-Creation-Date: 2024-09-01 21:41+0200\n"
-"PO-Revision-Date: 2020-04-04 07:54+0000\n"
-"Last-Translator: Robert Tari <Unknown>\n"
-"Language-Team: Russian <ru@li.org>\n"
+"PO-Revision-Date: 2025-04-28 06:01+0000\n"
+"Last-Translator: Sergey Ponomarev <stokito@gmail.com>\n"
+"Language-Team: Russian <https://hosted.weblate.org/projects/odio-edit/master/"
+"ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 #: src/chunk.c:130
 msgid "Mixing"
@@ -41,21 +45,24 @@ msgid ""
 "and save again. If you exit now, the file's contents could be left in a bad "
 "state."
 msgstr ""
+"Файл %s может быть потерян, так как сохранение не удалось. Попробуйте "
+"освободить дисковое пространство и сохранить снова. Если вы выйдете сейчас "
+"то содержимое файла может быть оставлено в плохом состоянии."
 
 #: src/chunk.c:431
 #, c-format
 msgid "File %s does not exist!"
-msgstr ""
+msgstr "Файл %s не существует!"
 
 #: src/chunk.c:440
 #, c-format
 msgid "File %s is not a regular file!"
-msgstr ""
+msgstr "Файл %s не является обычным файлом!"
 
 #: src/chunk.c:463 src/chunk.c:528
 #, c-format
 msgid "Failed to open '%s'"
-msgstr ""
+msgstr "Ошибка при открытии '%s'"
 
 #: src/chunk.c:470 src/chunk.c:502
 msgid "Loading"
@@ -64,16 +71,16 @@ msgstr "Загрузка"
 #: src/chunk.c:483
 #, c-format
 msgid "Failed to decode '%s'"
-msgstr ""
+msgstr "Не удалось декодировать «%s»"
 
 #: src/chunk.c:841
 msgid "Fading"
-msgstr ""
+msgstr "Выцветание"
 
 #: src/datasource.c:156
 #, c-format
 msgid "Could not open %s"
-msgstr ""
+msgstr "Невозможно открыть %s"
 
 #: src/datasource.c:367
 #, c-format
@@ -83,7 +90,7 @@ msgstr "Ошибка чтения %s: %s"
 #: src/document.c:149
 #, c-format
 msgid "Untitled %d"
-msgstr ""
+msgstr "Без названия %d"
 
 #: src/file.c:53
 #, c-format
@@ -93,7 +100,7 @@ msgstr "Не могу открыть %s: %s"
 #: src/file.c:57
 #, c-format
 msgid "Unexpected error: %s %s"
-msgstr ""
+msgstr "Неожиданная ошибка: %s %s"
 
 #: src/file.c:84
 #, c-format
@@ -113,17 +120,17 @@ msgstr "Не могу прочитать из %s: %s"
 #: src/file.c:154
 #, c-format
 msgid "Unexpected end of file reading %s"
-msgstr ""
+msgstr "Неожиданный конец файла при чтении %s"
 
 #: src/file.c:176
 #, c-format
 msgid "Could not write data to %s"
-msgstr ""
+msgstr "Невозможно записать данные в %s"
 
 #: src/file.c:190
 #, c-format
 msgid "Could not read from file %s, here's the error: %s"
-msgstr ""
+msgstr "Невозможно прочитать из файла %s, вот ошибка: %s"
 
 #: src/file.c:210
 #, c-format
@@ -133,7 +140,7 @@ msgstr "Невозможно получить позицию файла %s: %s"
 #: src/file.c:298
 #, c-format
 msgid "Could not delete '%s': %s"
-msgstr ""
+msgstr "Невозможно удалить «%s»: %s"
 
 #: src/file.c:325
 #, c-format
@@ -142,15 +149,15 @@ msgstr "Ошибка при создании ссылки на '%s': %s"
 
 #: src/mainwindow.c:73
 msgid "The file extension should be \".wav\""
-msgstr ""
+msgstr "Расширение файла должно быть \".wav\""
 
 #: src/mainwindow.c:89
 msgid "_Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: src/mainwindow.c:89
 msgid "_Open"
-msgstr ""
+msgstr "Открыть"
 
 #: src/mainwindow.c:89
 msgid "_Cancel"
@@ -163,11 +170,11 @@ msgstr "Обработка данных"
 #: src/mainwindow.c:171
 #, c-format
 msgid "%s... Press ESC to cancel."
-msgstr ""
+msgstr "%s... Нажмите ESC, чтобы отменить."
 
 #: src/mainwindow.c:188
 msgid "Ready"
-msgstr ""
+msgstr "Готово"
 
 #: src/mainwindow.c:322
 msgid "Close"
@@ -175,7 +182,7 @@ msgstr "Закрыть"
 
 #: src/mainwindow.c:325
 msgid "Click here for recent files"
-msgstr ""
+msgstr "Нажмите здесь для недавних файлов"
 
 #: src/mainwindow.c:423 src/mainwindow.c:1576
 msgid "Cursor"
@@ -183,7 +190,7 @@ msgstr "Курсор"
 
 #: src/mainwindow.c:431 src/mainwindow.c:1578
 msgid "View"
-msgstr ""
+msgstr "Вид"
 
 #: src/mainwindow.c:441 src/mainwindow.c:446 src/mainwindow.c:1580
 msgid "Selection"
@@ -191,7 +198,7 @@ msgstr "Выделение"
 
 #: src/mainwindow.c:563
 msgid "Save file"
-msgstr ""
+msgstr "Сохранить файл"
 
 #: src/mainwindow.c:604
 #, c-format
@@ -200,24 +207,24 @@ msgstr "Сохранить изменения в %s?"
 
 #: src/mainwindow.c:851 src/mainwindow.c:862
 msgid "Load file"
-msgstr ""
+msgstr "Загрузить файл"
 
 #: src/mainwindow.c:887 src/mainwindow.c:1401
 msgid "Save selection as..."
-msgstr ""
+msgstr "Сохранить выбор как..."
 
 #: src/mainwindow.c:999 src/mainwindow.c:1020 src/mainwindow.c:1044
 msgid "You cannot mix different sound formats"
-msgstr ""
+msgstr "Нельзя смешивать различные форматы звука"
 
 #: src/mainwindow.c:1176
 #, c-format
 msgid "Robert Tari 2019-20%s"
-msgstr ""
+msgstr "Robert Tari 2019-20%s"
 
 #: src/mainwindow.c:1180 data/odio-edit.desktop.intl:4
 msgid "A lightweight audio wave editor"
-msgstr ""
+msgstr "Легкий редактор звука"
 
 #: src/mainwindow.c:1182
 msgid "translator-credits"
@@ -228,99 +235,99 @@ msgstr ""
 
 #: src/mainwindow.c:1390
 msgid "Open"
-msgstr ""
+msgstr "Открыть"
 
 #: src/mainwindow.c:1392
 msgid "Load new file [Ctrl+O]"
-msgstr ""
+msgstr "Загрузить новый файл [Ctrl+O]"
 
 #: src/mainwindow.c:1397
 msgid "Save as..."
-msgstr ""
+msgstr "Сохранить как..."
 
 #: src/mainwindow.c:1407
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 #: src/mainwindow.c:1409
 msgid "Save current file [Ctrl+S]"
-msgstr ""
+msgstr "Сохранить текущий файл [Ctrl+S]"
 
 #: src/mainwindow.c:1410 src/mainwindow.c:1465 src/mainwindow.c:1506
 msgid "Click here for more options"
-msgstr ""
+msgstr "Нажмите здесь для дополнительных опций"
 
 #: src/mainwindow.c:1418
 msgid "Undo"
-msgstr ""
+msgstr "Отменить"
 
 #: src/mainwindow.c:1420
 msgid "Undo last change [Ctrl+Z]"
-msgstr ""
+msgstr "Убрать последнее изменение [Ctrl+Z]"
 
 #: src/mainwindow.c:1425
 msgid "Redo"
-msgstr ""
+msgstr "Повторить"
 
 #: src/mainwindow.c:1427
 msgid "Redo last undo operation [Ctrl+Shift+Z]"
-msgstr ""
+msgstr "Повторить последнюю операцию [Ctrl+Shift+Z]"
 
 #: src/mainwindow.c:1434
 msgid "Cut"
-msgstr ""
+msgstr "Вырезать"
 
 #: src/mainwindow.c:1436
 msgid "Remove and copy current selection [Ctrl+X]"
-msgstr ""
+msgstr "Удалить и копировать выбранное [Ctrl+X]"
 
 #: src/mainwindow.c:1441
 msgid "Copy"
-msgstr ""
+msgstr "Копировать"
 
 #: src/mainwindow.c:1443
 msgid "Copy current selection [Ctrl+C]"
-msgstr ""
+msgstr "Копировать выбранное [Ctrl+C]"
 
 #: src/mainwindow.c:1449
 msgid "Paste over"
-msgstr ""
+msgstr "Вставить поверх"
 
 #: src/mainwindow.c:1453
 msgid "Paste mixed"
-msgstr ""
+msgstr "Вставить смешано"
 
 #: src/mainwindow.c:1457
 msgid "Paste to new"
-msgstr ""
+msgstr "Вставить в новое"
 
 #: src/mainwindow.c:1462
 msgid "Paste"
-msgstr ""
+msgstr "Вставить"
 
 #: src/mainwindow.c:1464
 msgid "Paste at cursor position [Ctrl+V]"
-msgstr ""
+msgstr "Вставить в позицию курсора [Ctrl+V]"
 
 #: src/mainwindow.c:1478
 msgid "Crop"
-msgstr ""
+msgstr "Обрезать"
 
 #: src/mainwindow.c:1480
 msgid "Crop to selection"
-msgstr ""
+msgstr "Обрезать к выбранному"
 
 #: src/mainwindow.c:1485
 msgid "Delete"
-msgstr ""
+msgstr "Удалить"
 
 #: src/mainwindow.c:1487
 msgid "Delete selection [Del]"
-msgstr ""
+msgstr "Удалить выбранное [Del]"
 
 #: src/mainwindow.c:1495
 msgid "Play all"
-msgstr ""
+msgstr "Играть всё"
 
 #: src/mainwindow.c:1499
 msgid "Play from cursor position"
@@ -328,43 +335,43 @@ msgstr "Играть начиная с позиции курсора"
 
 #: src/mainwindow.c:1504
 msgid "Play"
-msgstr ""
+msgstr "Играть"
 
 #: src/mainwindow.c:1505
 msgid "Play selection"
-msgstr ""
+msgstr "Играть выбранное"
 
 #: src/mainwindow.c:1512
 msgid "Stop"
-msgstr ""
+msgstr "Стоп"
 
 #: src/mainwindow.c:1513
 msgid "Stop playback"
-msgstr ""
+msgstr "Остановить проигрывание"
 
 #: src/mainwindow.c:1527
 msgid "Fade in"
-msgstr ""
+msgstr "Постепенное появление"
 
 #: src/mainwindow.c:1529
 msgid "Fade in selection"
-msgstr ""
+msgstr "Постепенное появление выбранного"
 
 #: src/mainwindow.c:1541
 msgid "Fade out"
-msgstr ""
+msgstr "Постепенное исчезание"
 
 #: src/mainwindow.c:1543
 msgid "Fade out selection"
-msgstr ""
+msgstr "Постепенное исчезание выбранного"
 
 #: src/mainwindow.c:1551
 msgid "About"
-msgstr ""
+msgstr "О программе"
 
 #: src/mainwindow.c:1552
 msgid "About Odio Edit"
-msgstr ""
+msgstr "Про Odio Edit"
 
 #: src/message.c:55
 msgid "Yes"
@@ -380,24 +387,24 @@ msgstr "Отменить"
 
 #: data/in.tari.odio-edit.gschema.xml:6
 msgid "List of recently accessed files"
-msgstr ""
+msgstr "Список недавно открытых файлов"
 
 #: data/in.tari.odio-edit.gschema.xml:7
 msgid "Stores the list of files last accessed by the application."
-msgstr ""
+msgstr "Хранит список файлов недавно открытых в приложении."
 
 #: data/in.tari.odio-edit.gschema.xml:11
 msgid "Last file opened"
-msgstr ""
+msgstr "Последний открытый файл"
 
 #: data/in.tari.odio-edit.gschema.xml:12
 msgid "The last file opened by the application."
-msgstr ""
+msgstr "Последний файл, открытый приложением."
 
 #: data/in.tari.odio-edit.gschema.xml:16
 msgid "Last file saved"
-msgstr ""
+msgstr "Последний сохранённый файл"
 
 #: data/in.tari.odio-edit.gschema.xml:17
 msgid "The last file saved by the application."
-msgstr ""
+msgstr "Последний файл сохранённый приложением."
