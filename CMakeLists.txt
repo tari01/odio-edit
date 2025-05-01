@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 3.13)
-project (odio-edit VERSION 25.2.1 LANGUAGES C)
+project (odio-edit VERSION 25.5.1 LANGUAGES C)
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     SET (CMAKE_INSTALL_PREFIX "/usr" CACHE PATH "..." FORCE)

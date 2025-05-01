@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2024-09-01 21:41+0200\n"
+"POT-Creation-Date: 2024-08-25 23:36+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -215,7 +215,7 @@ msgstr ""
 msgid "Robert Tari 2019-20%s"
 msgstr ""
 
-#: src/mainwindow.c:1180 data/odio-edit.desktop.intl:4
+#: src/mainwindow.c:1180 data/odio-edit.desktop.intl:3
 msgid "A lightweight audio wave editor"
 msgstr ""
 

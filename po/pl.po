@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit_pl\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2024-09-01 21:41+0200\n"
+"POT-Creation-Date: 2024-08-25 23:36+0200\n"
 "PO-Revision-Date: 2023-10-08 21:03+0000\n"
 "Last-Translator: Eryk Michalak <gnu.ewm@protonmail.com>\n"
 "Language-Team: Polish <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -219,7 +219,7 @@ msgstr ""
 msgid "Robert Tari 2019-20%s"
 msgstr ""
 
-#: src/mainwindow.c:1180 data/odio-edit.desktop.intl:4
+#: src/mainwindow.c:1180 data/odio-edit.desktop.intl:3
 msgid "A lightweight audio wave editor"
 msgstr ""
 

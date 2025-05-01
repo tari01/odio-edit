@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: odio-edit\n"
 "Report-Msgid-Bugs-To: https://github.com/tari01/odio-edit/issues\n"
-"POT-Creation-Date: 2024-09-01 21:41+0200\n"
+"POT-Creation-Date: 2024-08-25 23:36+0200\n"
 "PO-Revision-Date: 2024-09-02 20:09+0000\n"
 "Last-Translator: gallegonovato <fran-carro@hotmail.es>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/odio-edit/master/"
@@ -221,7 +221,7 @@ msgstr "No se pueden mezclar formatos de sonido diferentes"
 msgid "Robert Tari 2019-20%s"
 msgstr "Robert Tari 2019-20%s"
 
-#: src/mainwindow.c:1180 data/odio-edit.desktop.intl:4
+#: src/mainwindow.c:1180 data/odio-edit.desktop.intl:3
 msgid "A lightweight audio wave editor"
 msgstr "Un editor de audio de onda ligero"
 

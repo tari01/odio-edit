@@ -1,3 +1,8 @@
+# 25.5.1
+
+ - Translated using Weblate (Russian) (389189c)
+ - Translated using Weblate (German) (4f09531)
+
 # 25.2.1
 
  - Translated using Weblate (Tamil) (1332a47)
